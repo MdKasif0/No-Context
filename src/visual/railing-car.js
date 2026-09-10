@@ -16,29 +16,29 @@ export class RailingCarLayer {
       <defs>
         <!-- Large muted gray-purple vehicle paint gradient -->
         <linearGradient id="car-body-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#6B5B6D" />
-          <stop offset="45%" stop-color="#58485A" />
-          <stop offset="100%" stop-color="#463747" />
+          <stop offset="0%" stop-color="#847179" />
+          <stop offset="45%" stop-color="#6F5D65" />
+          <stop offset="100%" stop-color="#55444D" />
         </linearGradient>
 
         <linearGradient id="car-roof-surface-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#736375" />
-          <stop offset="60%" stop-color="#5E4E60" />
-          <stop offset="100%" stop-color="#4D3D4F" />
+          <stop offset="0%" stop-color="#8C7982" />
+          <stop offset="60%" stop-color="#76636D" />
+          <stop offset="100%" stop-color="#5C4A54" />
         </linearGradient>
 
         <!-- Car rear window dark purple glass gradient -->
         <linearGradient id="car-window-glass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#3B2E3C" />
-          <stop offset="65%" stop-color="#2D212E" />
-          <stop offset="100%" stop-color="#201621" />
+          <stop offset="0%" stop-color="#4E3D48" />
+          <stop offset="65%" stop-color="#3C2C36" />
+          <stop offset="100%" stop-color="#261A22" />
         </linearGradient>
 
         <!-- Railing metal gradient -->
         <linearGradient id="railing-metal-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#675060" />
-          <stop offset="40%" stop-color="#543E4E" />
-          <stop offset="100%" stop-color="#3F2D3A" />
+          <stop offset="0%" stop-color="#6A5361" />
+          <stop offset="40%" stop-color="#553E4D" />
+          <stop offset="100%" stop-color="#3E2B37" />
         </linearGradient>
       </defs>
 
