@@ -104,8 +104,9 @@
           <button class="toggle-pill active" data-layer="city">City Skyline</button>
           <button class="toggle-pill active" data-layer="foliage">Trees & Foliage</button>
           <button class="toggle-pill active" data-layer="railingCar">Car & Railing</button>
-          <button class="toggle-pill active" data-layer="characters">Characters</button>
-          <button class="toggle-pill active" data-layer="particles">Floating Petals</button>
+          <button class="toggle-pill active" data-layer="characters">Scene 1 Characters</button>
+          <button class="toggle-pill active" data-layer="scene2">Scene 2 Portrait</button>
+          <button class="toggle-pill active" data-layer="particles">Floating Particles</button>
           <button class="toggle-pill active" data-layer="lyrics">Lyrics</button>
           <button class="toggle-pill active" data-layer="grain">Paper Grain</button>
           <button class="toggle-pill active" data-layer="wobble">Ink Jitter</button>
@@ -124,7 +125,7 @@
 
   <!-- Main Application Bootstrap -->
   <script type="module">
-    import { SceneCompositor } from './src/scene.js?v=v15';
+    import { SceneCompositor } from './src/scene.js?v=v16';
 
     window.addEventListener('DOMContentLoaded', () => {
       const compositor = new SceneCompositor();
@@ -254,7 +255,9 @@
         teleScale.textContent = `${camData.scale}×`;
         telePan.textContent = `(${camData.x}, ${camData.y})`;
         if (camera.mode === 'timeline') {
-          const currentShot = time < 4.47 ? 'Scene 1 Push-In (Auto)' : 'Girl Close-up (Auto)';
+          const currentShot = time < 4.47 
+            ? 'Scene 1 Push-In (Auto)' 
+            : (time < 8.95 ? 'Scene 2 Close-up (Auto)' : 'Scene 3 (Auto)');
           teleShot.textContent = currentShot;
         } else {
           teleShot.textContent = cameraSelect.options[cameraSelect.selectedIndex]?.text || camData.mode;
