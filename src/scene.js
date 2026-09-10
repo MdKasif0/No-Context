@@ -1,14 +1,14 @@
-import { injectSvgFilters } from './visual/svg-filters.js?v=v11';
-import { SkyAndCloudsLayer } from './visual/sky-clouds.js?v=v11';
-import { CityscapeLayer } from './visual/cityscape.js?v=v11';
-import { FoliageLayer } from './visual/foliage.js?v=v11';
-import { RailingCarLayer } from './visual/railing-car.js?v=v11';
-import { CharactersLayer } from './visual/characters.js?v=v11';
-import { ParticlesLayer } from './visual/particles.js?v=v11';
-import { LyricsLayer } from './visual/lyrics.js?v=v11';
-import { PaperTextureEngine } from './visual/paper-texture.js?v=v11';
-import { Camera } from './core/camera.js?v=v11';
-import { AnimationEngine } from './core/engine.js?v=v11';
+import { injectSvgFilters } from './visual/svg-filters.js?v=v12';
+import { SkyAndCloudsLayer } from './visual/sky-clouds.js?v=v12';
+import { CityscapeLayer } from './visual/cityscape.js?v=v12';
+import { FoliageLayer } from './visual/foliage.js?v=v12';
+import { RailingCarLayer } from './visual/railing-car.js?v=v12';
+import { CharactersLayer } from './visual/characters.js?v=v12';
+import { ParticlesLayer } from './visual/particles.js?v=v12';
+import { LyricsLayer } from './visual/lyrics.js?v=v12';
+import { PaperTextureEngine } from './visual/paper-texture.js?v=v12';
+import { Camera } from './core/camera.js?v=v12';
+import { AnimationEngine } from './core/engine.js?v=v12';
 
 /**
  * Scene Compositor

@@ -60,8 +60,8 @@ export class CharactersLayer {
         <g id="girl-lower-body">
           <!-- Main Seated Skirt Mass over Lap & Thighs on Car Roof (y: 405 - 440, x: 70 - 235) -->
           <path d="M72,436 
-                   C65,415 85,395 118,390 
-                   C152,386 195,402 218,425 
+                   C64,412 85,394 116,390 
+                   C150,386 195,402 218,425 
                    C232,440 240,460 236,482 
                    C232,508 226,545 220,582 
                    C214,588 200,588 190,582 
@@ -109,14 +109,14 @@ export class CharactersLayer {
         <!-- Torso, Arms & Off-The-Shoulder Ruffle Capelet -->
         <g id="girl-torso">
           <!-- Back Arm: straight down, leaning back on car roof supporting her weight -->
-          <path d="M92,342 C84,368 76,400 70,432 L84,435 C88,405 96,375 104,350 Z" 
+          <path d="M88,345 C80,370 74,402 70,436 L84,438 C88,408 94,378 102,352 Z" 
                 fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.6" />
           <!-- Hand planted flat on car roof -->
-          <path d="M64,432 C54,438 60,446 72,446 C82,446 86,438 84,432 Z" 
+          <path d="M64,436 C54,442 60,448 72,448 C82,448 86,442 84,436 Z" 
                 fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.5" />
 
           <!-- Bodice / Waist -->
-          <path d="M96,330 C94,354 98,378 104,395 C124,397 154,392 168,385 C165,362 160,340 156,325 Z" 
+          <path d="M96,335 C94,358 98,380 104,398 C124,400 154,395 168,388 C165,365 160,344 156,330 Z" 
                 fill="url(#girl-cream-fabric)" stroke="#4A3744" stroke-width="1.6" />
 
           <!-- Foreground Arm: hangs down gracefully, hand resting on her knee/lap -->
@@ -126,87 +126,87 @@ export class CharactersLayer {
           <path d="M168,432 C175,436 182,442 177,447 C170,450 164,446 162,438 Z" 
                 fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.4" />
 
-          <!-- Flared Off-The-Shoulder Ruffled Capelet (Broad flowing poncho collar) -->
+          <!-- Flared Off-The-Shoulder Ruffled Capelet (Broad flowing poncho collar matching frame_01.jpg) -->
           <g id="girl-ruffle">
-            <!-- Smooth bell-shaped capelet covering shoulders & chest -->
-            <path d="M72,305 
-                     C95,296 142,294 186,308 
-                     C208,336 216,368 206,378 
-                     C192,382 172,376 154,378 
-                     C136,380 118,376 102,378 
-                     C86,380 72,376 60,366 
-                     C55,346 60,322 72,305 Z" 
+            <!-- Smooth bell-shaped capelet covering shoulders & chest (y: 275 - 355) -->
+            <path d="M62,330 
+                     C82,310 120,290 150,278 
+                     C165,276 180,282 186,305 
+                     C196,325 198,342 186,350 
+                     C174,358 152,360 132,360 
+                     C112,360 90,358 72,352 
+                     C58,348 55,340 62,330 Z" 
                   fill="url(#girl-collar-fabric)" stroke="#4A3744" stroke-width="1.8" />
 
             <!-- Radial pleat creases flowing outward from neckline -->
-            <path d="M95,300 L72,370" stroke="#4A3744" stroke-width="1.3" />
-            <path d="M116,298 L108,374" stroke="#4A3744" stroke-width="1.3" />
-            <path d="M142,298 L145,376" stroke="#4A3744" stroke-width="1.3" />
-            <path d="M168,302 L185,372" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M90,320 L72,348" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M116,305 L106,358" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M142,298 L138,360" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M168,305 L174,352" stroke="#4A3744" stroke-width="1.3" />
           </g>
         </g>
 
-        <!-- Girl Head & Hair (Breathes and tilts) -->
+        <!-- Girl Head & Hair (Breathes and tilts - exact frame_01.jpg coordinates) -->
         <g id="girl-head">
-          <!-- Slender Graceful Neck -->
-          <path d="M144,265 C146,282 148,298 150,308 C158,308 166,306 172,300 C170,284 168,268 164,262 Z" 
+          <!-- Slender Graceful Neck (y: 248 - 278, slender 18px height) -->
+          <path d="M154,250 C155,260 153,270 150,278 C160,280 170,278 175,274 C176,265 178,256 180,250 Z" 
                 fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.4" />
 
-          <!-- Face Profile Shape (Delicate anime profile facing right) -->
-          <path d="M152,218 
-                   C168,218 184,226 194,236 
-                   C199,241 202,246 198,252 
-                   C195,256 190,260 186,264 
-                   C178,272 166,274 158,272 
-                   C146,268 142,256 142,242 
-                   C142,228 146,220 152,218 Z" 
+          <!-- Face Profile Shape (Small delicate anime profile facing right, level gaze) -->
+          <path d="M168,205 
+                   C185,206 200,212 210,220 
+                   C214,223 214,228 210,232 
+                   C206,236 204,239 207,243 
+                   C204,248 198,254 190,256 
+                   C178,258 168,254 162,246 
+                   C156,238 158,220 168,205 Z" 
                 fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.6" />
 
           <!-- Soft Warm Peach Blush -->
-          <ellipse id="girl-blush" cx="180" cy="248" rx="8" ry="4.8" fill="#F3A688" opacity="0.68" filter="url(#blush-soften)" />
+          <ellipse id="girl-blush" cx="190" cy="236" rx="7.5" ry="4.5" fill="#F3A688" opacity="0.70" filter="url(#blush-soften)" />
 
           <!-- Facial Features -->
           <!-- Eye looking right toward boy with micro-blink -->
           <g id="girl-eye">
-            <path d="M182,236 C186,234 190,235 192,238" fill="none" stroke="#3A2C37" stroke-width="1.8" stroke-linecap="round" />
-            <circle cx="187" cy="238" r="1.3" fill="#2E212B" />
+            <path d="M194,224 C198,222 201,223 203,226" fill="none" stroke="#3A2C37" stroke-width="1.8" stroke-linecap="round" />
+            <circle cx="197" cy="226" r="1.3" fill="#2E212B" />
           </g>
           <!-- Eyebrow -->
-          <path d="M180,229 C184,227 189,228 193,230" fill="none" stroke="#4A3744" stroke-width="1.1" stroke-linecap="round" />
-          <!-- Dainty nose tip -->
-          <path d="M197,242 C199,244 198,246 196,247" fill="none" stroke="#4A3744" stroke-width="1.1" />
-          <!-- Warm sweet smile -->
-          <path d="M185,254 C190,256 194,254 196,252" fill="none" stroke="#4A3744" stroke-width="1.3" stroke-linecap="round" />
+          <path d="M192,217 C196,215 200,216 204,218" fill="none" stroke="#4A3744" stroke-width="1.1" stroke-linecap="round" />
+          <!-- Dainty upturned nose tip -->
+          <path d="M211,226 C213,228 212,230 210,231" fill="none" stroke="#4A3744" stroke-width="1.1" />
+          <!-- Sweet gentle smile line -->
+          <path d="M198,238 C202,240 206,238 207,236" fill="none" stroke="#4A3744" stroke-width="1.3" stroke-linecap="round" />
 
           <!-- Ear -->
-          <path d="M152,245 C149,243 147,249 149,255 C151,259 155,259 156,255" fill="none" stroke="#4A3744" stroke-width="1.2" />
+          <path d="M165,234 C162,232 160,238 162,244 C164,248 168,248 169,244" fill="none" stroke="#4A3744" stroke-width="1.2" />
 
           <!-- Hair System (Dark muted gray/plum anime hair with low bun) -->
           <g id="girl-hair">
             <!-- Full Back Hair Volume & Crown Silhouette -->
-            <path d="M150,214 
-                     C126,215 110,232 112,256 
-                     C114,272 126,282 142,282 
-                     C146,270 152,256 158,246 
-                     C164,232 172,222 182,218 
-                     C172,214 160,213 150,214 Z" 
+            <path d="M165,202 
+                     C140,202 120,216 118,238 
+                     C116,252 126,264 142,265 
+                     C146,254 154,242 162,234 
+                     C170,222 178,212 188,208 
+                     C180,204 172,202 165,202 Z" 
                   fill="#47404A" stroke="#352834" stroke-width="1.6" />
 
             <!-- Low Bun at Nape of Neck (frame_01.jpg: cute knot at back of head) -->
             <g id="girl-bun">
-              <ellipse cx="112" cy="256" rx="16" ry="14" fill="#3D3640" stroke="#352834" stroke-width="1.6" />
-              <path d="M104,248 C112,252 118,260 116,268" fill="none" stroke="#544B57" stroke-width="1.4" />
+              <ellipse cx="118" cy="242" rx="16" ry="14" fill="#3D3640" stroke="#352834" stroke-width="1.6" />
+              <path d="M110,234 C118,238 124,246 122,254" fill="none" stroke="#544B57" stroke-width="1.4" />
               <!-- Hair tie detail -->
-              <path d="M122,246 C124,254 123,264 120,270" fill="none" stroke="#2B1F2A" stroke-width="1.5" />
+              <path d="M128,232 C130,240 129,250 126,256" fill="none" stroke="#2B1F2A" stroke-width="1.5" />
             </g>
 
-            <!-- Front Bangs & Loose Tendril Curling in Breeze -->
+            <!-- Front Bangs & Loose Tendril Curling in Breeze (frame_01.jpg: tendril reaching toward right) -->
             <g id="girl-hair-strand">
               <!-- Rounded forehead fringe sweeping across -->
-              <path d="M152,214 C164,218 178,228 184,238 C174,234 164,230 154,226 Z" fill="#47404A" />
+              <path d="M166,202 C178,206 192,216 198,224 C188,222 178,218 168,214 Z" fill="#47404A" />
               <!-- Loose wispy tendril curving gracefully into the breeze -->
-              <path d="M168,236 C176,230 188,228 196,232" fill="none" stroke="#3D3640" stroke-width="1.8" stroke-linecap="round" />
-              <path d="M184,228 C192,226 200,230 204,235" fill="none" stroke="#3D3640" stroke-width="1.2" stroke-linecap="round" />
+              <path d="M195,205 C208,210 224,214 227,218 C222,224 212,228 206,232" fill="none" stroke="#3D3640" stroke-width="1.7" stroke-linecap="round" />
+              <path d="M182,218 C192,220 202,226 206,232" fill="none" stroke="#3D3640" stroke-width="1.2" stroke-linecap="round" />
             </g>
           </g>
         </g>
@@ -297,65 +297,64 @@ export class CharactersLayer {
 
         <!-- Boy Head & Authentic Tousled Anime Hair (Tilted upward gazing at girl) -->
         <g id="boy-head">
-          <!-- Slanted Neck -->
-          <path d="M486,380 C484,396 482,410 480,418 C496,420 510,420 518,416 C514,402 510,392 506,380 Z" 
+          <!-- Slanted Neck (slender 18px neck) -->
+          <path d="M486,380 C484,394 482,404 480,414 C496,416 508,416 514,412 C510,402 506,392 504,380 Z" 
                 fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.5" />
 
-          <!-- Face Profile (Tilted upward ~18°, looking left towards girl) -->
-          <path d="M490,340 
-                   C480,344 470,352 466,360 
-                   C462,367 465,374 470,380 
-                   C476,386 486,389 494,388 
-                   C502,385 508,377 510,366 
-                   C510,352 504,342 490,340 Z" 
+          <!-- Face Profile (Tilted upward ~15°, looking left towards girl) -->
+          <path d="M484,334 
+                   C476,338 468,344 466,350 
+                   C464,356 468,362 472,367 
+                   C476,372 484,375 492,374 
+                   C498,372 504,365 506,356 
+                   C506,345 500,336 484,334 Z" 
                 fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.6" />
 
           <!-- Soft Warm Peach Blush -->
-          <ellipse cx="478" cy="368" rx="6.5" ry="4.0" fill="var(--character-blush)" filter="url(#blush-soften)" />
+          <ellipse cx="478" cy="358" rx="6.5" ry="4.0" fill="var(--character-blush)" filter="url(#blush-soften)" />
 
           <!-- Eye looking affectionately left and up toward the girl -->
-          <path d="M472,352 C476,350 480,351 482,354" fill="none" stroke="#423540" stroke-width="1.8" stroke-linecap="round" />
-          <circle cx="476" cy="353" r="1.3" fill="#352632" />
+          <path d="M474,344 C478,342 482,343 484,346" fill="none" stroke="#423540" stroke-width="1.8" stroke-linecap="round" />
+          <circle cx="478" cy="345" r="1.3" fill="#352632" />
           <!-- Eyebrow -->
-          <path d="M470,345 C474,343 480,344 483,346" fill="none" stroke="#543C4C" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M472,337 C476,335 482,336 485,338" fill="none" stroke="#543C4C" stroke-width="1.2" stroke-linecap="round" />
           <!-- Soft nose profile -->
-          <path d="M465,357 C463,359 464,361 466,362" fill="none" stroke="#65495A" stroke-width="1.1" />
+          <path d="M466,348 C464,350 465,352 467,353" fill="none" stroke="#65495A" stroke-width="1.1" />
           <!-- Sweet gentle smile -->
-          <path d="M472,372 C476,374 481,372 483,370" fill="none" stroke="#65495A" stroke-width="1.3" stroke-linecap="round" />
+          <path d="M474,360 C478,362 482,360 484,358" fill="none" stroke="#65495A" stroke-width="1.3" stroke-linecap="round" />
 
           <!-- Ear -->
-          <path d="M500,358 C504,355 507,360 506,366 C504,371 500,370 499,367" fill="none" stroke="#65495A" stroke-width="1.2" />
+          <path d="M498,348 C502,345 505,350 504,356 C502,361 498,360 497,357" fill="none" stroke="#65495A" stroke-width="1.2" />
 
           <!-- Tousled Messy Anime Hair (Natural spiky locks matching frame_01.jpg) -->
           <g id="boy-hair">
             <!-- Solid back of head & crown mass with anime lock peaks -->
-            <path d="M470,348 
-                     C458,336 462,316 478,308 
-                     C484,295 498,292 508,298 
-                     C518,292 530,295 536,306 
-                     C546,305 556,312 555,326 
-                     C560,342 558,365 548,380 
-                     C538,392 524,398 514,395 
-                     C512,386 512,376 510,368 
-                     C506,356 500,348 492,344 
-                     C484,340 476,344 470,348 Z" 
+            <path d="M470,338 
+                     C460,326 465,308 480,300 
+                     C486,288 498,284 508,288 
+                     C518,284 528,286 534,296 
+                     C542,295 550,302 548,315 
+                     C552,328 550,348 542,362 
+                     C534,372 522,378 512,375 
+                     C510,368 508,358 506,352 
+                     C502,342 496,336 488,332 
+                     C482,330 475,334 470,338 Z" 
                   fill="#423540" stroke="#65495A" stroke-width="1.6" />
 
             <!-- Messy anime locks and bangs in the breeze -->
             <g id="boy-hair-spikes">
               <!-- Front lock flicking over brow towards girl -->
-              <path d="M468,332 C458,340 456,350 464,356 C466,346 472,340 478,336 Z" fill="#382B37" />
+              <path d="M468,322 C458,330 456,340 464,346 C466,336 472,330 478,326 Z" fill="#382B37" />
               <!-- Second bang lock -->
-              <path d="M478,324 C468,334 470,344 478,350 C480,340 486,334 492,330 Z" fill="#382B37" />
+              <path d="M478,314 C468,324 470,334 478,340 C480,330 486,324 492,320 Z" fill="#382B37" />
               <!-- Temple lock in front of ear -->
-              <path d="M490,344 C486,354 485,364 488,367 C490,360 493,354 495,350 Z" fill="#382B37" />
+              <path d="M488,334 C484,344 483,354 486,357 C488,350 491,344 493,340 Z" fill="#382B37" />
               
               <!-- Crown tufts spiking in the sunset wind -->
-              <path d="M498,296 C505,302 510,312 508,320" fill="none" stroke="#564554" stroke-width="1.3" />
-              <path d="M524,296 C528,304 532,314 530,322" fill="none" stroke="#564554" stroke-width="1.3" />
-              <path d="M542,310 C548,318 550,328 546,335" fill="none" stroke="#564554" stroke-width="1.3" />
+              <path d="M496,286 C502,292 506,302 504,310" fill="none" stroke="#564554" stroke-width="1.3" />
+              <path d="M520,286 C524,294 528,304 526,312" fill="none" stroke="#564554" stroke-width="1.3" />
               <!-- Nape flick -->
-              <path d="M542,378 C548,375 554,368 556,360" fill="none" stroke="#423540" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M536,365 C542,362 546,356 548,350" fill="none" stroke="#423540" stroke-width="2.0" stroke-linecap="round" />
             </g>
           </g>
         </g>
@@ -383,27 +382,27 @@ export class CharactersLayer {
 
     // 1. Girl subtle breathing & posture sway (very gentle)
     if (this.girlTorso) {
-      const gBreathScale = 1.0 + breathCycle * 0.006;
-      this.girlTorso.setAttribute('transform', `scale(1, ${gBreathScale}) translate(0, ${-breathCycle * 0.5})`);
+      const gBreathScale = 1.0 + breathCycle * 0.005;
+      this.girlTorso.setAttribute('transform', `scale(1, ${gBreathScale}) translate(0, ${-breathCycle * 0.4})`);
     }
 
     // 2. Girl head gentle drift
     if (this.girlHead) {
-      const gTilt = Math.sin(time * 0.8) * 0.8;
-      this.girlHead.setAttribute('transform', `rotate(${gTilt}, 150, 275)`);
+      const gTilt = Math.sin(time * 0.8) * 0.7;
+      this.girlHead.setAttribute('transform', `rotate(${gTilt}, 165, 260)`);
     }
 
     // 3. Occasional tiny movement in the loose hair strand
     if (this.girlStrand) {
       // Resting sway with gentle organic puffs
-      const strandSway = Math.sin(time * 2.4) * 1.6 + Math.sin(time * 5.1) * 0.8;
-      this.girlStrand.setAttribute('transform', `rotate(${strandSway}, 165, 235)`);
+      const strandSway = Math.sin(time * 2.4) * 1.5 + Math.sin(time * 5.1) * 0.7;
+      this.girlStrand.setAttribute('transform', `rotate(${strandSway}, 195, 205)`);
     }
 
     // 4. Girl ruffle cloth soft flutter
     if (this.girlRuffle) {
-      const ruffleFlutter = Math.sin(time * 2.2) * 0.9;
-      this.girlRuffle.setAttribute('transform', `rotate(${ruffleFlutter}, 145, 300) scale(1, ${1 + ruffleFlutter * 0.004})`);
+      const ruffleFlutter = Math.sin(time * 2.2) * 0.8;
+      this.girlRuffle.setAttribute('transform', `rotate(${ruffleFlutter}, 130, 310) scale(1, ${1 + ruffleFlutter * 0.003})`);
     }
 
     // 5. Subtle eye/face variation: delicate micro-blink around 2.15s and 3.85s
@@ -419,7 +418,7 @@ export class CharactersLayer {
         const p = (time - 3.80) / 0.12;
         eyeScaleY = Math.abs(Math.sin(p * Math.PI - Math.PI / 2));
       }
-      this.girlEye.setAttribute('transform', `translate(187, 237) scale(1, ${Math.max(0.1, eyeScaleY)}) translate(-187, -237)`);
+      this.girlEye.setAttribute('transform', `translate(197, 226) scale(1, ${Math.max(0.1, eyeScaleY)}) translate(-197, -226)`);
     }
 
     // 6. Subtle cheek blush warmth breathing
@@ -430,29 +429,29 @@ export class CharactersLayer {
 
     // 7. Boy breathing cycle
     if (this.boyTorso) {
-      const bBreathScale = 1.0 + breathCycle * 0.007;
-      this.boyTorso.setAttribute('transform', `scale(1, ${bBreathScale}) translate(0, ${-breathCycle * 0.5})`);
+      const bBreathScale = 1.0 + breathCycle * 0.006;
+      this.boyTorso.setAttribute('transform', `scale(1, ${bBreathScale}) translate(0, ${-breathCycle * 0.4})`);
     }
 
     // 8. Boy head tilt upward gazing at woman
     if (this.boyHead) {
-      const bTilt = Math.sin(time * 0.75 + 0.4) * 0.8;
-      this.boyHead.setAttribute('transform', `rotate(${bTilt}, 494, 388)`);
+      const bTilt = Math.sin(time * 0.75 + 0.4) * 0.7;
+      this.boyHead.setAttribute('transform', `rotate(${bTilt}, 495, 375)`);
     }
 
     // 9. Boy hair tufts in the breeze
     if (this.boyHairSpikes) {
-      const spikeSway = Math.sin(time * 2.8 + 0.3) * 1.4 + Math.cos(time * 5.4) * 0.6;
-      this.boyHairSpikes.setAttribute('transform', `rotate(${spikeSway}, 490, 310)`);
+      const spikeSway = Math.sin(time * 2.8 + 0.3) * 1.3 + Math.cos(time * 5.4) * 0.5;
+      this.boyHairSpikes.setAttribute('transform', `rotate(${spikeSway}, 495, 290)`);
     }
 
     // 10. Boy jacket subtle flutter in sunset breeze
     if (this.boyJacketLeft) {
-      const jFlutterL = Math.sin(time * 2.1) * 0.9;
+      const jFlutterL = Math.sin(time * 2.1) * 0.8;
       this.boyJacketLeft.setAttribute('transform', `rotate(${jFlutterL}, 468, 418)`);
     }
     if (this.boyJacketRight) {
-      const jFlutterR = Math.sin(time * 2.3 + 0.3) * 0.8;
+      const jFlutterR = Math.sin(time * 2.3 + 0.3) * 0.7;
       this.boyJacketRight.setAttribute('transform', `rotate(${jFlutterR}, 530, 416)`);
     }
   }
