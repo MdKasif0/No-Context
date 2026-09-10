@@ -298,125 +298,134 @@ export class Scene2Layer {
       <!-- ==================================================== -->
       <!-- 5. MALE CHARACTER PORTRAIT (True 1:1 Vector Art)    -->
       <!-- ==================================================== -->
+      <!-- 5. MALE CHARACTER PORTRAIT (1:1 Ground-Truth Vector) -->
+      <!-- ==================================================== -->
       <g id="s2-male-character" filter="url(#ink-wobble-filter)">
         
-        <!-- Dark Plum Trousers Overlapping Railing (y: 630 to 740) -->
+        <!-- Dark Plum Trousers (waistline to canvas bottom y: 630 to 740) -->
         <g id="s2-char-trousers">
-          <path d="M365,635 
-                   L395,635 
-                   C398,655 405,685 410,740 
-                   L360,740 Z" 
-                fill="url(#s2-trousers-fabric)" stroke="#2B1F27" stroke-width="2.2" />
-          <path d="M395,635 
-                   L485,635 
-                   C520,675 540,705 550,740 
-                   L410,740 
-                   C405,685 398,655 395,635 Z" 
-                fill="url(#s2-trousers-fabric)" stroke="#2B1F27" stroke-width="2.2" />
-          <path d="M428,635 C430,665 435,700 440,740" fill="none" stroke="#231820" stroke-width="1.6" />
+          <path d="M250,638 
+                   L450,646 
+                   L455,740 
+                   L240,740 Z" 
+                fill="url(#s2-trousers-fabric)" stroke="#221721" stroke-width="2.2" />
+          <!-- Central trouser fly / seam line -->
+          <line x1="335" y1="644" x2="335" y2="740" stroke="#1A1119" stroke-width="1.6" />
         </g>
 
         <!-- Torso & Blazer (Root Group for Breathing Animation) -->
         <g id="s2-char-torso-group">
           
-          <!-- Cream Shirt Undercoat Placket (Clean white panel down center) -->
-          <g id="s2-shirt-placket">
-            <path d="M346,305 
-                     L386,305 
-                     L380,640 
-                     L348,640 Z" 
-                  fill="url(#s2-shirt-fabric)" stroke="#43353F" stroke-width="1.6" />
-            <path d="M366,315 C364,410 362,510 362,635" fill="none" stroke="#D5C7B7" stroke-width="1.5" />
+          <!-- 1. Left Jacket Panel / Draped Arm Silhouette (Gapless to Shirt) -->
+          <g id="s2-jacket-left-panel">
+            <path d="M344,288 
+                     C330,330 318,370 304,410 
+                     C280,445 252,475 232,505 
+                     C216,540 210,565 214,590 
+                     C224,615 244,634 270,642 
+                     C274,600 282,560 292,520 
+                     C302,475 312,430 322,385 
+                     C330,345 338,310 344,288 Z" 
+                  fill="url(#s2-suit-fabric)" stroke="#2E202B" stroke-width="2.4" />
+            <!-- Inner contour shadow along coat drape -->
+            <path d="M320,350 C298,420 282,490 286,550 C290,590 306,620 332,635" 
+                  fill="none" stroke="#241822" stroke-width="1.8" opacity="0.55" />
           </g>
 
-          <!-- White Spread Collar Wings (Open at throat in V) -->
+          <!-- 2. Cream Shirt Placket (Continuous Vertical Band) -->
+          <g id="s2-shirt-placket">
+            <path d="M344,288 
+                     L376,278 
+                     C366,325 350,375 334,425 
+                     C320,475 308,520 300,560 
+                     C296,590 294,610 294,628 
+                     L270,642 
+                     C274,600 282,560 292,520 
+                     C302,475 312,430 322,385 
+                     C330,345 338,310 344,288 Z" 
+                  fill="url(#s2-shirt-fabric)" stroke="#382935" stroke-width="2.0" />
+            <!-- Central shirt fold / placket line -->
+            <path d="M360,285 C348,370 332,460 310,550 C302,580 296,610 294,628" 
+                  fill="none" stroke="#D8CBBC" stroke-width="1.5" />
+          </g>
+
+          <!-- 3. White Spread Collar Wings (Open at throat in V) -->
           <g id="s2-shirt-collar">
             <!-- Left collar wing -->
-            <path d="M356,292 
-                     L332,330 
-                     L360,342 
-                     L372,302 Z" 
-                  fill="url(#s2-shirt-fabric)" stroke="#342330" stroke-width="2.0" />
+            <path d="M350,274 L326,312 L356,305 L364,282 Z" 
+                  fill="#FBF8F2" stroke="#342330" stroke-width="2.0" />
             <!-- Right collar wing -->
-            <path d="M380,302 
-                     L418,338 
-                     L440,315 
-                     L415,294 Z" 
-                  fill="url(#s2-shirt-fabric)" stroke="#342330" stroke-width="2.0" />
+            <path d="M368,260 L416,274 L388,296 L376,278 Z" 
+                  fill="#F7F2E9" stroke="#342330" stroke-width="2.0" />
             <!-- V opening throat shadow -->
-            <path d="M372,302 L380,302 L376,318 Z" fill="#E5B59E" />
+            <path d="M364,282 L376,278 L370,298 Z" fill="#E5B59E" />
           </g>
 
-          <!-- Tailored Dark Plum Blazer / Coat -->
+          <!-- 4. Tailored Dark Plum Blazer / Right Chest, Notch Lapel & Arm -->
           <g id="s2-jacket-group">
             
-            <!-- Left coat body / natural draped silhouette (matching frame_06.jpg) -->
-            <g id="s2-jacket-left-bulge">
-              <path d="M330,325 
-                       C308,375 278,440 268,505 
-                       C260,555 268,600 295,635 
-                       C315,645 338,642 355,635 
-                       L346,330 Z" 
-                    fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
-              <!-- Inner shadow along coat contour -->
-              <path d="M320,355 C295,420 280,490 284,550 C290,590 306,620 332,635" 
-                    fill="none" stroke="#2B1D28" stroke-width="1.8" opacity="0.65" />
-            </g>
-
-            <!-- Main Jacket Body, Notch Lapels & Right Sleeve -->
+            <!-- Main Right Jacket Body & Notch Lapel -->
             <g id="s2-jacket-main-body">
               <!-- Right Notch Lapel -->
-              <path d="M415,294 
-                       L462,352 
-                       L438,362 
-                       L472,425 
-                       L405,540 
-                       L380,302 Z" 
-                    fill="#443540" stroke="#32222E" stroke-width="2.2" />
+              <path d="M376,278 
+                       L424,312 
+                       L410,320 
+                       L438,368 
+                       C400,430 365,500 335,560 
+                       C315,600 300,620 294,628 
+                       L334,425 
+                       C350,375 366,325 376,278 Z" 
+                    fill="#453641" stroke="#2E202B" stroke-width="2.2" />
 
-              <!-- Main Jacket Back & Right Shoulder -->
-              <path d="M415,294 
-                       C455,298 505,322 530,355 
-                       C545,378 545,430 538,490 
-                       C530,550 518,600 500,635 
-                       C485,655 465,662 440,652 
-                       C425,646 410,638 395,630 
-                       L415,294 Z" 
-                    fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
+              <!-- Main Jacket Body, Right Shoulder & Back Drape -->
+              <path d="M395,268 
+                       C430,278 475,296 505,325 
+                       C524,355 528,400 526,450 
+                       C524,495 516,540 495,585 
+                       C482,610 465,626 445,630 
+                       C420,638 360,634 294,628 
+                       L376,278 
+                       L395,268 Z" 
+                    fill="url(#s2-suit-fabric)" stroke="#2E202B" stroke-width="2.4" />
 
-              <!-- Right Arm & Sleeve Outer Contour -->
-              <path d="M530,355 
-                       C550,410 545,475 532,535 
-                       C522,580 508,618 485,636 
-                       L450,622 
-                       C478,585 492,530 502,470 
-                       C508,420 505,385 495,365 Z" 
-                    fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.2" />
+              <!-- Outer Sleeve & Arm Fold Contour -->
+              <path d="M505,325 
+                       C524,355 528,400 526,450 
+                       C524,495 516,540 495,585 
+                       C482,610 465,626 445,630 
+                       C460,590 472,545 478,495 
+                       C482,450 476,410 460,380 
+                       Z" 
+                    fill="url(#s2-suit-fabric)" stroke="#2E202B" stroke-width="2.2" />
 
               <!-- Inner elbow crease lines -->
-              <path d="M475,445 C485,470 495,498 490,528" fill="none" stroke="#2E202B" stroke-width="1.8" />
-              <path d="M460,475 C475,498 482,525 478,552" fill="none" stroke="#2E202B" stroke-width="1.6" />
+              <path d="M470,440 C480,465 488,495 484,525" fill="none" stroke="#281B25" stroke-width="1.8" />
+              <path d="M455,470 C470,495 476,522 472,548" fill="none" stroke="#281B25" stroke-width="1.6" />
 
               <!-- 4 Radiating Fabric Creases on Right Jacket Panel Towards Pocket (frame_06.jpg) -->
-              <path id="s2-crease-1" d="M382,520 C400,532 420,545 442,555" fill="none" stroke="#2C1E29" stroke-width="1.8" />
-              <path id="s2-crease-2" d="M380,550 C400,562 422,572 440,582" fill="none" stroke="#2C1E29" stroke-width="1.8" />
-              <path id="s2-crease-3" d="M378,580 C398,592 418,602 436,612" fill="none" stroke="#2C1E29" stroke-width="1.7" />
-              <path id="s2-crease-4" d="M376,608 C394,618 412,626 430,634" fill="none" stroke="#2C1E29" stroke-width="1.6" />
+              <path id="s2-crease-1" d="M326,505 C350,522 380,540 412,552" fill="none" stroke="#2B1D28" stroke-width="1.8" />
+              <path id="s2-crease-2" d="M318,538 C345,556 380,572 414,582" fill="none" stroke="#2B1D28" stroke-width="1.8" />
+              <path id="s2-crease-3" d="M310,570 C338,588 375,602 410,612" fill="none" stroke="#2B1D28" stroke-width="1.7" />
+              <path id="s2-crease-4" d="M304,600 C332,615 368,626 402,634" fill="none" stroke="#2B1D28" stroke-width="1.6" />
+
+              <!-- 2 Front Blazer Buttons -->
+              <circle cx="320" cy="525" r="2.2" fill="#2B1D28" />
+              <circle cx="310" cy="565" r="2.2" fill="#2B1D28" />
 
               <!-- 3 Cuff Buttons on Sleeve -->
-              <circle cx="478" cy="610" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
-              <circle cx="484" cy="618" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
-              <circle cx="490" cy="626" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
+              <circle cx="470" cy="595" r="1.4" fill="#6B5967" stroke="#281B25" stroke-width="0.8" />
+              <circle cx="476" cy="603" r="1.4" fill="#6B5967" stroke="#281B25" stroke-width="0.8" />
+              <circle cx="482" cy="611" r="1.4" fill="#6B5967" stroke="#281B25" stroke-width="0.8" />
 
-              <!-- Left Hand Slipping into Pocket (Viewer's Right) -->
+              <!-- Hand Slipping into Trouser/Coat Pocket (frame_06.jpg) -->
               <g id="s2-hand-pocket">
                 <!-- Diagonal Pocket Slit Line -->
-                <path d="M410,622 L452,656" stroke="#241721" stroke-width="2.4" fill="none" />
+                <path d="M382,616 L422,642" stroke="#221620" stroke-width="2.4" fill="none" />
                 <!-- Peachy skin wrist and top of knuckles entering pocket opening -->
-                <path d="M415,624 
-                         C422,630 432,640 442,650 
-                         C436,656 428,654 420,644 
-                         C414,636 410,630 415,624 Z" 
+                <path d="M388,618 
+                         C398,624 410,634 418,642 
+                         C412,646 402,642 394,634 
+                         C388,628 386,622 388,618 Z" 
                       fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="1.6" />
               </g>
             </g>
@@ -424,101 +433,109 @@ export class Scene2Layer {
         </g>
 
         <!-- ==================================================== -->
-        <!-- HEAD & FACE (Upturned Gazing Screen-Left, Anime Art) -->
+        <!-- HEAD & FACE (Upturned Gazing Screen-Left at Sunset)   -->
         <!-- ==================================================== -->
         <g id="s2-char-head-group">
           
-          <!-- Head Base Skin Mass (Strictly confined inside hair boundary - zero bleed) -->
+          <!-- Head Base Skin Mass (Strictly matching frame_06.jpg profile) -->
           <path id="s2-head-skin"
-                d="M356,292 
-                   C348,275 344,260 342,250 
-                   C336,246 326,242 322,238 
-                   C318,232 322,226 324,222 
-                   C322,218 318,212 324,204 
-                   C328,192 336,180 342,172 
-                   C355,165 375,170 395,190 
-                   C405,210 415,230 418,260 
-                   C422,275 428,288 435,298 
-                   L356,292 Z" 
+                d="M338,144 
+                   C334,152 331,160 334,166 
+                   C332,168 322,170 318,172 
+                   C322,178 326,184 324,188 
+                   C322,192 322,196 325,198 
+                   C320,204 319,210 322,216 
+                   C328,226 342,234 354,236 
+                   C362,236 370,232 376,226 
+                   L374,204 
+                   C388,200 400,210 398,224 
+                   C396,234 386,240 376,234 
+                   C384,248 396,264 410,276 
+                   L350,285 
+                   C344,265 338,245 334,226 
+                   Z" 
                 fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="2.2" />
 
           <!-- Soft Warm Peach Cheek Blush (frame_06.jpg) -->
-          <ellipse id="s2-cheek-blush" cx="362" cy="225" rx="19" ry="12" 
+          <ellipse id="s2-cheek-blush" cx="365" cy="168" rx="17" ry="11" 
                    fill="url(#s2-blush-grad)" opacity="0.65" />
 
-          <!-- Tiny Dark Plum Eye (Tilted upward gazing screen-left) -->
+          <!-- Tiny Dark Plum Eye (Gazing upward screen-left at x: 350, y: 152) -->
           <g id="s2-eye-group">
-            <ellipse id="s2-eye-pupil" cx="348" cy="208" rx="3.4" ry="6.2" 
-                     transform="rotate(-20, 348, 208)" 
+            <ellipse id="s2-eye-pupil" cx="350" cy="152" rx="3.5" ry="5.5" 
+                     transform="rotate(-12, 350, 152)" 
                      fill="#221720" stroke="#3E2E39" stroke-width="0.8" />
             <!-- Soft upward anime eyebrow -->
-            <path d="M338,192 C344,186 353,186 360,190" fill="none" stroke="#332430" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M343,141 C348,137 356,137 362,140" fill="none" stroke="#332430" stroke-width="1.8" stroke-linecap="round" />
           </g>
 
-          <!-- Nose Tip & Mouth Slit -->
-          <path d="M322,228 C325,230 329,230 331,229" fill="none" stroke="#4A3845" stroke-width="1.4" stroke-linecap="round" />
+          <!-- Nose Bridge Accent & Mouth Slit -->
+          <path d="M324,196 C326,197 329,197 331,196" fill="none" stroke="#4A3845" stroke-width="1.4" stroke-linecap="round" />
 
-          <!-- Stylized Anime Ear (x: 395 to 430, y: 232 to 275) -->
+          <!-- Stylized Anime Ear (x: 374 to 400, y: 202 to 236) -->
           <g id="s2-ear-group">
-            <path d="M398,236 
-                     C416,230 430,242 428,260 
-                     C426,274 415,280 405,275 
-                     C398,270 396,256 398,236 Z" 
+            <path d="M374,204 
+                     C388,200 400,210 398,224 
+                     C396,234 386,240 376,234 Z" 
                   fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="2.0" />
-            <path d="M410,245 C418,250 420,260 415,268" fill="none" stroke="#4D3B48" stroke-width="1.5" />
-            <path d="M406,256 C412,258 414,264 410,268" fill="none" stroke="#4D3B48" stroke-width="1.2" />
+            <path d="M380,214 C386,218 388,224 382,230" fill="none" stroke="#4D3B48" stroke-width="1.5" />
+            <path d="M378,224 C382,226 384,230 380,233" fill="none" stroke="#4D3B48" stroke-width="1.2" />
           </g>
+
+          <!-- Subtle Throat Tendon / Neck Shadow -->
+          <path d="M346,242 C350,258 356,274 362,284" fill="none" stroke="#DEB7A2" stroke-width="1.4" />
 
           <!-- ==================================================== -->
-          <!-- TOUSLED ANIME HAIR (Sleek Continuous Anime Silhouette)-->
+          <!-- TOUSLED ANIME HAIR (1:1 with frame_06.jpg)           -->
           <!-- ==================================================== -->
           <g id="s2-hair-group">
-            <!-- Main Sleek Hair Silhouette covering entire skull and nape (1:1 to scene2_boy_head.jpg) -->
-            <path d="M342,172 
-                     C336,158 342,138 354,122 
-                     C368,105 385,88 410,80 
-                     C425,65 448,70 452,88 
-                     C472,82 495,102 505,128 
-                     C518,155 522,190 516,220 
-                     C510,248 490,272 462,284 
-                     C446,290 435,280 428,264 
-                     C420,250 416,234 404,232 
-                     C394,230 388,236 382,246 
-                     C374,232 366,218 356,214 
-                     C348,212 344,220 340,228 
-                     C338,205 342,190 342,172 Z" 
-                  fill="#453E4E" stroke="#302432" stroke-width="2.4" />
+            <!-- Main Hair Silhouette covering skull, crown & nape -->
+            <path d="M346,128 
+                     C344,112 354,98 372,88 
+                     C392,78 414,72 430,70 
+                     L437,65 
+                     L444,76 
+                     L454,82 
+                     L450,92 
+                     C474,98 496,118 506,144 
+                     C516,168 518,195 510,222 
+                     C504,238 494,254 482,256 
+                     C472,256 462,246 456,238 
+                     C430,240 405,236 394,226 
+                     L384,204 
+                     L376,176 Z" 
+                  fill="#453E4E" stroke="#2E2230" stroke-width="2.4" />
 
-            <!-- Dynamic Crown Spikes for Wind Oscillation -->
+            <!-- Dynamic Crown Spikes for Breeze Sway -->
             <g id="s2-crown-spikes">
-              <!-- Highest crest spike -->
-              <path d="M420,80 C430,60 448,64 448,86 C438,92 430,98 424,104 Z" 
-                    fill="#433C4C" stroke="#302432" stroke-width="2.0" />
+              <!-- Highest crest spike at (437, 65) -->
+              <path d="M430,70 L437,65 L444,76 Z" 
+                    fill="#423A4A" stroke="#2E2230" stroke-width="1.8" />
               <!-- Back outward flick -->
-              <path d="M472,125 C498,128 506,148 485,160 C478,152 474,142 470,134 Z" 
-                    fill="#3F3847" stroke="#302432" stroke-width="2.0" />
+              <path d="M470,105 C495,110 502,128 484,140 C478,132 474,122 470,114 Z" 
+                    fill="#3E3646" stroke="#2E2230" stroke-width="1.8" />
             </g>
 
-            <!-- Forehead Bangs & Loose Strands -->
+            <!-- Forehead Bangs & Loose Strands (frame_06.jpg) -->
             <g id="s2-front-bangs">
-              <!-- Distinct Forward Flick Lock over brow (frame_06.jpg) -->
+              <!-- Distinct Forward Flick Lock over brow -->
               <path id="s2-forward-flick" 
-                    d="M346,148 C322,140 318,158 332,170 C338,164 344,158 350,154 Z" 
-                    fill="#4A4253" stroke="#302432" stroke-width="2.0" />
-              <!-- Center Bang Lock framing eye -->
-              <path d="M358,132 C350,158 346,182 352,195 C358,182 362,168 368,152 Z" 
-                    fill="#463F50" stroke="#302432" stroke-width="2.0" />
-              <!-- Right Bang Lock -->
-              <path d="M375,135 C372,165 375,195 385,210 C388,192 392,175 394,158 Z" 
-                    fill="#433C4D" stroke="#302432" stroke-width="2.0" />
+                    d="M346,128 C324,124 316,138 324,146 C332,142 342,136 348,132 Z" 
+                    fill="#4A4253" stroke="#2E2230" stroke-width="2.0" />
+              <!-- Center Lock framing eye -->
+              <path d="M336,134 C330,146 332,156 342,162 C342,152 344,142 348,136 Z" 
+                    fill="#463F50" stroke="#2E2230" stroke-width="2.0" />
+              <!-- Forehead Sweep -->
+              <path d="M348,132 C356,152 364,168 372,176 C370,162 372,148 376,138 Z" 
+                    fill="#433C4D" stroke="#2E2230" stroke-width="2.0" />
               <!-- Sideburn Lock in front of ear -->
-              <path d="M396,222 C393,242 396,258 400,270 C404,258 406,246 404,232 Z" 
-                    fill="#3E3747" stroke="#302432" stroke-width="1.8" />
+              <path d="M372,176 C374,192 372,204 376,210 C378,198 380,188 382,178 Z" 
+                    fill="#3E3747" stroke="#2E2230" stroke-width="1.8" />
             </g>
 
-            <!-- Nape Lock at back of neck -->
-            <path d="M448,260 C455,280 445,295 435,288 C440,278 442,268 444,262 Z" 
-                  fill="#3A3342" stroke="#302432" stroke-width="1.8" />
+            <!-- Flow & Volume Texture Lines inside Hair -->
+            <path d="M410,95 C435,115 460,150 465,190" fill="none" stroke="#352937" stroke-width="1.8" />
+            <path d="M380,115 C410,135 435,170 440,210" fill="none" stroke="#352937" stroke-width="1.6" />
           </g>
         </g>
       </g>
@@ -529,7 +546,7 @@ export class Scene2Layer {
     this.headGroup = this.group.querySelector('#s2-char-head-group');
     this.crownSpikes = this.group.querySelector('#s2-crown-spikes');
     this.forwardFlick = this.group.querySelector('#s2-forward-flick');
-    this.jacketBulge = this.group.querySelector('#s2-jacket-left-bulge');
+    this.leftPanel = this.group.querySelector('#s2-jacket-left-panel');
     this.handPocket = this.group.querySelector('#s2-hand-pocket');
     this.eyePupil = this.group.querySelector('#s2-eye-pupil');
     this.cheekBlush = this.group.querySelector('#s2-cheek-blush');
@@ -553,11 +570,11 @@ export class Scene2Layer {
 
     const s2Time = time - 4.47;
 
-    // 1. Organic Breathing Cycle (nearly imperceptible expansion)
+    // 1. Organic Breathing Cycle (subtle chest rise and fall)
     const breath = Math.sin(s2Time * 1.6);
     if (this.torsoGroup) {
-      const breathScaleY = 1.0 + breath * 0.005;
-      const breathTransY = -breath * 0.35;
+      const breathScaleY = 1.0 + breath * 0.004;
+      const breathTransY = -breath * 0.4;
       this.torsoGroup.setAttribute(
         'transform',
         `translate(0, ${breathTransY.toFixed(2)}) scale(1, ${breathScaleY.toFixed(4)})`
@@ -570,32 +587,32 @@ export class Scene2Layer {
       if (s2Time > 1.8) {
         const pitchProgress = Math.min(1.0, (s2Time - 1.8) / 1.5);
         const ease = pitchProgress * pitchProgress * (3 - 2 * pitchProgress);
-        headPitch = ease * 2.5; // Smooth 2.5 deg tilt
+        headPitch = ease * 2.2; // Smooth tilt down towards horizon
       }
-      const headBreath = Math.sin(s2Time * 1.6 + 0.3) * 0.4;
+      const headBreath = Math.sin(s2Time * 1.6 + 0.3) * 0.35;
       const totalHeadRot = headPitch + headBreath;
-      this.headGroup.setAttribute('transform', `rotate(${totalHeadRot.toFixed(2)}, 410, 260)`);
+      this.headGroup.setAttribute('transform', `rotate(${totalHeadRot.toFixed(2)}, 380, 275)`);
     }
 
     // 3. Hair Strands Catching Sunset Breeze
     if (this.crownSpikes) {
-      const crownSway = Math.sin(s2Time * 2.6) * 1.4 + Math.cos(s2Time * 5.2) * 0.5;
-      this.crownSpikes.setAttribute('transform', `rotate(${crownSway.toFixed(2)}, 430, 95)`);
+      const crownSway = Math.sin(s2Time * 2.6) * 1.2 + Math.cos(s2Time * 5.2) * 0.4;
+      this.crownSpikes.setAttribute('transform', `rotate(${crownSway.toFixed(2)}, 435, 75)`);
     }
 
     if (this.forwardFlick) {
-      const flickSway = Math.sin(s2Time * 3.1 + 0.4) * 1.6;
-      this.forwardFlick.setAttribute('transform', `rotate(${flickSway.toFixed(2)}, 346, 148)`);
+      const flickSway = Math.sin(s2Time * 3.1 + 0.4) * 1.4;
+      this.forwardFlick.setAttribute('transform', `rotate(${flickSway.toFixed(2)}, 346, 128)`);
     }
 
-    // 4. Subtle Jacket Fabric Flutter & Pocket Shift
-    if (this.jacketBulge) {
-      const jFlutter = Math.sin(s2Time * 2.1) * 0.5;
-      this.jacketBulge.setAttribute('transform', `rotate(${jFlutter.toFixed(2)}, 310, 500)`);
+    // 4. Subtle Left Coat Fabric Flutter & Pocket Shift
+    if (this.leftPanel) {
+      const jFlutter = Math.sin(s2Time * 2.1) * 0.4;
+      this.leftPanel.setAttribute('transform', `rotate(${jFlutter.toFixed(2)}, 300, 480)`);
     }
 
     if (this.handPocket) {
-      const pShift = Math.sin(s2Time * 1.6) * 0.3;
+      const pShift = Math.sin(s2Time * 1.6) * 0.25;
       this.handPocket.setAttribute('transform', `translate(0, ${pShift.toFixed(2)})`);
     }
 
@@ -611,7 +628,7 @@ export class Scene2Layer {
       }
       this.eyePupil.setAttribute(
         'transform',
-        `translate(348, 208) rotate(-20) scale(1, ${Math.max(0.1, eyeScaleY).toFixed(3)}) translate(-348, -208)`
+        `translate(350, 152) rotate(-12) scale(1, ${Math.max(0.1, eyeScaleY).toFixed(3)}) translate(-350, -152)`
       );
     }
 

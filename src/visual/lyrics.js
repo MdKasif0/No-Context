@@ -17,8 +17,8 @@ export class LyricsLayer {
         id: 's2-parvardigara',
         start: 4.47,
         end: 5.08,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           { text: 'parvardigara,', isNew: true, stageStart: 4.47 },
@@ -29,8 +29,8 @@ export class LyricsLayer {
         id: 's2-deewan',
         start: 5.08,
         end: 5.78,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           { text: 'deewan', isNew: true, stageStart: 5.08 }
@@ -40,8 +40,8 @@ export class LyricsLayer {
         id: 's2-deewangi',
         start: 5.78,
         end: 6.58,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           { text: 'deewangi', isNew: true, stageStart: 5.78 }
@@ -51,8 +51,8 @@ export class LyricsLayer {
         id: 's2-deewangi-ki',
         start: 6.58,
         end: 7.18,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           {
@@ -67,8 +67,8 @@ export class LyricsLayer {
         id: 's2-hadd',
         start: 7.18,
         end: 7.68,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           { text: 'deewangi ki', isNew: false },
@@ -79,8 +79,8 @@ export class LyricsLayer {
         id: 's2-maine',
         start: 7.68,
         end: 8.28,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           { text: 'deewangi ki', isNew: false },
@@ -92,8 +92,8 @@ export class LyricsLayer {
         id: 's2-maine-nochi',
         start: 8.28,
         end: 8.78,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           { text: 'deewangi ki', isNew: false },
@@ -110,8 +110,8 @@ export class LyricsLayer {
         id: 's2-o',
         start: 8.78,
         end: 10.5,
-        x: 48,
-        y: 160,
+        x: 52,
+        y: 156,
         fontSize: 27,
         lines: [
           { text: 'o', isNew: true, stageStart: 8.78 }
