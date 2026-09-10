@@ -16,81 +16,84 @@ export class FoliageLayer {
     this.group.innerHTML = `
       <defs>
         <!-- Fine stipple leaf texture -->
-        <pattern id="foliage-stipple-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
-          <rect width="10" height="10" fill="#6A5364" />
-          <circle cx="2" cy="2" r="1.1" fill="#846C7E" />
-          <circle cx="7" cy="3" r="1.0" fill="#523E4D" />
-          <circle cx="8" cy="7" r="1.2" fill="#8E7688" />
-          <circle cx="3" cy="8" r="1.0" fill="#4B3746" />
-          <circle cx="5" cy="5" r="1.3" fill="#967E90" />
+        <pattern id="foliage-stipple-pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+          <rect width="8" height="8" fill="#5F4A5B" />
+          <circle cx="2" cy="2" r="0.9" fill="#7D6677" />
+          <circle cx="6" cy="3" r="0.8" fill="#4B3746" />
+          <circle cx="7" cy="6" r="1.0" fill="#887081" />
+          <circle cx="3" cy="7" r="0.8" fill="#43323F" />
         </pattern>
 
         <linearGradient id="foliage-tree-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#7C6577" />
-          <stop offset="50%" stop-color="#654E60" />
-          <stop offset="100%" stop-color="#4A3644" />
+          <stop offset="0%" stop-color="#765F71" />
+          <stop offset="50%" stop-color="#5E4759" />
+          <stop offset="100%" stop-color="#463442" />
         </linearGradient>
       </defs>
 
       <!-- LEFT PAINTERLY ANIME TREE -->
       <g id="tree-left-group" filter="url(#ink-wobble-filter)">
         <!-- Slender Branches rising behind car -->
-        <g id="tree-left-branches" stroke="#463442" stroke-linecap="round" fill="none">
+        <g id="tree-left-branches" stroke="#3D2C39" stroke-linecap="round" fill="none">
           <!-- Main winding trunk -->
-          <path d="M-15,480 C2,410 10,340 12,270 C14,200 20,150 24,70" stroke-width="3.5" />
-          <path d="M11,290 C26,260 52,245 74,220" stroke-width="2.2" />
-          <path d="M12,210 C32,180 58,165 80,140" stroke-width="2.0" />
-          <path d="M16,140 C34,115 58,100 78,80" stroke-width="1.6" />
+          <path d="M-15,480 C-5,410 4,340 8,265 C12,190 18,135 22,50" stroke-width="4.0" />
+          <path d="M8,280 C24,250 48,235 68,210" stroke-width="2.5" />
+          <path d="M10,195 C30,165 54,150 74,125" stroke-width="2.2" />
+          <path d="M14,125 C32,100 55,85 72,65" stroke-width="1.8" />
           <!-- Twigs -->
-          <path d="M48,245 C62,235 76,232 88,225" stroke-width="1.2" />
-          <path d="M52,170 C68,160 82,158 92,150" stroke-width="1.2" />
-          <path d="M55,105 C70,95 84,92 94,84" stroke-width="1.1" />
+          <path d="M44,235 C58,225 72,222 84,215" stroke-width="1.4" />
+          <path d="M48,155 C64,145 78,142 88,135" stroke-width="1.3" />
+          <path d="M50,90 C65,80 78,78 88,70" stroke-width="1.2" />
         </g>
 
-        <!-- Leafy Clusters Canopy (Organic scalloped shapes, airy clusters) -->
+        <!-- Leafy Clusters Canopy (Airy, organic, painterly silhouettes) -->
         <g id="tree-left-canopy">
-          <!-- Cluster 1: Topmost canopy (y: 30 - 130) -->
-          <path d="M-20,60 
-                   C-10,40 15,35 35,48 
-                   C55,42 75,55 82,75 
-                   C88,95 78,115 65,125 
-                   C48,135 25,130 10,122 
-                   C-5,128 -18,115 -20,95 Z" 
-                fill="url(#foliage-tree-grad)" />
+          <!-- Cluster A: Upper crown (y: 35 - 120) -->
+          <path d="M-25,50 
+                   C-15,30 10,25 32,38 
+                   C48,28 70,38 78,56 
+                   C85,74 76,92 64,102 
+                   C72,112 65,126 50,130 
+                   C32,134 18,124 5,118 
+                   C-10,122 -22,110 -25,90 Z" 
+                fill="url(#foliage-tree-grad)" opacity="0.92" />
 
-          <!-- Cluster 2: Upper bough (y: 110 - 210) -->
-          <path d="M-20,135 
-                   C-5,120 20,115 45,128 
-                   C68,122 92,138 96,162 
-                   C98,185 82,205 62,210 
-                   C40,215 15,208 0,195 
-                   C-12,200 -20,185 -20,165 Z" 
-                fill="url(#foliage-tree-grad)" />
+          <!-- Cluster B: Upper mid-bough (y: 105 - 195) -->
+          <path d="M-25,120 
+                   C-10,105 15,102 38,114 
+                   C58,106 82,120 86,142 
+                   C90,164 76,182 58,186 
+                   C65,198 52,212 35,210 
+                   C18,208 6,198 -8,190 
+                   C-20,194 -25,178 -25,158 Z" 
+                fill="url(#foliage-tree-grad)" opacity="0.92" />
 
-          <!-- Cluster 3: Mid bough (y: 190 - 300) -->
-          <path d="M-15,215 
-                   C5,200 35,198 60,212 
-                   C85,210 106,230 108,255 
-                   C108,280 90,300 68,302 
-                   C45,304 22,295 5,280 
-                   C-10,285 -18,265 -15,240 Z" 
-                fill="url(#foliage-tree-grad)" />
+          <!-- Cluster C: Mid-bough (y: 180 - 280) -->
+          <path d="M-20,195 
+                   C-2,180 25,178 48,192 
+                   C70,186 92,204 94,228 
+                   C95,252 78,270 58,272 
+                   C64,284 50,298 32,295 
+                   C14,292 2,282 -10,272 
+                   C-22,276 -25,258 -20,232 Z" 
+                fill="url(#foliage-tree-grad)" opacity="0.92" />
 
-          <!-- Cluster 4: Lower bough (y: 280 - 390) -->
-          <path d="M-15,305 
-                   C5,290 32,292 52,305 
-                   C75,305 92,325 90,350 
-                   C88,375 70,392 48,390 
-                   C28,388 8,378 -5,362 
-                   C-15,365 -18,345 -15,325 Z" 
-                fill="url(#foliage-tree-grad)" />
+          <!-- Cluster D: Lower bough (y: 265 - 370) -->
+          <path d="M-20,285 
+                   C-2,270 22,272 42,284 
+                   C62,280 82,298 80,322 
+                   C78,344 62,360 42,358 
+                   C48,370 34,382 18,380 
+                   C2,376 -8,364 -18,350 
+                   C-25,352 -25,334 -20,312 Z" 
+                fill="url(#foliage-tree-grad)" opacity="0.90" />
 
-          <!-- Stipple overlay for textured leaf flecks -->
-          <g opacity="0.45" mix-blend-mode="multiply">
-            <path d="M-20,60 C-10,40 15,35 35,48 C55,42 75,55 82,75 C88,95 78,115 65,125 C48,135 25,130 10,122 C-5,128 -18,115 -20,95 Z" fill="url(#foliage-stipple-pattern)" />
-            <path d="M-20,135 C-5,120 20,115 45,128 C68,122 92,138 96,162 C98,185 82,205 62,210 C40,215 15,208 0,195 C-12,200 -20,185 -20,165 Z" fill="url(#foliage-stipple-pattern)" />
-            <path d="M-15,215 C5,200 35,198 60,212 C85,210 106,230 108,255 C108,280 90,300 68,302 C45,304 22,295 5,280 C-10,285 -18,265 -15,240 Z" fill="url(#foliage-stipple-pattern)" />
-            <path d="M-15,305 C5,290 32,292 52,305 C75,305 92,325 90,350 C88,375 70,392 48,390 C28,388 8,378 -5,362 C-15,365 -18,345 -15,325 Z" fill="url(#foliage-stipple-pattern)" />
+          <!-- Stipple overlay for fine organic leaf flecks -->
+          <g opacity="0.38" mix-blend-mode="multiply">
+            <path d="M-25,50 C-15,30 10,25 32,38 C48,28 70,38 78,56 C85,74 76,92 64,102 C72,112 65,126 50,130 C32,134 18,124 5,118 C-10,122 -22,110 -25,90 Z" fill="url(#foliage-stipple-pattern)" />
+            <path d="M-25,120 C-10,105 15,102 38,114 C58,106 82,120 86,142 C90,164 76,182 58,186 C65,198 52,212 35,210 C18,208 6,198 -8,190 C-20,194 -25,178 -25,158 Z" fill="url(#foliage-stipple-pattern)" />
+            <path d="M-20,195 C-2,180 25,178 48,192 C70,186 92,204 94,228 C95,252 78,270 58,272 C64,284 50,298 32,295 C14,292 2,282 -10,272 C-22,276 -25,258 -20,232 Z" fill="url(#foliage-stipple-pattern)" />
+            <path d="M-20,285 C-2,270 22,272 42,284 C62,280 82,298 80,322 C78,344 62,360 42,358 C48,370 34,382 18,380 C2,376 -8,364 -18,350 C-25,352 -25,334 -20,312 Z" fill="url(#foliage-stipple-pattern)" />
           </g>
 
           <!-- Organic anime leaf stipple specks around edges -->
