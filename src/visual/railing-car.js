@@ -14,24 +14,24 @@ export class RailingCarLayer {
   render() {
     this.group.innerHTML = `
       <defs>
-        <!-- Large muted gray-purple vehicle paint gradient -->
+        <!-- Authentic warm beige-taupe vehicle paint gradient matching frame_01.jpg -->
         <linearGradient id="car-body-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#847179" />
-          <stop offset="45%" stop-color="#6F5D65" />
-          <stop offset="100%" stop-color="#55444D" />
+          <stop offset="0%" stop-color="#C2B2A6" />
+          <stop offset="45%" stop-color="#AFA094" />
+          <stop offset="100%" stop-color="#938478" />
         </linearGradient>
 
         <linearGradient id="car-roof-surface-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#8C7982" />
-          <stop offset="60%" stop-color="#76636D" />
-          <stop offset="100%" stop-color="#5C4A54" />
+          <stop offset="0%" stop-color="#C8B8AC" />
+          <stop offset="60%" stop-color="#B8A89C" />
+          <stop offset="100%" stop-color="#9E8E82" />
         </linearGradient>
 
-        <!-- Car rear window dark purple glass gradient -->
+        <!-- Car rear window soft muted purple tinted glass gradient -->
         <linearGradient id="car-window-glass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#4E3D48" />
-          <stop offset="65%" stop-color="#3C2C36" />
-          <stop offset="100%" stop-color="#261A22" />
+          <stop offset="0%" stop-color="#8A7A88" />
+          <stop offset="60%" stop-color="#6E5E6C" />
+          <stop offset="100%" stop-color="#4C3E4A" />
         </linearGradient>
 
         <!-- Railing metal gradient -->
@@ -72,76 +72,70 @@ export class RailingCarLayer {
         <rect x="692" y="602" width="10" height="118" fill="url(#railing-metal-grad)" stroke="#45313F" stroke-width="1.2" />
         <rect x="690" y="600" width="14" height="6" rx="2" ry="2" fill="#6A5262" />
 
-        <!-- Post 5 (extended off-screen right x: 815) -->
-        <rect x="812" y="602" width="10" height="118" fill="url(#railing-metal-grad)" stroke="#45313F" stroke-width="1.2" />
-        <rect x="810" y="600" width="14" height="6" rx="2" ry="2" fill="#6A5262" />
-
         <!-- Balusters (Vertical pickets) -->
         <g id="railing-balusters" stroke="#483442" stroke-width="2.2" stroke-linecap="round"></g>
       </g>
 
-      <!-- VINTAGE CAR (Left foreground x: -30 to 275, y: 430 to 720) -->
+      <!-- VINTAGE CAR (Left foreground x: -30 to 260, y: 432 to 720 matching girl_body.jpg) -->
       <g id="vintage-car" filter="url(#ink-wobble-filter)">
         <!-- Car main body silhouette -->
         <path d="M-30,432 
-                 C40,428 140,427 210,434 
-                 C240,437 255,448 262,475 
-                 C268,505 272,550 274,620 
-                 C275,655 272,695 270,725 
+                 C35,431 125,430 195,435 
+                 C220,438 238,446 244,475 
+                 C248,505 252,550 254,615 
+                 C255,650 254,690 252,725 
                  L-30,725 Z" 
-              fill="url(#car-body-grad)" stroke="#2F2130" stroke-width="2.2" />
+              fill="url(#car-body-grad)" stroke="#3E302B" stroke-width="2.2" />
 
         <!-- Car Roof Panel (Top platform where girl sits) -->
         <path d="M-25,432 
-                 C35,429 135,428 205,435 
-                 C230,437 245,444 250,455 
-                 C240,458 135,455 35,456 
-                 C-5,456 -25,455 -25,455 Z" 
-              fill="url(#car-roof-surface-grad)" stroke="#2F2130" stroke-width="1.8" />
+                 C35,431 125,430 195,435 
+                 C218,438 232,444 238,452 
+                 C225,456 125,454 35,455 
+                 C-5,455 -25,454 -25,454 Z" 
+              fill="url(#car-roof-surface-grad)" stroke="#3E302B" stroke-width="1.8" />
 
         <!-- Contact shadow under girl on car roof -->
-        <ellipse cx="145" cy="442" rx="75" ry="7" fill="#2A1C2B" opacity="0.55" />
+        <ellipse cx="115" cy="437" rx="70" ry="5.5" fill="#3A2C28" opacity="0.45" />
 
-        <!-- Car Rear Window Cutout Frame -->
-        <path d="M-20,465 
-                 C30,463 125,464 185,470 
-                 C205,472 215,485 212,525 
-                 C208,565 204,595 195,618 
-                 C190,625 180,626 150,627 
-                 C70,628 -5,627 -20,627 Z" 
-              fill="url(#car-window-glass-grad)" stroke="#281A28" stroke-width="2.4" />
+        <!-- Car Rear Window Cutout Frame (Rounded trapezoid matching girl_body.jpg) -->
+        <path d="M-20,466 
+                 C25,464 115,465 175,472 
+                 C195,475 204,488 200,525 
+                 C196,562 192,592 184,614 
+                 C178,620 168,622 140,622 
+                 C65,623 -5,622 -20,622 Z" 
+              fill="url(#car-window-glass-grad)" stroke="#382A26" stroke-width="2.4" />
 
         <!-- Interior Car Seats / Headrests visible inside -->
-        <rect x="25" y="505" width="48" height="52" rx="10" ry="10" fill="#221623" stroke="#180F19" stroke-width="1.5" />
-        <rect x="95" y="510" width="48" height="48" rx="10" ry="10" fill="#221623" stroke="#180F19" stroke-width="1.5" />
-        <!-- Rear seat shelf -->
-        <path d="M-15,570 C40,568 120,570 195,578 L190,620 C100,622 0,620 -15,620 Z" fill="#1C111C" />
+        <rect x="20" y="500" width="50" height="52" rx="12" ry="12" fill="#584856" stroke="#3C2C3A" stroke-width="1.5" />
+        <rect x="90" y="504" width="50" height="48" rx="12" ry="12" fill="#584856" stroke="#3C2C3A" stroke-width="1.5" />
+        <!-- Rear shelf -->
+        <path d="M-15,565 C35,563 115,565 185,572 L180,615 C95,617 0,615 -15,615 Z" fill="#423440" />
 
         <!-- Window glass diagonal sunset reflections -->
-        <path d="M20,466 L-15,530 L-15,500 L5,466 Z" fill="#756173" opacity="0.3" />
-        <path d="M90,467 L15,595 L35,596 L112,467 Z" fill="#756173" opacity="0.22" />
-        <path d="M165,472 L85,626 L105,626 L182,475 Z" fill="#756173" opacity="0.18" />
+        <path d="M20,468 L-15,530 L-15,500 L5,468 Z" fill="#FFF2E5" opacity="0.20" />
+        <path d="M85,469 L15,595 L35,596 L105,469 Z" fill="#FFF2E5" opacity="0.16" />
+        <path d="M155,473 L85,620 L105,620 L172,476 Z" fill="#FFF2E5" opacity="0.14" />
 
-        <!-- Car body seams & crease lines -->
-        <!-- Side beltline crease -->
-        <path d="M-20,638 C70,637 170,642 268,655" fill="none" stroke="#3D2D3E" stroke-width="1.6" />
-        <path d="M-20,640 C70,639 170,644 268,657" fill="none" stroke="#7E6D80" stroke-width="0.8" opacity="0.4" />
+        <!-- Car body seams & vertical creases -->
+        <path d="M-20,638 C65,637 155,641 245,652" fill="none" stroke="#5E4E46" stroke-width="1.6" />
+        <path d="M-20,640 C65,639 155,643 245,654" fill="none" stroke="#DDD0C4" stroke-width="0.8" opacity="0.5" />
 
-        <!-- Vertical body panel seam -->
-        <path d="M190,642 C186,665 182,695 180,725" fill="none" stroke="#3D2D3E" stroke-width="1.4" />
+        <path d="M175,640 C172,662 168,692 166,725" fill="none" stroke="#5E4E46" stroke-width="1.4" />
 
-        <!-- Stylized hand-drawn script badge on car flank -->
-        <text x="210" y="688" font-family="'Caveat', cursive" font-size="13" fill="#3D2D3E" opacity="0.6">toots</text>
+        <!-- Stylized hand-drawn script badge on car flank matching frame_01.jpg -->
+        <text x="195" y="688" font-family="'Caveat', cursive" font-size="14" fill="#3E302B" opacity="0.75">toots</text>
 
-        <!-- Oval Side Mirror (x: 232 - 262, y: 575 - 612) -->
+        <!-- Oval Side Mirror attached on right flank (matching girl_body.jpg: x: 220 - 275, y: 610 - 655) -->
         <g id="car-side-mirror">
           <!-- Mirror mount arm -->
-          <path d="M225,590 L242,593" stroke="#2D1F2E" stroke-width="4" stroke-linecap="round" />
-          <!-- Oval mirror casing -->
-          <ellipse cx="250" cy="593" rx="15" ry="18" fill="#58485A" stroke="#2D1F2E" stroke-width="2.2" />
-          <!-- Inner mirror glass bevel -->
-          <ellipse cx="249" cy="593" rx="11" ry="14" fill="#362937" />
-          <path d="M244,583 C252,586 256,595 254,603" fill="none" stroke="#8E7D90" stroke-width="1.5" opacity="0.6" />
+          <path d="M205,628 L225,632" stroke="#3A2C26" stroke-width="4.5" stroke-linecap="round" />
+          <!-- Rounded pill/oval mirror casing -->
+          <rect x="220" y="614" width="54" height="38" rx="18" ry="18" fill="#C2B2A6" stroke="#3A2C26" stroke-width="2.2" />
+          <!-- Inner mirror face with warm highlight -->
+          <rect x="224" y="618" width="46" height="30" rx="14" ry="14" fill="#DDD0C4" />
+          <path d="M232,624 C242,622 254,625 260,632" fill="none" stroke="#FFF7EE" stroke-width="2.0" stroke-linecap="round" />
         </g>
       </g>
     `;
