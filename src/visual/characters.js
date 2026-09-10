@@ -21,32 +21,32 @@ export class CharactersLayer {
       <defs>
         <!-- Soft watercolor anime skin gradient -->
         <linearGradient id="anime-skin-soft" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#FFF4EB" />
-          <stop offset="70%" stop-color="#FEE8D6" />
-          <stop offset="100%" stop-color="#F4D0B5" />
+          <stop offset="0%" stop-color="#FFF5EC" />
+          <stop offset="70%" stop-color="#FEE9DA" />
+          <stop offset="100%" stop-color="#F4D3BD" />
         </linearGradient>
 
         <linearGradient id="girl-cream-fabric" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#FAF1E6" />
-          <stop offset="55%" stop-color="#F4D6AF" />
-          <stop offset="100%" stop-color="#DEC097" />
+          <stop offset="0%" stop-color="#FAF5ED" />
+          <stop offset="55%" stop-color="#F3E7D5" />
+          <stop offset="100%" stop-color="#DFD0BC" />
         </linearGradient>
 
         <linearGradient id="girl-collar-fabric" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#FCEDE1" />
-          <stop offset="65%" stop-color="#F5D7B2" />
-          <stop offset="100%" stop-color="#E2C19A" />
+          <stop offset="0%" stop-color="#FCF7F0" />
+          <stop offset="65%" stop-color="#F5EBDD" />
+          <stop offset="100%" stop-color="#E2D4C3" />
         </linearGradient>
 
         <linearGradient id="boy-suit-fabric" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#544452" />
-          <stop offset="45%" stop-color="#443742" />
-          <stop offset="100%" stop-color="#322631" />
+          <stop offset="0%" stop-color="#4E3E49" />
+          <stop offset="45%" stop-color="#40323B" />
+          <stop offset="100%" stop-color="#2F232B" />
         </linearGradient>
 
         <linearGradient id="boy-trouser-fabric" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#423440" />
-          <stop offset="100%" stop-color="#2B1E29" />
+          <stop offset="0%" stop-color="#3B2E36" />
+          <stop offset="100%" stop-color="#261C23" />
         </linearGradient>
       </defs>
 
@@ -63,23 +63,23 @@ export class CharactersLayer {
                    C146,358 172,374 192,398 
                    C205,418 214,432 210,442 
                    C204,446 130,446 74,442 Z" 
-                fill="url(#girl-cream-fabric)" stroke="#65495A" stroke-width="1.8" />
+                fill="url(#girl-cream-fabric)" stroke="#4A3744" stroke-width="1.8" />
 
           <!-- Background Leg (Right leg: knee bends at roof rim, shin dangles down) -->
           <g id="girl-leg-back">
             <!-- Thigh to knee bend -->
             <path d="M142,425 C160,422 178,426 195,438 C198,446 195,455 190,460 C175,450 155,446 138,442 Z" 
-                  fill="#DFC097" />
+                  fill="#D9C7B2" />
             <!-- Dangling shin -->
             <path d="M192,442 
                      C196,470 198,510 195,548 
                      C194,562 188,568 180,568 
                      C172,566 170,550 172,518 
                      C174,482 178,458 182,442 Z" 
-                  fill="#DFC097" stroke="#65495A" stroke-width="1.6" />
+                  fill="#D9C7B2" stroke="#4A3744" stroke-width="1.6" />
             <!-- Back shoe -->
-            <ellipse cx="186" cy="572" rx="14" ry="8" transform="rotate(15, 186, 572)" fill="#DBC6B0" stroke="#65495A" stroke-width="1.5" />
-            <path d="M176,577 C186,581 196,578 200,574" fill="none" stroke="#543C4C" stroke-width="1.5" />
+            <ellipse cx="186" cy="572" rx="14" ry="8" transform="rotate(15, 186, 572)" fill="#DBC6B0" stroke="#4A3744" stroke-width="1.5" />
+            <path d="M176,577 C186,581 196,578 200,574" fill="none" stroke="#44323E" stroke-width="1.5" />
           </g>
 
           <!-- Foreground Leg (Left leg: draped cream fabric curving over knee and dangling) -->
@@ -92,38 +92,38 @@ export class CharactersLayer {
                      C188,578 185,558 188,522 
                      C192,482 196,456 190,440 
                      C182,434 165,432 152,432 Z" 
-                  fill="url(#girl-cream-fabric)" stroke="#65495A" stroke-width="1.8" />
+                  fill="url(#girl-cream-fabric)" stroke="#4A3744" stroke-width="1.8" />
 
             <!-- Soft fluid creases draping over knee and down shin -->
-            <path d="M198,436 C210,445 214,472 210,518 C206,548 202,568 198,572" fill="none" stroke="#65495A" stroke-width="1.3" />
-            <path d="M188,446 C198,456 200,488 198,525 C196,550 192,565 190,568" fill="none" stroke="#65495A" stroke-width="1.0" />
-            <path d="M174,432 C185,434 198,440 205,450" fill="none" stroke="#65495A" stroke-width="1.2" />
+            <path d="M198,436 C210,445 214,472 210,518 C206,548 202,568 198,572" fill="none" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M188,446 C198,456 200,488 198,525 C196,550 192,565 190,568" fill="none" stroke="#4A3744" stroke-width="1.0" />
+            <path d="M174,432 C185,434 198,440 205,450" fill="none" stroke="#4A3744" stroke-width="1.2" />
 
-            <!-- Front shoe -->
-            <ellipse cx="204" cy="580" rx="16" ry="9" transform="rotate(18, 204, 580)" fill="#F4D6AF" stroke="#65495A" stroke-width="1.6" />
-            <path d="M192,586 C204,591 214,588 219,582" fill="none" stroke="#543C4C" stroke-width="1.8" />
+            <!-- Front shoe peeking out near side mirror -->
+            <ellipse cx="204" cy="580" rx="16" ry="9" transform="rotate(18, 204, 580)" fill="#EDE0D0" stroke="#4A3744" stroke-width="1.6" />
+            <path d="M192,586 C204,591 214,588 219,582" fill="none" stroke="#44323E" stroke-width="1.8" />
           </g>
         </g>
 
         <!-- Torso, Arms & Off-The-Shoulder Ruffle Capelet -->
         <g id="girl-torso">
-          <!-- Back Arm: straight down, leaning back on car roof -->
+          <!-- Back Arm: straight down, leaning back on car roof supporting her weight -->
           <path d="M96,335 C88,360 76,392 72,425 L86,427 C90,396 98,368 108,342 Z" 
-                fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.6" />
+                fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.6" />
           <!-- Hand resting flat on car roof -->
           <path d="M68,425 C58,432 64,442 74,442 C84,442 88,434 86,425 Z" 
-                fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.5" />
+                fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.5" />
 
           <!-- Bodice / Waist -->
           <path d="M98,320 C95,344 98,368 102,384 C122,386 148,382 160,376 C158,354 154,332 150,316 Z" 
-                fill="url(#girl-cream-fabric)" stroke="#65495A" stroke-width="1.6" />
+                fill="url(#girl-cream-fabric)" stroke="#4A3744" stroke-width="1.6" />
 
           <!-- Foreground Arm: hangs down gracefully, hand resting on her knee/lap -->
           <path d="M148,332 C158,358 168,388 176,424 C178,434 172,440 164,438 C158,436 156,426 154,415 C148,382 142,352 138,332 Z" 
-                fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.6" />
+                fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.6" />
           <!-- Hand resting on knee -->
           <path d="M165,426 C172,430 178,436 174,442 C168,446 162,442 160,435 Z" 
-                fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.4" />
+                fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.4" />
 
           <!-- Flared Off-The-Shoulder Ruffled Capelet (Poncho collar) -->
           <g id="girl-ruffle">
@@ -135,13 +135,13 @@ export class CharactersLayer {
                      C136,362 120,358 106,360 
                      C92,362 78,358 68,350 
                      C64,330 70,305 84,286 Z" 
-                  fill="url(#girl-collar-fabric)" stroke="#65495A" stroke-width="1.8" />
+                  fill="url(#girl-collar-fabric)" stroke="#4A3744" stroke-width="1.8" />
 
             <!-- Radial pleat creases flowing outward from neckline -->
-            <path d="M104,282 L82,352" stroke="#65495A" stroke-width="1.3" />
-            <path d="M122,280 L112,356" stroke="#65495A" stroke-width="1.3" />
-            <path d="M142,280 L145,358" stroke="#65495A" stroke-width="1.3" />
-            <path d="M162,284 L178,356" stroke="#65495A" stroke-width="1.3" />
+            <path d="M104,282 L82,352" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M122,280 L112,356" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M142,280 L145,358" stroke="#4A3744" stroke-width="1.3" />
+            <path d="M162,284 L178,356" stroke="#4A3744" stroke-width="1.3" />
           </g>
         </g>
 
@@ -149,7 +149,7 @@ export class CharactersLayer {
         <g id="girl-head">
           <!-- Slender Graceful Neck -->
           <path d="M126,254 C128,270 130,285 132,294 C138,294 146,292 150,288 C148,272 146,256 142,252 Z" 
-                fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.4" />
+                fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.4" />
 
           <!-- Face Profile Shape -->
           <path d="M132,216 
@@ -159,26 +159,28 @@ export class CharactersLayer {
                    C148,276 138,278 132,276 
                    C122,272 120,260 120,246 
                    C120,232 124,220 132,216 Z" 
-                fill="url(#anime-skin-soft)" stroke="#65495A" stroke-width="1.6" />
+                fill="url(#anime-skin-soft)" stroke="#4A3744" stroke-width="1.6" />
 
           <!-- Soft Warm Peach Blush -->
-          <ellipse cx="154" cy="254" rx="6.5" ry="4" fill="var(--character-blush)" filter="url(#blush-soften)" />
+          <ellipse id="girl-blush" cx="154" cy="254" rx="7" ry="4.2" fill="#F3A688" opacity="0.65" filter="url(#blush-soften)" />
 
           <!-- Facial Features -->
-          <!-- Eye looking right toward boy -->
-          <path d="M154,240 C157,238 160,239 162,242" fill="none" stroke="#543C4C" stroke-width="1.8" stroke-linecap="round" />
-          <circle cx="158" cy="242" r="1.3" fill="#423540" />
+          <!-- Eye looking right toward boy with micro-blink -->
+          <g id="girl-eye">
+            <path d="M154,240 C157,238 160,239 162,242" fill="none" stroke="#3A2C37" stroke-width="1.8" stroke-linecap="round" />
+            <circle cx="158" cy="242" r="1.3" fill="#2E212B" />
+          </g>
           <!-- Eyebrow -->
-          <path d="M152,234 C156,232 160,233 163,235" fill="none" stroke="#65495A" stroke-width="1.1" stroke-linecap="round" />
+          <path d="M152,234 C156,232 160,233 163,235" fill="none" stroke="#4A3744" stroke-width="1.1" stroke-linecap="round" />
           <!-- Nose tip -->
-          <path d="M166,246 C167,248 166,250 164,251" fill="none" stroke="#65495A" stroke-width="1.1" />
+          <path d="M166,246 C167,248 166,250 164,251" fill="none" stroke="#4A3744" stroke-width="1.1" />
           <!-- Warm sweet smile -->
-          <path d="M156,258 C160,260 164,258 165,256" fill="none" stroke="#65495A" stroke-width="1.3" stroke-linecap="round" />
+          <path d="M156,258 C160,260 164,258 165,256" fill="none" stroke="#4A3744" stroke-width="1.3" stroke-linecap="round" />
 
           <!-- Ear -->
-          <path d="M130,246 C127,244 125,250 127,256 C129,260 133,260 134,256" fill="none" stroke="#65495A" stroke-width="1.2" />
+          <path d="M130,246 C127,244 125,250 127,256 C129,260 133,260 134,256" fill="none" stroke="#4A3744" stroke-width="1.2" />
 
-          <!-- Hair System (Dark plum anime hair with low bun) -->
+          <!-- Hair System (Dark muted gray/plum anime hair with low bun) -->
           <g id="girl-hair">
             <!-- Full Back Hair Volume -->
             <path d="M130,212 
@@ -187,20 +189,20 @@ export class CharactersLayer {
                      C126,272 132,258 136,248 
                      C140,232 146,222 154,217 
                      C146,213 136,211 130,212 Z" 
-                  fill="#423540" stroke="#65495A" stroke-width="1.6" />
+                  fill="#47404A" stroke="#352834" stroke-width="1.6" />
 
             <!-- Low Bun at Nape of Neck -->
             <g id="girl-bun">
-              <ellipse cx="94" cy="260" rx="14" ry="12" fill="#3A2C37" stroke="#65495A" stroke-width="1.6" />
-              <path d="M88,252 C94,256 100,264 98,270" fill="none" stroke="#5C4757" stroke-width="1.3" />
+              <ellipse cx="94" cy="260" rx="14" ry="12" fill="#3D3640" stroke="#352834" stroke-width="1.6" />
+              <path d="M88,252 C94,256 100,264 98,270" fill="none" stroke="#544B57" stroke-width="1.3" />
             </g>
 
             <!-- Front Bangs & Loose Tendril Curling in Breeze -->
             <g id="girl-hair-strand">
               <!-- Rounded forehead fringe -->
-              <path d="M132,212 C142,216 152,226 156,236 C148,232 140,228 132,224 Z" fill="#423540" />
+              <path d="M132,212 C142,216 152,226 156,236 C148,232 140,228 132,224 Z" fill="#47404A" />
               <!-- Tendril curving into wind -->
-              <path d="M142,238 C148,232 158,230 166,234" fill="none" stroke="#423540" stroke-width="1.8" stroke-linecap="round" />
+              <path d="M142,238 C148,232 158,230 166,234" fill="none" stroke="#3D3640" stroke-width="1.8" stroke-linecap="round" />
             </g>
           </g>
         </g>
@@ -355,6 +357,8 @@ export class CharactersLayer {
     this.girlStrand = this.group.querySelector('#girl-hair-strand');
     this.girlRuffle = this.group.querySelector('#girl-ruffle');
     this.girlTorso = this.group.querySelector('#girl-torso');
+    this.girlEye = this.group.querySelector('#girl-eye');
+    this.girlBlush = this.group.querySelector('#girl-blush');
 
     this.boyHead = this.group.querySelector('#boy-head');
     this.boyHairSpikes = this.group.querySelector('#boy-hair-spikes');
@@ -366,55 +370,78 @@ export class CharactersLayer {
   update(time) {
     const breathCycle = Math.sin(time * 1.45);
 
-    // Girl subtle breathing & posture sway
+    // 1. Girl subtle breathing & posture sway (very gentle)
     if (this.girlTorso) {
-      const gBreathScale = 1.0 + breathCycle * 0.008;
-      this.girlTorso.setAttribute('transform', `scale(1, ${gBreathScale}) translate(0, ${-breathCycle * 0.6})`);
+      const gBreathScale = 1.0 + breathCycle * 0.006;
+      this.girlTorso.setAttribute('transform', `scale(1, ${gBreathScale}) translate(0, ${-breathCycle * 0.5})`);
     }
 
-    // Girl head tilt
+    // 2. Girl head gentle drift
     if (this.girlHead) {
-      const gTilt = Math.sin(time * 0.9) * 1.4;
+      const gTilt = Math.sin(time * 0.8) * 0.9;
       this.girlHead.setAttribute('transform', `rotate(${gTilt}, 132, 276)`);
     }
 
-    // Girl hair loose strand sway
+    // 3. Occasional tiny movement in the loose hair strand
     if (this.girlStrand) {
-      const strandSway = Math.sin(time * 3.2) * 2.8 + Math.sin(time * 5.7) * 1.2;
+      // Resting sway with gentle organic puffs
+      const strandSway = Math.sin(time * 2.4) * 1.6 + Math.sin(time * 5.1) * 0.8;
       this.girlStrand.setAttribute('transform', `rotate(${strandSway}, 142, 230)`);
     }
 
-    // Girl ruffle cloth flutter
+    // 4. Girl ruffle cloth soft flutter
     if (this.girlRuffle) {
-      const ruffleFlutter = Math.sin(time * 2.8) * 1.5;
-      this.girlRuffle.setAttribute('transform', `rotate(${ruffleFlutter}, 130, 280) scale(1, ${1 + ruffleFlutter * 0.006})`);
+      const ruffleFlutter = Math.sin(time * 2.2) * 0.9;
+      this.girlRuffle.setAttribute('transform', `rotate(${ruffleFlutter}, 130, 280) scale(1, ${1 + ruffleFlutter * 0.004})`);
     }
 
-    // Boy breathing cycle
+    // 5. Subtle eye/face variation: delicate micro-blink around 2.15s and 3.85s
+    if (this.girlEye) {
+      let eyeScaleY = 1.0;
+      // Blink 1 at 2.10s - 2.22s
+      if (time >= 2.10 && time <= 2.22) {
+        const p = (time - 2.10) / 0.12;
+        eyeScaleY = Math.abs(Math.sin(p * Math.PI - Math.PI / 2));
+      }
+      // Blink 2 at 3.80s - 3.92s
+      else if (time >= 3.80 && time <= 3.92) {
+        const p = (time - 3.80) / 0.12;
+        eyeScaleY = Math.abs(Math.sin(p * Math.PI - Math.PI / 2));
+      }
+      this.girlEye.setAttribute('transform', `translate(158, 241) scale(1, ${Math.max(0.1, eyeScaleY)}) translate(-158, -241)`);
+    }
+
+    // 6. Subtle cheek blush warmth breathing
+    if (this.girlBlush) {
+      const blushOpacity = 0.62 + Math.sin(time * 1.45) * 0.07;
+      this.girlBlush.setAttribute('opacity', blushOpacity.toFixed(2));
+    }
+
+    // 7. Boy breathing cycle
     if (this.boyTorso) {
-      const bBreathScale = 1.0 + breathCycle * 0.009;
-      this.boyTorso.setAttribute('transform', `scale(1, ${bBreathScale}) translate(0, ${-breathCycle * 0.7})`);
+      const bBreathScale = 1.0 + breathCycle * 0.007;
+      this.boyTorso.setAttribute('transform', `scale(1, ${bBreathScale}) translate(0, ${-breathCycle * 0.5})`);
     }
 
-    // Boy head tilt
+    // 8. Boy head tilt upward gazing at woman
     if (this.boyHead) {
-      const bTilt = Math.sin(time * 0.85 + 0.5) * 1.2;
+      const bTilt = Math.sin(time * 0.75 + 0.4) * 0.8;
       this.boyHead.setAttribute('transform', `rotate(${bTilt}, 488, 383)`);
     }
 
-    // Boy hair tufts in the wind
+    // 9. Boy hair tufts in the breeze
     if (this.boyHairSpikes) {
-      const spikeSway = Math.sin(time * 3.5 + 0.3) * 2.0 + Math.cos(time * 6.1) * 1.0;
+      const spikeSway = Math.sin(time * 2.8 + 0.3) * 1.4 + Math.cos(time * 5.4) * 0.6;
       this.boyHairSpikes.setAttribute('transform', `rotate(${spikeSway}, 485, 310)`);
     }
 
-    // Boy jacket flutter in sunset breeze
+    // 10. Boy jacket subtle flutter in sunset breeze
     if (this.boyJacketLeft) {
-      const jFlutterL = Math.sin(time * 2.4) * 1.2;
+      const jFlutterL = Math.sin(time * 2.1) * 0.9;
       this.boyJacketLeft.setAttribute('transform', `rotate(${jFlutterL}, 464, 414)`);
     }
     if (this.boyJacketRight) {
-      const jFlutterR = Math.sin(time * 2.6 + 0.4) * 1.0;
+      const jFlutterR = Math.sin(time * 2.3 + 0.3) * 0.8;
       this.boyJacketRight.setAttribute('transform', `rotate(${jFlutterR}, 524, 412)`);
     }
   }

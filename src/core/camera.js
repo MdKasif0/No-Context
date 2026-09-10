@@ -61,7 +61,8 @@ export class Camera {
       }
     };
 
-    this.mode = 'wide'; // 'wide' | 'girlShot' | 'boyShot' | 'manual' | 'timeline'
+    this.mode = 'timeline'; // 'timeline' | 'wide' | 'girlShot' | 'boyShot' | 'manual'
+    this.lastTime = 0;
   }
 
   setMode(mode) {
@@ -94,32 +95,73 @@ export class Camera {
   update(time, lerpFactor = 0.12) {
     // If running in timeline mode, compute shot transitions based on time
     if (this.mode === 'timeline') {
-      if (time < 3.2) {
-        // Scene 1: Wide shot of both characters
-        Object.assign(this.target, this.presets.wide);
-      } else if (time < 7.4) {
-        // Scene 2: Girl close-up shot
-        Object.assign(this.target, this.presets.girlShot);
+      if (time < 4.47) {
+        // Scene 1: 0.00s to 4.47s
+        // 0.00s: Wide establishing shot showing both characters and vehicle
+        // 0.00s - 2.00s: Very subtle slow push-in, gradually favoring the woman
+        // 2.00s - 4.47s: Continue slow dreamy push toward woman; woman becomes visual focal point
+        const t = Math.max(0, Math.min(4.47, time));
+        let s, x, y;
+        if (t <= 2.0) {
+          const p = t / 2.0;
+          const ease = p * p * (3 - 2 * p); // smooth cubic ease
+          s = 1.0 + ease * 0.12;           // 1.00 -> 1.12
+          x = ease * 38;                   // 0 -> 38 (favors woman on left)
+          y = ease * 10;                   // 0 -> 10
+        } else {
+          const p = (t - 2.0) / (4.47 - 2.0);
+          const ease = p * p * (3 - 2 * p);
+          s = 1.12 + ease * 0.18;          // 1.12 -> 1.30
+          x = 38 + ease * 52;              // 38 -> 90
+          y = 10 + ease * 12;              // 10 -> 22
+        }
+
+        this.target.scale = s;
+        this.target.x = x;
+        this.target.y = y;
+        this.target.pivotX = 360;
+        this.target.pivotY = 360;
+        this.target.rotation = 0;
+
+        // Instant deterministic assignment for Scene 1 (zero drift / lag)
+        this.state.x = this.target.x;
+        this.state.y = this.target.y;
+        this.state.scale = this.target.scale;
+        this.state.pivotX = this.target.pivotX;
+        this.state.pivotY = this.target.pivotY;
+        this.state.rotation = this.target.rotation;
       } else {
-        // Scene 3: Boy shot with lyrics
-        Object.assign(this.target, this.presets.boyShot);
+        // At 4.47s: Instantaneous HARD CUT! No crossfade or lerp latency.
+        Object.assign(this.target, this.presets.girlShot);
+        if (this.lastTime < 4.47 || Math.abs(time - 4.47) < 0.06) {
+          // Hard cut snap
+          Object.assign(this.state, this.presets.girlShot);
+        } else {
+          this.state.x += (this.target.x - this.state.x) * lerpFactor;
+          this.state.y += (this.target.y - this.state.y) * lerpFactor;
+          this.state.scale += (this.target.scale - this.state.scale) * lerpFactor;
+          this.state.pivotX += (this.target.pivotX - this.state.pivotX) * lerpFactor;
+          this.state.pivotY += (this.target.pivotY - this.state.pivotY) * lerpFactor;
+        }
       }
+    } else {
+      // Manual preset mode: smooth interpolation towards target
+      this.state.x += (this.target.x - this.state.x) * lerpFactor;
+      this.state.y += (this.target.y - this.state.y) * lerpFactor;
+      this.state.scale += (this.target.scale - this.state.scale) * lerpFactor;
+      this.state.rotation += (this.target.rotation - this.state.rotation) * lerpFactor;
+      this.state.pivotX += (this.target.pivotX - this.state.pivotX) * lerpFactor;
+      this.state.pivotY += (this.target.pivotY - this.state.pivotY) * lerpFactor;
     }
 
-    // Smooth interpolation towards target
-    this.state.x += (this.target.x - this.state.x) * lerpFactor;
-    this.state.y += (this.target.y - this.state.y) * lerpFactor;
-    this.state.scale += (this.target.scale - this.state.scale) * lerpFactor;
-    this.state.rotation += (this.target.rotation - this.state.rotation) * lerpFactor;
-    this.state.pivotX += (this.target.pivotX - this.state.pivotX) * lerpFactor;
-    this.state.pivotY += (this.target.pivotY - this.state.pivotY) * lerpFactor;
+    this.lastTime = time;
 
-    // Organic micro-drift / breathing
+    // Organic micro-drift / handheld breathing float
     let driftX = 0;
     let driftY = 0;
     if (this.state.shake > 0) {
-      driftX = Math.sin(time * 1.3) * 1.2 * this.state.shake;
-      driftY = Math.cos(time * 1.8) * 0.9 * this.state.shake;
+      driftX = Math.sin(time * 1.3) * 0.9 * this.state.shake;
+      driftY = Math.cos(time * 1.8) * 0.7 * this.state.shake;
     }
 
     // Apply SVG transform matrix

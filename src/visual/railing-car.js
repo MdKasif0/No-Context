@@ -14,24 +14,24 @@ export class RailingCarLayer {
   render() {
     this.group.innerHTML = `
       <defs>
-        <!-- Vintage car paint gradient -->
+        <!-- Large muted gray-purple vehicle paint gradient -->
         <linearGradient id="car-body-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#E5D6C5" />
-          <stop offset="40%" stop-color="#DAC7B3" />
-          <stop offset="100%" stop-color="#C2AD97" />
+          <stop offset="0%" stop-color="#6B5B6D" />
+          <stop offset="45%" stop-color="#58485A" />
+          <stop offset="100%" stop-color="#463747" />
         </linearGradient>
 
         <linearGradient id="car-roof-surface-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#ECE0D2" />
-          <stop offset="60%" stop-color="#DAC6B1" />
-          <stop offset="100%" stop-color="#C8B39D" />
+          <stop offset="0%" stop-color="#736375" />
+          <stop offset="60%" stop-color="#5E4E60" />
+          <stop offset="100%" stop-color="#4D3D4F" />
         </linearGradient>
 
-        <!-- Car rear window gradient -->
+        <!-- Car rear window dark purple glass gradient -->
         <linearGradient id="car-window-glass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#554452" />
-          <stop offset="65%" stop-color="#463643" />
-          <stop offset="100%" stop-color="#372935" />
+          <stop offset="0%" stop-color="#3B2E3C" />
+          <stop offset="65%" stop-color="#2D212E" />
+          <stop offset="100%" stop-color="#201621" />
         </linearGradient>
 
         <!-- Railing metal gradient -->
@@ -89,7 +89,7 @@ export class RailingCarLayer {
                  C268,505 272,550 274,620 
                  C275,655 272,695 270,725 
                  L-30,725 Z" 
-              fill="url(#car-body-grad)" stroke="#553F4F" stroke-width="2.2" />
+              fill="url(#car-body-grad)" stroke="#2F2130" stroke-width="2.2" />
 
         <!-- Car Roof Panel (Top platform where girl sits) -->
         <path d="M-25,432 
@@ -97,10 +97,10 @@ export class RailingCarLayer {
                  C230,437 245,444 250,455 
                  C240,458 135,455 35,456 
                  C-5,456 -25,455 -25,455 Z" 
-              fill="url(#car-roof-surface-grad)" stroke="#553F4F" stroke-width="1.8" />
+              fill="url(#car-roof-surface-grad)" stroke="#2F2130" stroke-width="1.8" />
 
         <!-- Contact shadow under girl on car roof -->
-        <ellipse cx="145" cy="442" rx="75" ry="7" fill="#8B7363" opacity="0.45" />
+        <ellipse cx="145" cy="442" rx="75" ry="7" fill="#2A1C2B" opacity="0.55" />
 
         <!-- Car Rear Window Cutout Frame -->
         <path d="M-20,465 
@@ -109,36 +109,39 @@ export class RailingCarLayer {
                  C208,565 204,595 195,618 
                  C190,625 180,626 150,627 
                  C70,628 -5,627 -20,627 Z" 
-              fill="url(#car-window-glass-grad)" stroke="#4A3744" stroke-width="2.4" />
+              fill="url(#car-window-glass-grad)" stroke="#281A28" stroke-width="2.4" />
 
         <!-- Interior Car Seats / Headrests visible inside -->
-        <rect x="25" y="505" width="48" height="52" rx="10" ry="10" fill="#3D2E3A" stroke="#2D1F2A" stroke-width="1.5" />
-        <rect x="95" y="510" width="48" height="48" rx="10" ry="10" fill="#3D2E3A" stroke="#2D1F2A" stroke-width="1.5" />
+        <rect x="25" y="505" width="48" height="52" rx="10" ry="10" fill="#221623" stroke="#180F19" stroke-width="1.5" />
+        <rect x="95" y="510" width="48" height="48" rx="10" ry="10" fill="#221623" stroke="#180F19" stroke-width="1.5" />
         <!-- Rear seat shelf -->
-        <path d="M-15,570 C40,568 120,570 195,578 L190,620 C100,622 0,620 -15,620 Z" fill="#32242F" />
+        <path d="M-15,570 C40,568 120,570 195,578 L190,620 C100,622 0,620 -15,620 Z" fill="#1C111C" />
 
         <!-- Window glass diagonal sunset reflections -->
-        <path d="M20,466 L-15,530 L-15,500 L5,466 Z" fill="#8D7588" opacity="0.35" />
-        <path d="M90,467 L15,595 L35,596 L112,467 Z" fill="#8D7588" opacity="0.25" />
-        <path d="M165,472 L85,626 L105,626 L182,475 Z" fill="#8D7588" opacity="0.2" />
+        <path d="M20,466 L-15,530 L-15,500 L5,466 Z" fill="#756173" opacity="0.3" />
+        <path d="M90,467 L15,595 L35,596 L112,467 Z" fill="#756173" opacity="0.22" />
+        <path d="M165,472 L85,626 L105,626 L182,475 Z" fill="#756173" opacity="0.18" />
 
         <!-- Car body seams & crease lines -->
         <!-- Side beltline crease -->
-        <path d="M-20,638 C70,637 170,642 268,655" fill="none" stroke="#685161" stroke-width="1.6" />
-        <path d="M-20,640 C70,639 170,644 268,657" fill="none" stroke="#F1E4D6" stroke-width="0.8" opacity="0.5" />
+        <path d="M-20,638 C70,637 170,642 268,655" fill="none" stroke="#3D2D3E" stroke-width="1.6" />
+        <path d="M-20,640 C70,639 170,644 268,657" fill="none" stroke="#7E6D80" stroke-width="0.8" opacity="0.4" />
 
         <!-- Vertical body panel seam -->
-        <path d="M190,642 C186,665 182,695 180,725" fill="none" stroke="#685161" stroke-width="1.4" />
+        <path d="M190,642 C186,665 182,695 180,725" fill="none" stroke="#3D2D3E" stroke-width="1.4" />
+
+        <!-- Stylized hand-drawn script badge on car flank -->
+        <text x="210" y="688" font-family="'Caveat', cursive" font-size="13" fill="#3D2D3E" opacity="0.6">toots</text>
 
         <!-- Oval Side Mirror (x: 232 - 262, y: 575 - 612) -->
         <g id="car-side-mirror">
           <!-- Mirror mount arm -->
-          <path d="M225,590 L242,593" stroke="#483644" stroke-width="4" stroke-linecap="round" />
+          <path d="M225,590 L242,593" stroke="#2D1F2E" stroke-width="4" stroke-linecap="round" />
           <!-- Oval mirror casing -->
-          <ellipse cx="250" cy="593" rx="15" ry="18" fill="#D3BEA8" stroke="#4F3B4A" stroke-width="2.2" />
+          <ellipse cx="250" cy="593" rx="15" ry="18" fill="#58485A" stroke="#2D1F2E" stroke-width="2.2" />
           <!-- Inner mirror glass bevel -->
-          <ellipse cx="249" cy="593" rx="11" ry="14" fill="#634F5E" />
-          <path d="M244,583 C252,586 256,595 254,603" fill="none" stroke="#B8A2B4" stroke-width="1.5" opacity="0.7" />
+          <ellipse cx="249" cy="593" rx="11" ry="14" fill="#362937" />
+          <path d="M244,583 C252,586 256,595 254,603" fill="none" stroke="#8E7D90" stroke-width="1.5" opacity="0.6" />
         </g>
       </g>
     `;
