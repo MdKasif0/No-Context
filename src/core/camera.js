@@ -130,19 +130,54 @@ export class Camera {
         this.state.pivotX = this.target.pivotX;
         this.state.pivotY = this.target.pivotY;
         this.state.rotation = this.target.rotation;
-      } else {
-        // At 4.47s: Instantaneous HARD CUT! No crossfade or lerp latency.
-        Object.assign(this.target, this.presets.girlShot);
-        if (this.lastTime < 4.47 || Math.abs(time - 4.47) < 0.06) {
-          // Hard cut snap
-          Object.assign(this.state, this.presets.girlShot);
+      } else if (time < 8.95) {
+        // ========================================================
+        // Scene 2: 4.47s to 8.95s (Male Character Close-up Portrait)
+        // Instantaneous hard cut at 4.47s.
+        // Stable framing with slow 2D push-in and tiny vertical drift.
+        // No camera shake.
+        // ========================================================
+        const s2Duration = 8.95 - 4.47;
+        const p = Math.max(0, Math.min(1.0, (time - 4.47) / s2Duration));
+        const smoothP = p * p * (3 - 2 * p);
+
+        // Very slow 2D push-in (1.000 -> 1.035) focused on the male character
+        const s = 1.00 + smoothP * 0.035;
+        // Tiny cinematic vertical drift
+        const driftY = Math.sin((time - 4.47) * 0.8) * 1.6;
+        const driftX = Math.sin((time - 4.47) * 0.4) * 0.6;
+
+        this.target.scale = s;
+        this.target.x = driftX;
+        this.target.y = driftY;
+        this.target.pivotX = 420;
+        this.target.pivotY = 340;
+        this.target.rotation = 0;
+
+        // Instant hard cut snap at 4.47s (zero lerp latency)
+        if (this.lastTime < 4.47 || Math.abs(time - 4.47) < 0.05) {
+          this.state.x = this.target.x;
+          this.state.y = this.target.y;
+          this.state.scale = this.target.scale;
+          this.state.pivotX = this.target.pivotX;
+          this.state.pivotY = this.target.pivotY;
+          this.state.rotation = 0;
         } else {
-          this.state.x += (this.target.x - this.state.x) * lerpFactor;
-          this.state.y += (this.target.y - this.state.y) * lerpFactor;
-          this.state.scale += (this.target.scale - this.state.scale) * lerpFactor;
-          this.state.pivotX += (this.target.pivotX - this.state.pivotX) * lerpFactor;
-          this.state.pivotY += (this.target.pivotY - this.state.pivotY) * lerpFactor;
+          this.state.x = this.target.x;
+          this.state.y = this.target.y;
+          this.state.scale = this.target.scale;
+          this.state.pivotX = this.target.pivotX;
+          this.state.pivotY = this.target.pivotY;
+          this.state.rotation = 0;
         }
+      } else {
+        // Post Scene 2: Hold stable framing
+        this.state.x = 0;
+        this.state.y = 0;
+        this.state.scale = 1.0;
+        this.state.pivotX = 360;
+        this.state.pivotY = 360;
+        this.state.rotation = 0;
       }
     } else {
       // Manual preset mode: smooth interpolation towards target
@@ -159,7 +194,8 @@ export class Camera {
     // Organic micro-drift / handheld breathing float
     let driftX = 0;
     let driftY = 0;
-    if (this.state.shake > 0) {
+    // Camera shake is disabled during Scene 2 for cinematic stability
+    if (this.state.shake > 0 && (this.mode !== 'timeline' || time < 4.47)) {
       driftX = Math.sin(time * 1.3) * 0.9 * this.state.shake;
       driftY = Math.cos(time * 1.8) * 0.7 * this.state.shake;
     }
