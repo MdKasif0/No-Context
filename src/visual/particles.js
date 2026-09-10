@@ -13,6 +13,29 @@ export class ParticlesLayer {
     this.particles = [];
     this.initParticles();
     this.initScene1SingleLeaf();
+    this.initScene2LightMotes();
+  }
+
+  initScene2LightMotes() {
+    // Dedicated subtle light motes for Scene 2
+    this.scene2MotesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    this.scene2MotesGroup.id = 'scene2-light-motes';
+    this.scene2MotesGroup.style.display = 'none';
+
+    this.scene2Motes = [
+      { startX: 120, startY: 180, speedX: 16, freqY: 0.8, ampY: 10, r: 2.2, color: '#FFF2D6' },
+      { startX: 240, startY: 280, speedX: 12, freqY: 1.1, ampY: 8, r: 1.8, color: '#FFE8C0' },
+      { startX: 450, startY: 140, speedX: 14, freqY: 0.9, ampY: 12, r: 2.4, color: '#FFF5E0' }
+    ];
+
+    this.scene2Motes.forEach((m, idx) => {
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.innerHTML = `<circle cx="0" cy="0" r="${m.r}" fill="${m.color}" opacity="0.65" filter="url(#warm-glow-filter)" />`;
+      this.scene2MotesGroup.appendChild(g);
+      m.el = g;
+    });
+
+    this.group.appendChild(this.scene2MotesGroup);
   }
 
   initScene1SingleLeaf() {
@@ -83,6 +106,7 @@ export class ParticlesLayer {
       // Scene 1: Suppress general particles swarm.
       // Show ONLY the single tiny drifting leaf around the woman during the latter portion of the scene.
       this.particlesGroup.style.display = 'none';
+      if (this.scene2MotesGroup) this.scene2MotesGroup.style.display = 'none';
 
       if (time >= 2.6 && time < 4.47) {
         this.scene1Leaf.style.display = 'block';
@@ -103,9 +127,23 @@ export class ParticlesLayer {
       } else {
         this.scene1Leaf.style.display = 'none';
       }
-    } else {
-      // Post Scene 1
+    } else if (time < 8.95) {
+      // Scene 2: Dedicated subtle light motes drifting lazily across sunset sky
       this.scene1Leaf.style.display = 'none';
+      this.particlesGroup.style.display = 'none';
+      if (this.scene2MotesGroup) {
+        this.scene2MotesGroup.style.display = 'block';
+        const s2Time = time - 4.47;
+        this.scene2Motes.forEach(m => {
+          const curX = (m.startX + m.speedX * s2Time) % 760 - 20;
+          const curY = m.startY + Math.sin(s2Time * m.freqY) * m.ampY;
+          m.el.setAttribute('transform', `translate(${curX.toFixed(1)}, ${curY.toFixed(1)})`);
+        });
+      }
+    } else {
+      // Post Scene 2
+      this.scene1Leaf.style.display = 'none';
+      if (this.scene2MotesGroup) this.scene2MotesGroup.style.display = 'none';
       this.particlesGroup.style.display = 'block';
 
       const wrapWidth = 920;

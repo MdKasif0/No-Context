@@ -1,18 +1,20 @@
-import { injectSvgFilters } from './visual/svg-filters.js?v=v15';
-import { SkyAndCloudsLayer } from './visual/sky-clouds.js?v=v15';
-import { CityscapeLayer } from './visual/cityscape.js?v=v15';
-import { FoliageLayer } from './visual/foliage.js?v=v15';
-import { RailingCarLayer } from './visual/railing-car.js?v=v15';
-import { CharactersLayer } from './visual/characters.js?v=v15';
-import { ParticlesLayer } from './visual/particles.js?v=v15';
-import { LyricsLayer } from './visual/lyrics.js?v=v15';
-import { PaperTextureEngine } from './visual/paper-texture.js?v=v15';
-import { Camera } from './core/camera.js?v=v15';
-import { AnimationEngine } from './core/engine.js?v=v15';
+import { injectSvgFilters } from './visual/svg-filters.js?v=v16';
+import { SkyAndCloudsLayer } from './visual/sky-clouds.js?v=v16';
+import { CityscapeLayer } from './visual/cityscape.js?v=v16';
+import { FoliageLayer } from './visual/foliage.js?v=v16';
+import { RailingCarLayer } from './visual/railing-car.js?v=v16';
+import { CharactersLayer } from './visual/characters.js?v=v16';
+import { Scene2Layer } from './visual/scene2.js?v=v16';
+import { ParticlesLayer } from './visual/particles.js?v=v16';
+import { LyricsLayer } from './visual/lyrics.js?v=v16';
+import { PaperTextureEngine } from './visual/paper-texture.js?v=v16';
+import { Camera } from './core/camera.js?v=v16';
+import { AnimationEngine } from './core/engine.js?v=v16';
 
 /**
  * Scene Compositor
  * Assembles the full layered environment, paper texture, camera, and animation systems.
+ * Manages abrupt hard cuts and clean scene transitions between Scene 1 (0-4.47s) and Scene 2 (4.47-8.95s).
  */
 export class SceneCompositor {
   constructor(options = {}) {
@@ -34,12 +36,27 @@ export class SceneCompositor {
       viewportHeight: 720
     });
 
-    // 4. Build Layers in strict depth order
-    this.skyClouds = new SkyAndCloudsLayer(this.cameraGroup);
-    this.cityscape = new CityscapeLayer(this.cameraGroup);
-    this.foliage = new FoliageLayer(this.cameraGroup);
-    this.railingCar = new RailingCarLayer(this.cameraGroup);
-    this.characters = new CharactersLayer(this.cameraGroup);
+    // 4. Dedicated Scene Containers for Abrupt Hard Cut Switching
+    this.scene1Group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    this.scene1Group.id = 'scene-1-container';
+    this.cameraGroup.appendChild(this.scene1Group);
+
+    this.scene2Group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    this.scene2Group.id = 'scene-2-container';
+    this.scene2Group.style.display = 'none';
+    this.cameraGroup.appendChild(this.scene2Group);
+
+    // Build Scene 1 Layers
+    this.skyClouds = new SkyAndCloudsLayer(this.scene1Group);
+    this.cityscape = new CityscapeLayer(this.scene1Group);
+    this.foliage = new FoliageLayer(this.scene1Group);
+    this.railingCar = new RailingCarLayer(this.scene1Group);
+    this.characters = new CharactersLayer(this.scene1Group);
+
+    // Build Scene 2 Layer (Close portrait of male character & recomposed sunset)
+    this.scene2 = new Scene2Layer(this.scene2Group);
+
+    // Global Floating Particles & Lyrics
     this.particles = new ParticlesLayer(this.cameraGroup, 32);
     this.lyrics = new LyricsLayer(this.svg);
 
@@ -53,6 +70,7 @@ export class SceneCompositor {
       foliage: { el: this.foliage.group, visible: true },
       railingCar: { el: this.railingCar.group, visible: true },
       characters: { el: this.characters.group, visible: true },
+      scene2: { el: this.scene2.group, visible: true },
       particles: { el: this.particles.group, visible: true },
       lyrics: { el: this.lyrics.group, visible: true },
       grain: { el: this.grainCanvas, visible: true },
@@ -81,37 +99,39 @@ export class SceneCompositor {
       this.camera.update(time);
     }
 
-    // 2. Update Sky & Drifting Clouds
-    if (this.layerToggles.sky.visible) {
-      this.skyClouds.update(time);
+    // 2. Exact Hard Cut Scene Switching at 4.47s
+    const isScene1 = time < 4.47;
+    const isScene2 = time >= 4.47 && time < 8.95;
+
+    this.scene1Group.style.display = isScene1 ? 'block' : 'none';
+    if (this.layerToggles.scene2.visible) {
+      this.scene2Group.style.display = isScene2 ? 'block' : 'none';
     }
 
-    // 3. Update Distant Cityscape Windows
-    if (this.layerToggles.city.visible) {
-      this.cityscape.update(time);
+    // 3. Update Scene 1 Layers
+    if (isScene1) {
+      if (this.layerToggles.sky.visible) this.skyClouds.update(time);
+      if (this.layerToggles.city.visible) this.cityscape.update(time);
+      if (this.layerToggles.foliage.visible) this.foliage.update(time);
+      if (this.layerToggles.characters.visible) this.characters.update(time);
     }
 
-    // 4. Update Trees Wind Sway
-    if (this.layerToggles.foliage.visible) {
-      this.foliage.update(time);
+    // 4. Update Scene 2 Layer
+    if (isScene2 && this.layerToggles.scene2.visible) {
+      this.scene2.update(time);
     }
 
-    // 5. Update Characters (Breathing, Hair, Clothing Flutter, Head Tilt)
-    if (this.layerToggles.characters.visible) {
-      this.characters.update(time);
-    }
-
-    // 6. Update Drifting Sunset Particles / Petals
+    // 5. Update Floating Particles / Motes
     if (this.layerToggles.particles.visible) {
       this.particles.update(time);
     }
 
-    // 7. Update Lyrics
+    // 6. Update Lyrics
     if (this.layerToggles.lyrics.visible) {
       this.lyrics.update(time);
     }
 
-    // 8. Render Dynamic Paper Grain & Film Noise
+    // 7. Render Dynamic Paper Grain & Film Noise
     if (this.layerToggles.grain.visible) {
       this.paperTexture.render(time, frame);
     }
@@ -133,6 +153,16 @@ export class SceneCompositor {
       this.characters.group.setAttribute('filter', filterVal);
       this.foliage.group.setAttribute('filter', filterVal);
       this.railingCar.group.setAttribute('filter', filterVal);
+      if (this.scene2) {
+        const s2Tree = this.scene2.group.querySelector('#scene2-tree');
+        const s2City = this.scene2.group.querySelector('#scene2-cityscape');
+        const s2Char = this.scene2.group.querySelector('#scene2-male-character');
+        const s2Rail = this.scene2.group.querySelector('#scene2-railing');
+        if (s2Tree) s2Tree.setAttribute('filter', filterVal);
+        if (s2City) s2City.setAttribute('filter', filterVal);
+        if (s2Char) s2Char.setAttribute('filter', filterVal);
+        if (s2Rail) s2Rail.setAttribute('filter', filterVal);
+      }
     } else if (item.el) {
       item.el.style.display = item.visible ? 'block' : 'none';
     }
