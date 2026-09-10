@@ -69,10 +69,10 @@
         <div class="dropdown-group">
           <label for="camera-select">Camera:</label>
           <select id="camera-select" class="select-ctrl">
-            <option value="wide" selected>Master Wide Shot</option>
+            <option value="timeline" selected>Auto Timeline Track (Scene 1)</option>
+            <option value="wide">Master Wide (Static)</option>
             <option value="girlShot">Girl Close-up (Roof)</option>
             <option value="boyShot">Boy Close-up (Railing)</option>
-            <option value="timeline">Auto Timeline Track</option>
           </select>
         </div>
 
@@ -116,7 +116,7 @@
           <div class="telemetry-item">Frame: <span id="telemetry-frame">0</span> / 449</div>
           <div class="telemetry-item">Cam Scale: <span id="telemetry-scale">1.00×</span></div>
           <div class="telemetry-item">Cam Pan: <span id="telemetry-pan">(0, 0)</span></div>
-          <div class="telemetry-item">Shot: <span id="telemetry-shot">Master Wide</span></div>
+          <div class="telemetry-item">Shot: <span id="telemetry-shot">Scene 1 Push-In</span></div>
         </div>
       </div>
     </section>
@@ -124,7 +124,7 @@
 
   <!-- Main Application Bootstrap -->
   <script type="module">
-    import { SceneCompositor } from './src/scene.js?v=v8';
+    import { SceneCompositor } from './src/scene.js?v=v9';
 
     window.addEventListener('DOMContentLoaded', () => {
       const compositor = new SceneCompositor();
@@ -254,7 +254,7 @@
         teleScale.textContent = `${camData.scale}×`;
         telePan.textContent = `(${camData.x}, ${camData.y})`;
         if (camera.mode === 'timeline') {
-          const currentShot = time < 3.2 ? 'Master Wide (Auto)' : (time < 7.4 ? 'Girl Close-up (Auto)' : 'Boy Close-up (Auto)');
+          const currentShot = time < 4.47 ? 'Scene 1 Push-In (Auto)' : 'Girl Close-up (Auto)';
           teleShot.textContent = currentShot;
         } else {
           teleShot.textContent = cameraSelect.options[cameraSelect.selectedIndex]?.text || camData.mode;
