@@ -17,9 +17,9 @@ export class LyricsLayer {
         id: 's2-parvardigara',
         start: 4.47,
         end: 5.08,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           { text: 'parvardigara,', isNew: true, stageStart: 4.47 },
           { text: 'parvardigara', isNew: true, stageStart: 4.47 }
@@ -29,9 +29,9 @@ export class LyricsLayer {
         id: 's2-deewan',
         start: 5.08,
         end: 5.78,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           { text: 'deewan', isNew: true, stageStart: 5.08 }
         ]
@@ -40,9 +40,9 @@ export class LyricsLayer {
         id: 's2-deewangi',
         start: 5.78,
         end: 6.58,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           { text: 'deewangi', isNew: true, stageStart: 5.78 }
         ]
@@ -51,9 +51,9 @@ export class LyricsLayer {
         id: 's2-deewangi-ki',
         start: 6.58,
         end: 7.18,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           {
             words: [
@@ -67,9 +67,9 @@ export class LyricsLayer {
         id: 's2-hadd',
         start: 7.18,
         end: 7.68,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           { text: 'deewangi ki', isNew: false },
           { text: 'hadd', isNew: true, stageStart: 7.18 }
@@ -79,9 +79,9 @@ export class LyricsLayer {
         id: 's2-maine',
         start: 7.68,
         end: 8.28,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           { text: 'deewangi ki', isNew: false },
           { text: 'hadd', isNew: false },
@@ -92,9 +92,9 @@ export class LyricsLayer {
         id: 's2-maine-nochi',
         start: 8.28,
         end: 8.78,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           { text: 'deewangi ki', isNew: false },
           { text: 'hadd', isNew: false },
@@ -109,10 +109,10 @@ export class LyricsLayer {
       {
         id: 's2-o',
         start: 8.78,
-        end: 8.95,
-        x: 46,
-        y: 162,
-        fontSize: 25,
+        end: 10.5,
+        x: 48,
+        y: 160,
+        fontSize: 27,
         lines: [
           { text: 'o', isNew: true, stageStart: 8.78 }
         ]
@@ -186,7 +186,7 @@ export class LyricsLayer {
       this.contentGroup.setAttribute('transform', `translate(${s2Stage.x}, ${s2Stage.y})`);
 
       // Compute progressive reveal timing and subtle horizontal settling
-      const lineHeight = 31;
+      const lineHeight = 35;
       let html = '';
 
       s2Stage.lines.forEach((lineObj, idx) => {
@@ -208,12 +208,12 @@ export class LyricsLayer {
 
           html += `
             <text x="0" y="${yPos}" 
-                  fill="#FFF8F0" 
+                  fill="#FFFDF8" 
                   font-family="'Caveat', cursive, sans-serif" 
                   font-weight="400" 
                   font-size="${s2Stage.fontSize}" 
                   letter-spacing="0.4px"
-                  style="text-shadow: 0 1px 2px rgba(80, 50, 60, 0.2);">
+                  style="text-shadow: 0 1px 3px rgba(50, 25, 35, 0.45);">
               ${wordHtml}
             </text>
           `;
@@ -229,13 +229,13 @@ export class LyricsLayer {
 
           html += `
             <text x="${settleX.toFixed(1)}" y="${yPos}" 
-                  fill="#FFF8F0" 
+                  fill="#FFFDF8" 
                   opacity="${lineOpacity.toFixed(3)}"
                   font-family="'Caveat', cursive, sans-serif" 
                   font-weight="400" 
                   font-size="${s2Stage.fontSize}" 
                   letter-spacing="0.4px"
-                  style="text-shadow: 0 1px 2px rgba(80, 50, 60, 0.2);">
+                  style="text-shadow: 0 1px 3px rgba(50, 25, 35, 0.45);">
               ${lineObj.text}
             </text>
           `;
