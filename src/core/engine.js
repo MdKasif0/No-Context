@@ -1,3 +1,4 @@
+
 /**
  * Deterministic 30 FPS Animation Engine
  * Handles precise timeline updates, frame stepping, playback rates, and audio sync.
@@ -122,7 +123,7 @@ export class AnimationEngine {
         this.currentTime = 0;
         if (this.audioElement) {
           this.audioElement.currentTime = 0;
-          this.audioElement.play().catch(() => {});
+          this.audioElement.play().catch(() => { });
         }
       } else {
         this.currentTime = this.duration;
