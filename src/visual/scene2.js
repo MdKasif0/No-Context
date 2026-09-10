@@ -4,11 +4,12 @@
  * 
  * Features:
  * - Hand-drawn anime male character with upward-tilted profile facing screen-left.
- * - Sleek sculpted anime hair mop with distinct crown spikes and front brow lock (no bumpy lobes).
+ * - Sleek sculpted anime hair mop with distinct crown spikes and front brow lock.
+ * - Clean boundary between head skin and hair (zero skin bleeding/artifacts).
  * - Upturned nose, delicate mouth slit, soft peach cheek blush, stylized ear, proportional neck.
- * - Crisp spread collar cream shirt open at throat with central placket down to trousers.
+ * - Crisp spread collar cream shirt open at throat with clean central placket down to trousers.
  * - Tailored dark plum blazer with notch lapel, natural silhouette, sleeve cuff buttons,
- *   radiating waist fold lines, and hand slipping into trouser pocket.
+ *   radiating waist fold lines on right panel, and hand slipping into trouser pocket.
  * - Recomposed peach sunset sky, layered pink clouds, distant apartment towers with glowing amber windows,
  *   blooming purple tree silhouette on lower-right, and horizontal rooftop railing behind character.
  * - Living illustration animation: breathing cycle, micro head movement transition, breeze hair sway,
@@ -228,7 +229,6 @@ export class Scene2Layer {
                    L740,720 Z" 
                 fill="#6A5167" stroke="#3D293B" stroke-width="1.6" />
 
-          <!-- Intricate decorative stippled leaf lobes -->
           <circle cx="700" cy="478" r="10" fill="#755C72" />
           <circle cx="688" cy="492" r="12" fill="#6A5167" />
           <circle cx="712" cy="495" r="13" fill="#785F75" />
@@ -319,36 +319,29 @@ export class Scene2Layer {
         <!-- Torso & Blazer (Root Group for Breathing Animation) -->
         <g id="s2-char-torso-group">
           
-          <!-- Back Neck / Upper Chest Skin Under Collar -->
-          <path d="M348,252 
-                   C346,275 352,295 355,305 
-                   L445,305 
-                   C438,280 430,265 422,260 Z" 
-                fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="1.8" />
-
-          <!-- Cream Shirt Undercoat Placket (Visible down center of open coat) -->
+          <!-- Cream Shirt Undercoat Placket (Clean white panel down center) -->
           <g id="s2-shirt-placket">
-            <path d="M362,305 
-                     L420,305 
-                     L405,640 
-                     L368,640 Z" 
+            <path d="M346,305 
+                     L386,305 
+                     L380,640 
+                     L348,640 Z" 
                   fill="url(#s2-shirt-fabric)" stroke="#43353F" stroke-width="1.6" />
-            <path d="M386,315 C383,410 380,510 378,635" fill="none" stroke="#D5C7B7" stroke-width="1.5" />
+            <path d="M366,315 C364,410 362,510 362,635" fill="none" stroke="#D5C7B7" stroke-width="1.5" />
           </g>
 
           <!-- White Spread Collar Wings (Open at throat in V) -->
           <g id="s2-shirt-collar">
             <!-- Left collar wing -->
-            <path d="M352,292 
-                     L328,332 
-                     L358,345 
+            <path d="M356,292 
+                     L332,330 
+                     L360,342 
                      L372,302 Z" 
                   fill="url(#s2-shirt-fabric)" stroke="#342330" stroke-width="2.0" />
             <!-- Right collar wing -->
             <path d="M380,302 
-                     L418,342 
-                     L442,318 
-                     L415,292 Z" 
+                     L418,338 
+                     L440,315 
+                     L415,294 Z" 
                   fill="url(#s2-shirt-fabric)" stroke="#342330" stroke-width="2.0" />
             <!-- V opening throat shadow -->
             <path d="M372,302 L380,302 L376,318 Z" fill="#E5B59E" />
@@ -359,21 +352,21 @@ export class Scene2Layer {
             
             <!-- Left coat body / natural draped silhouette (matching frame_06.jpg) -->
             <g id="s2-jacket-left-bulge">
-              <path d="M332,330 
-                       C305,385 272,460 262,525 
-                       C255,570 266,615 295,640 
-                       C315,650 345,648 368,638 
-                       L358,340 Z" 
+              <path d="M330,325 
+                       C308,375 278,440 268,505 
+                       C260,555 268,600 295,635 
+                       C315,645 338,642 355,635 
+                       L346,330 Z" 
                     fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
               <!-- Inner shadow along coat contour -->
-              <path d="M320,360 C290,430 274,510 278,570 C284,610 302,635 330,642" 
+              <path d="M320,355 C295,420 280,490 284,550 C290,590 306,620 332,635" 
                     fill="none" stroke="#2B1D28" stroke-width="1.8" opacity="0.65" />
             </g>
 
             <!-- Main Jacket Body, Notch Lapels & Right Sleeve -->
             <g id="s2-jacket-main-body">
               <!-- Right Notch Lapel -->
-              <path d="M415,292 
+              <path d="M415,294 
                        L462,352 
                        L438,362 
                        L472,425 
@@ -382,13 +375,13 @@ export class Scene2Layer {
                     fill="#443540" stroke="#32222E" stroke-width="2.2" />
 
               <!-- Main Jacket Back & Right Shoulder -->
-              <path d="M415,292 
+              <path d="M415,294 
                        C455,298 505,322 530,355 
                        C545,378 545,430 538,490 
                        C530,550 518,600 500,635 
                        C485,655 465,662 440,652 
                        C425,646 410,638 395,630 
-                       L415,292 Z" 
+                       L415,294 Z" 
                     fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
 
               <!-- Right Arm & Sleeve Outer Contour -->
@@ -404,11 +397,11 @@ export class Scene2Layer {
               <path d="M475,445 C485,470 495,498 490,528" fill="none" stroke="#2E202B" stroke-width="1.8" />
               <path d="M460,475 C475,498 482,525 478,552" fill="none" stroke="#2E202B" stroke-width="1.6" />
 
-              <!-- 4 Radiating Fabric Creases Spreading Across Waist towards Pocket -->
-              <path id="s2-crease-1" d="M338,510 C368,528 405,548 440,560" fill="none" stroke="#2C1E29" stroke-width="1.8" />
-              <path id="s2-crease-2" d="M332,548 C365,565 408,582 438,594" fill="none" stroke="#2C1E29" stroke-width="1.8" />
-              <path id="s2-crease-3" d="M326,582 C356,598 395,612 425,622" fill="none" stroke="#2C1E29" stroke-width="1.7" />
-              <path id="s2-crease-4" d="M318,612 C345,624 380,634 410,642" fill="none" stroke="#2C1E29" stroke-width="1.6" />
+              <!-- 4 Radiating Fabric Creases on Right Jacket Panel Towards Pocket (frame_06.jpg) -->
+              <path id="s2-crease-1" d="M382,520 C400,532 420,545 442,555" fill="none" stroke="#2C1E29" stroke-width="1.8" />
+              <path id="s2-crease-2" d="M380,550 C400,562 422,572 440,582" fill="none" stroke="#2C1E29" stroke-width="1.8" />
+              <path id="s2-crease-3" d="M378,580 C398,592 418,602 436,612" fill="none" stroke="#2C1E29" stroke-width="1.7" />
+              <path id="s2-crease-4" d="M376,608 C394,618 412,626 430,634" fill="none" stroke="#2C1E29" stroke-width="1.6" />
 
               <!-- 3 Cuff Buttons on Sleeve -->
               <circle cx="478" cy="610" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
@@ -435,20 +428,18 @@ export class Scene2Layer {
         <!-- ==================================================== -->
         <g id="s2-char-head-group">
           
-          <!-- Head Base Skin Mass (Neck starts at collar, jawline to chin) -->
+          <!-- Head Base Skin Mass (Strictly confined inside hair boundary - zero bleed) -->
           <path id="s2-head-skin"
-                d="M352,292 
-                   C348,278 344,262 342,252 
-                   C336,248 326,244 322,238 
+                d="M356,292 
+                   C348,275 344,260 342,250 
+                   C336,246 326,242 322,238 
                    C318,232 322,226 324,222 
                    C322,218 318,212 324,204 
                    C328,192 336,180 342,172 
-                   C365,145 405,130 440,145 
-                   C475,160 495,195 490,230 
-                   C485,255 465,275 442,285 
-                   C435,275 425,265 422,260 
-                   C430,280 438,295 445,305 
-                   L352,292 Z" 
+                   C355,165 375,170 395,190 
+                   C405,210 415,230 418,260 
+                   C422,275 428,288 435,298 
+                   L356,292 Z" 
                 fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="2.2" />
 
           <!-- Soft Warm Peach Cheek Blush (frame_06.jpg) -->
@@ -479,37 +470,38 @@ export class Scene2Layer {
           </g>
 
           <!-- ==================================================== -->
-          <!-- TOUSLED ANIME HAIR (Authentic Sculpted Anime Mop)    -->
+          <!-- TOUSLED ANIME HAIR (Sleek Continuous Anime Silhouette)-->
           <!-- ==================================================== -->
           <g id="s2-hair-group">
-            <!-- Main Sleek Tousled Hair Contour (Clean sweep without bumpy lobes) -->
+            <!-- Main Sleek Hair Silhouette covering entire skull and nape (1:1 to scene2_boy_head.jpg) -->
             <path d="M342,172 
                      C336,158 342,138 354,122 
-                     C368,105 385,90 410,82 
-                     C425,66 448,70 452,90 
-                     C468,95 482,115 480,140 
-                     C488,155 482,170 475,185 
-                     C468,210 460,240 445,265 
-                     C438,255 432,245 425,235 
-                     C416,230 406,236 398,248 
-                     C390,235 378,218 366,215 
-                     C356,212 348,220 342,228 
-                     C340,205 342,190 342,172 Z" 
+                     C368,105 385,88 410,80 
+                     C425,65 448,70 452,88 
+                     C472,82 495,102 505,128 
+                     C518,155 522,190 516,220 
+                     C510,248 490,272 462,284 
+                     C446,290 435,280 428,264 
+                     C420,250 416,234 404,232 
+                     C394,230 388,236 382,246 
+                     C374,232 366,218 356,214 
+                     C348,212 344,220 340,228 
+                     C338,205 342,190 342,172 Z" 
                   fill="#453E4E" stroke="#302432" stroke-width="2.4" />
 
             <!-- Dynamic Crown Spikes for Wind Oscillation -->
             <g id="s2-crown-spikes">
               <!-- Highest crest spike -->
-              <path d="M420,82 C430,62 448,65 448,88 C438,94 430,100 424,106 Z" 
+              <path d="M420,80 C430,60 448,64 448,86 C438,92 430,98 424,104 Z" 
                     fill="#433C4C" stroke="#302432" stroke-width="2.0" />
               <!-- Back outward flick -->
-              <path d="M472,130 C495,135 502,155 482,168 C476,158 472,146 468,138 Z" 
+              <path d="M472,125 C498,128 506,148 485,160 C478,152 474,142 470,134 Z" 
                     fill="#3F3847" stroke="#302432" stroke-width="2.0" />
             </g>
 
             <!-- Forehead Bangs & Loose Strands -->
             <g id="s2-front-bangs">
-              <!-- Distinct Forward Flick Lock over brow -->
+              <!-- Distinct Forward Flick Lock over brow (frame_06.jpg) -->
               <path id="s2-forward-flick" 
                     d="M346,148 C322,140 318,158 332,170 C338,164 344,158 350,154 Z" 
                     fill="#4A4253" stroke="#302432" stroke-width="2.0" />
