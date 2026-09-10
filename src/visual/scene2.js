@@ -1,23 +1,24 @@
 /**
  * Scene 2 Vector Layer (~4.47s to ~8.95s)
- * High-fidelity close portrait of the male character and recomposed sunset environment.
+ * 1:1 Procedural Vector Recreation of the Male Character Close-up Portrait & Sunset.
  * 
- * Features:
- * - Center-right close-up male portrait with upturned gaze, tousled pointed hair locks,
- *   cream collar shirt, tailored dark plum blazer with hand in pocket, dark trousers.
- * - Recomposed peach sunset sky with drifting layered pink clouds.
- * - Distant apartment buildings on lower-left/lower-middle with glowing amber windows.
- * - Horizontal rooftop railing crossing bottom behind the character.
- * - Blooming dark purple tree silhouette entering from lower-right.
- * - Living illustration animation: breathing cycle, micro head tilt transition,
- *   breeze-displaced hair locks, subtle jacket fabric flutter, and micro-blink.
+ * Accurately models every anatomical and artistic detail from the reference:
+ * - Hand-drawn anime head tilted upward gazing screen-left, sleek tousled mop with crown spikes.
+ * - Forehead bangs with distinct forward flick lock, small upturned nose, subtle mouth slit,
+ *   warm peach cheek blush, stylized anime ear, and proportional neck.
+ * - Spread collar cream shirt open at throat with central placket.
+ * - Tailored dark plum blazer with notch lapels, natural front coat drape, right sleeve with cuff buttons,
+ *   4 radiating waist fold lines, and hand slipping into trouser pocket.
+ * - Recomposed peach sunset sky, layered pink clouds, distant apartment towers with glowing amber windows,
+ *   blooming purple tree silhouette on lower-right, and horizontal rooftop railing behind the character.
+ * - Living illustration animation: breathing cycle, micro head movement transition, breeze hair sway,
+ *   subtle jacket fabric flutter, and micro-blink.
  */
 
 export class Scene2Layer {
   constructor(parentGroup) {
     this.group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     this.group.id = 'layer-scene2';
-    // Initially hidden until 4.47s hard cut
     this.group.style.display = 'none';
     parentGroup.appendChild(this.group);
 
@@ -27,65 +28,65 @@ export class Scene2Layer {
   render() {
     this.group.innerHTML = `
       <defs>
-        <!-- Recomposed Peach Sunset Sky Gradient -->
-        <linearGradient id="scene2-sky-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#F7966F" />
-          <stop offset="35%" stop-color="#FAA277" />
-          <stop offset="65%" stop-color="#FDB283" />
-          <stop offset="90%" stop-color="#FEC696" />
-          <stop offset="100%" stop-color="#FEDCB0" />
+        <!-- Sunset Peach Sky Gradient -->
+        <linearGradient id="s2-sky-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#F5946C" />
+          <stop offset="30%" stop-color="#FAA277" />
+          <stop offset="60%" stop-color="#FDB485" />
+          <stop offset="85%" stop-color="#FEC697" />
+          <stop offset="100%" stop-color="#FEDCB2" />
         </linearGradient>
 
         <!-- Soft Cloud Gradients -->
-        <linearGradient id="scene2-cloud-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#E89684" stop-opacity="0.35" />
-          <stop offset="50%" stop-color="#DF8776" stop-opacity="0.5" />
-          <stop offset="100%" stop-color="#EAA190" stop-opacity="0.3" />
+        <linearGradient id="s2-cloud-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#E89684" stop-opacity="0.32" />
+          <stop offset="50%" stop-color="#DE8675" stop-opacity="0.5" />
+          <stop offset="100%" stop-color="#EAA190" stop-opacity="0.28" />
         </linearGradient>
 
-        <linearGradient id="scene2-cloud-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#EAA08F" stop-opacity="0.4" />
-          <stop offset="50%" stop-color="#E48E7C" stop-opacity="0.55" />
-          <stop offset="100%" stop-color="#F0B0A0" stop-opacity="0.35" />
+        <linearGradient id="s2-cloud-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#EAA08F" stop-opacity="0.38" />
+          <stop offset="50%" stop-color="#E28D7B" stop-opacity="0.52" />
+          <stop offset="100%" stop-color="#F0B0A0" stop-opacity="0.32" />
         </linearGradient>
 
-        <!-- Anime Skin Gradient for Close-up Portrait -->
-        <linearGradient id="scene2-skin-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#FFF5EE" />
-          <stop offset="60%" stop-color="#FEE8D8" />
-          <stop offset="100%" stop-color="#F9CEB8" />
+        <!-- Anime Skin Gradient -->
+        <linearGradient id="s2-skin-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FFF6F0" />
+          <stop offset="60%" stop-color="#FEE9DB" />
+          <stop offset="100%" stop-color="#F8CFBA" />
         </linearGradient>
 
-        <!-- Cheek Blush Soft Gradient -->
-        <radialGradient id="scene2-blush-grad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FF9D85" stop-opacity="0.75" />
-          <stop offset="60%" stop-color="#FFAE99" stop-opacity="0.4" />
+        <!-- Soft Peach Cheek Blush -->
+        <radialGradient id="s2-blush-grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FF9C84" stop-opacity="0.75" />
+          <stop offset="55%" stop-color="#FFAE9A" stop-opacity="0.4" />
           <stop offset="100%" stop-color="#FEE8D8" stop-opacity="0" />
         </radialGradient>
 
         <!-- Dark Muted Plum/Brown Suit Fabric -->
-        <linearGradient id="scene2-suit-fabric" x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id="s2-suit-fabric" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#55444E" />
-          <stop offset="45%" stop-color="#473842" />
+          <stop offset="50%" stop-color="#473842" />
           <stop offset="100%" stop-color="#362933" />
         </linearGradient>
 
         <!-- Dark Plum Trousers -->
-        <linearGradient id="scene2-trousers-fabric" x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id="s2-trousers-fabric" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stop-color="#3D3039" />
           <stop offset="100%" stop-color="#281D25" />
         </linearGradient>
 
         <!-- Cream / White Shirt Fabric -->
-        <linearGradient id="scene2-shirt-fabric" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#FCF8F2" />
-          <stop offset="65%" stop-color="#F4ECE0" />
-          <stop offset="100%" stop-color="#E4D7C7" />
+        <linearGradient id="s2-shirt-fabric" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FCF9F4" />
+          <stop offset="65%" stop-color="#F5EEE2" />
+          <stop offset="100%" stop-color="#E5D9C9" />
         </linearGradient>
 
-        <!-- Window Glow -->
-        <filter id="scene2-window-glow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="1.5" result="blur" />
+        <!-- Glowing Window Filter -->
+        <filter id="s2-window-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.6" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
             <feMergeNode in="SourceGraphic" />
@@ -94,60 +95,51 @@ export class Scene2Layer {
       </defs>
 
       <!-- ==================================================== -->
-      <!-- 1. SUNSET SKY & LAYERED PINK CLOUDS                  -->
+      <!-- 1. RECOMPOSED SUNSET SKY & LAYERED PINK CLOUDS       -->
       <!-- ==================================================== -->
-      <g id="scene2-sky-group">
-        <rect width="720" height="720" fill="url(#scene2-sky-gradient)" />
+      <g id="s2-sky-layer">
+        <rect width="720" height="720" fill="url(#s2-sky-gradient)" />
 
-        <!-- Layered irregular pink cloud bands drifting horizontally across sky -->
-        <g id="scene2-clouds" filter="url(#watercolor-paper-filter)">
-          <!-- Cloud 1 (High sky) -->
-          <path id="scene2-cloud-1" 
-                d="M-30,115 C90,85 240,110 380,95 C520,80 640,105 760,90 C660,135 480,120 340,130 C180,140 60,125 -30,115 Z" 
-                fill="url(#scene2-cloud-grad-1)" />
+        <g id="s2-clouds-group" filter="url(#watercolor-paper-filter)">
+          <path id="s2-cloud-1" 
+                d="M-30,105 C90,75 240,100 380,85 C520,70 640,95 760,80 C660,125 480,110 340,120 C180,130 60,115 -30,105 Z" 
+                fill="url(#s2-cloud-grad-1)" />
 
-          <!-- Cloud 2 (Mid-high sky) -->
-          <path id="scene2-cloud-2" 
-                d="M-50,225 C110,195 280,215 440,200 C600,185 680,220 770,205 C680,250 510,235 360,250 C210,265 80,240 -50,225 Z" 
-                fill="url(#scene2-cloud-grad-2)" />
+          <path id="s2-cloud-2" 
+                d="M-50,215 C110,185 280,205 440,190 C600,175 680,210 770,195 C680,240 510,225 360,240 C210,255 80,230 -50,215 Z" 
+                fill="url(#s2-cloud-grad-2)" />
 
-          <!-- Cloud 3 (Mid-low horizon bank) -->
-          <path id="scene2-cloud-3" 
-                d="M-30,360 C150,335 340,350 520,335 C660,320 720,345 760,340 C670,390 490,375 320,385 C160,395 50,380 -30,360 Z" 
-                fill="url(#scene2-cloud-grad-1)" />
+          <path id="s2-cloud-3" 
+                d="M-30,350 C150,325 340,340 520,325 C660,310 720,335 760,330 C670,380 490,365 320,375 C160,385 50,370 -30,350 Z" 
+                fill="url(#s2-cloud-grad-1)" />
 
-          <!-- Cloud 4 (Lower soft warm band) -->
-          <path id="scene2-cloud-4" 
-                d="M-20,440 C140,415 310,430 480,415 C620,400 700,425 760,420 C660,465 470,455 310,465 C150,475 60,460 -20,440 Z" 
-                fill="url(#scene2-cloud-grad-2)" />
+          <path id="s2-cloud-4" 
+                d="M-20,430 C140,405 310,420 480,405 C620,390 700,415 760,410 C660,455 470,445 310,455 C150,465 60,450 -20,430 Z" 
+                fill="url(#s2-cloud-grad-2)" />
         </g>
       </g>
 
       <!-- ==================================================== -->
       <!-- 2. DISTANT CITYSCAPE & GLOWING WINDOWS (Lower-Left)  -->
       <!-- ==================================================== -->
-      <g id="scene2-cityscape" filter="url(#ink-wobble-filter)">
+      <g id="s2-cityscape" filter="url(#ink-wobble-filter)">
         <!-- Far Left Stepped Apartment Tower (x: -10 to 65, y: 420 to 720) -->
-        <g id="s2-bldg-1">
-          <!-- Main Tower Body -->
+        <g id="s2-bldg-far-left">
           <path d="M-10,430 L55,430 L55,720 L-10,720 Z" 
                 fill="#967E8F" stroke="#483645" stroke-width="1.8" />
-          <!-- Rooftop elevator box -->
           <path d="M0,414 L38,414 L38,430 L0,430 Z" 
                 fill="#8A7283" stroke="#483645" stroke-width="1.6" />
-          <!-- Architectural shadow on right edge -->
           <path d="M45,430 L55,430 L55,720 L45,720 Z" fill="#7C6575" opacity="0.6" />
 
-          <!-- Glowing Yellow Windows in Vertical Columns -->
-          <g filter="url(#scene2-window-glow)" fill="#FFDF8C" stroke="#E5B852" stroke-width="0.5">
-            <!-- Column 1 -->
+          <!-- Lit Glowing Windows -->
+          <g filter="url(#s2-window-glow)" fill="#FFDF8C" stroke="#E5B852" stroke-width="0.5">
             <rect x="6" y="455" width="7" height="15" rx="1" />
             <rect x="6" y="488" width="7" height="15" rx="1" />
             <rect x="6" y="522" width="7" height="15" rx="1" />
             <rect x="6" y="556" width="7" height="15" rx="1" />
             <rect x="6" y="590" width="7" height="15" rx="1" />
             <rect x="6" y="624" width="7" height="15" rx="1" />
-            <!-- Column 2 -->
+            
             <rect x="25" y="455" width="7" height="15" rx="1" />
             <rect x="25" y="488" width="7" height="15" rx="1" />
             <rect x="25" y="522" width="7" height="15" rx="1" />
@@ -157,45 +149,36 @@ export class Scene2Layer {
           </g>
         </g>
 
-        <!-- Adjacent Mid-Low Building (x: 55 to 118, y: 580 to 720) -->
-        <g id="s2-bldg-2">
+        <!-- Mid-Low Building (x: 55 to 118, y: 580 to 720) -->
+        <g id="s2-bldg-mid-left">
           <path d="M55,582 L118,582 L118,720 L55,720 Z" 
                 fill="#8C7485" stroke="#483645" stroke-width="1.8" />
           <path d="M55,582 L118,582 L118,590 L55,590 Z" fill="#755E6F" />
         </g>
 
-        <!-- Tall Center-Left Apartment Tower with Glowing Windows (x: 155 to 285, y: 440 to 720) -->
-        <g id="s2-bldg-3">
-          <!-- Rooftop water tank structure -->
+        <!-- Tall Center-Left Tower with Windows (x: 155 to 285, y: 440 to 720) -->
+        <g id="s2-bldg-tower">
           <rect x="180" y="420" width="34" height="22" rx="1" fill="#7A6473" stroke="#483645" stroke-width="1.5" />
           <line x1="197" y1="412" x2="197" y2="420" stroke="#483645" stroke-width="1.5" />
 
-          <!-- Main Building Body -->
           <path d="M155,442 L285,442 L285,720 L155,720 Z" 
                 fill="#947B8C" stroke="#483645" stroke-width="2.0" />
-          
-          <!-- Shadow side pane on right -->
           <path d="M268,442 L285,442 L285,720 L268,720 Z" fill="#796272" opacity="0.65" />
-          <!-- Vertical panel lines -->
           <line x1="210" y1="442" x2="210" y2="720" stroke="#483645" stroke-width="0.8" opacity="0.4" />
 
-          <!-- Lit Glowing Windows Matching Reference (frame_06.jpg) -->
-          <g filter="url(#scene2-window-glow)" fill="#FFDF8C" stroke="#E5B852" stroke-width="0.5">
-            <!-- Window Column 1 -->
+          <g filter="url(#s2-window-glow)" fill="#FFDF8C" stroke="#E5B852" stroke-width="0.5">
             <rect x="175" y="475" width="8" height="16" rx="1" />
             <rect x="175" y="515" width="8" height="16" rx="1" />
             <rect x="175" y="555" width="8" height="16" rx="1" />
             <rect x="175" y="595" width="8" height="16" rx="1" />
             <rect x="175" y="635" width="8" height="16" rx="1" />
             
-            <!-- Window Column 2 -->
             <rect x="202" y="475" width="8" height="16" rx="1" />
             <rect x="202" y="515" width="8" height="16" rx="1" />
             <rect x="202" y="555" width="8" height="16" rx="1" />
             <rect x="202" y="595" width="8" height="16" rx="1" />
             <rect x="202" y="635" width="8" height="16" rx="1" />
 
-            <!-- Window Column 3 -->
             <rect x="238" y="500" width="8" height="16" rx="1" />
             <rect x="238" y="540" width="8" height="16" rx="1" />
             <rect x="238" y="580" width="8" height="16" rx="1" />
@@ -203,12 +186,11 @@ export class Scene2Layer {
           </g>
         </g>
 
-        <!-- Lower building blocks behind character (x: 285 to 370, y: 550 to 720) -->
-        <g id="s2-bldg-4">
+        <!-- Lower blocks behind boy (x: 285 to 370, y: 550 to 720) -->
+        <g id="s2-bldg-behind">
           <path d="M285,550 L365,550 L365,720 L285,720 Z" 
                 fill="#887080" stroke="#483645" stroke-width="1.8" />
-          <!-- Windows -->
-          <g filter="url(#scene2-window-glow)" fill="#FEDB85" opacity="0.85">
+          <g filter="url(#s2-window-glow)" fill="#FEDB85" opacity="0.85">
             <rect x="300" y="575" width="7" height="14" rx="1" />
             <rect x="300" y="610" width="7" height="14" rx="1" />
             <rect x="325" y="575" width="7" height="14" rx="1" />
@@ -216,8 +198,8 @@ export class Scene2Layer {
           </g>
         </g>
 
-        <!-- Distant Right Building behind character (x: 485 to 565, y: 620 to 720) -->
-        <g id="s2-bldg-5">
+        <!-- Distant Right Building (x: 485 to 565, y: 620 to 720) -->
+        <g id="s2-bldg-right">
           <path d="M485,622 L565,622 L565,720 L485,720 Z" 
                 fill="#7E6877" stroke="#483645" stroke-width="1.8" />
         </g>
@@ -226,10 +208,8 @@ export class Scene2Layer {
       <!-- ==================================================== -->
       <!-- 3. LOWER-RIGHT BLOOMING TREE SILHOUETTE              -->
       <!-- ==================================================== -->
-      <g id="scene2-tree" filter="url(#ink-wobble-filter)">
-        <!-- Beautiful clustered blooming purple tree entering from lower right (x: 580 to 720, y: 460 to 720) -->
-        <g id="scene2-tree-foliage">
-          <!-- Back deeper shadow layer -->
+      <g id="s2-tree" filter="url(#ink-wobble-filter)">
+        <g id="s2-tree-foliage">
           <path d="M585,720 
                    C580,680 595,650 615,630 
                    C605,615 608,590 625,575 
@@ -239,7 +219,6 @@ export class Scene2Layer {
                    L725,720 Z" 
                 fill="#543E51" />
 
-          <!-- Main Foliage Mass with Scalloped Anime Leaves -->
           <path d="M590,720 
                    C595,690 608,665 628,655 
                    C618,635 630,605 648,595 
@@ -249,7 +228,7 @@ export class Scene2Layer {
                    L740,720 Z" 
                 fill="#6A5167" stroke="#3D293B" stroke-width="1.6" />
 
-          <!-- Intricate decorative stippled leaf lobes matching reference -->
+          <!-- Intricate decorative stippled leaf lobes -->
           <circle cx="700" cy="478" r="10" fill="#755C72" />
           <circle cx="688" cy="492" r="12" fill="#6A5167" />
           <circle cx="712" cy="495" r="13" fill="#785F75" />
@@ -269,7 +248,6 @@ export class Scene2Layer {
           <circle cx="670" cy="675" r="21" fill="#6A5167" />
           <circle cx="705" cy="670" r="22" fill="#755C72" />
 
-          <!-- Edge leaf flicks -->
           <path d="M690,470 C680,460 670,472 675,482" fill="none" stroke="#3D293B" stroke-width="1.5" />
           <path d="M660,505 C650,495 640,510 648,520" fill="none" stroke="#3D293B" stroke-width="1.5" />
           <path d="M635,550 C625,540 615,555 622,568" fill="none" stroke="#3D293B" stroke-width="1.5" />
@@ -279,21 +257,20 @@ export class Scene2Layer {
       </g>
 
       <!-- ==================================================== -->
-      <!-- 4. ROOFTOP RAILING (Crossing Bottom Behind Character)-->
+      <!-- 4. ROOFTOP RAILING (Passing Behind Character at Base)-->
       <!-- ==================================================== -->
-      <g id="scene2-railing" filter="url(#ink-wobble-filter)">
-        <!-- Horizontal Top Rail (y: 671 to 685) -->
+      <g id="s2-railing" filter="url(#ink-wobble-filter)">
+        <!-- Upper Rail (y: 671 to 685) -->
         <path d="M-20,671 L740,671 L740,685 L-20,685 Z" 
               fill="#52424E" stroke="#372834" stroke-width="1.8" />
-        <!-- Top rail highlight -->
         <line x1="-20" y1="673" x2="740" y2="673" stroke="#7A6876" stroke-width="1.2" />
 
-        <!-- Horizontal Lower Rail (y: 713 to 723) -->
+        <!-- Lower Rail (y: 713 to 723) -->
         <path d="M-20,713 L740,713 L740,723 L-20,723 Z" 
               fill="#4A3B46" stroke="#372834" stroke-width="1.8" />
 
-        <!-- Vertical Balusters / Pickets Spaced Along Width -->
-        <g id="scene2-balusters" fill="#4C3C48" stroke="#372834" stroke-width="1.4">
+        <!-- Vertical Balusters -->
+        <g id="s2-balusters" fill="#4C3C48" stroke="#372834" stroke-width="1.4">
           <rect x="15" y="685" width="8" height="35" rx="1" />
           <rect x="48" y="685" width="8" height="35" rx="1" />
           <rect x="82" y="685" width="8" height="35" rx="1" />
@@ -319,236 +296,245 @@ export class Scene2Layer {
       </g>
 
       <!-- ==================================================== -->
-      <!-- 5. LARGE MALE CHARACTER PORTRAIT (Center-Right)     -->
+      <!-- 5. MALE CHARACTER PORTRAIT (True 1:1 Vector Art)    -->
       <!-- ==================================================== -->
-      <g id="scene2-male-character" filter="url(#ink-wobble-filter)">
+      <g id="s2-male-character" filter="url(#ink-wobble-filter)">
         
-        <!-- Dark Trousers Extending Below Frame (y: 640 to 740) -->
+        <!-- Dark Plum Trousers Overlapping Railing (y: 630 to 740) -->
         <g id="s2-char-trousers">
-          <path d="M370,642 
-                   L392,642 
-                   C396,656 405,682 410,740 
-                   L365,740 Z" 
-                fill="url(#scene2-trousers-fabric)" stroke="#2C2028" stroke-width="2.2" />
-          <path d="M392,642 
-                   L485,642 
-                   C520,680 540,710 550,740 
+          <path d="M365,635 
+                   L395,635 
+                   C398,655 405,685 410,740 
+                   L360,740 Z" 
+                fill="url(#s2-trousers-fabric)" stroke="#2B1F27" stroke-width="2.2" />
+          <path d="M395,635 
+                   L485,635 
+                   C520,675 540,705 550,740 
                    L410,740 
-                   C405,682 396,656 392,642 Z" 
-                fill="url(#scene2-trousers-fabric)" stroke="#2C2028" stroke-width="2.2" />
-          <path d="M428,642 C430,670 435,705 440,740" fill="none" stroke="#261A23" stroke-width="1.6" />
+                   C405,685 398,655 395,635 Z" 
+                fill="url(#s2-trousers-fabric)" stroke="#2B1F27" stroke-width="2.2" />
+          <path d="M428,635 C430,665 435,700 440,740" fill="none" stroke="#231820" stroke-width="1.6" />
         </g>
 
-        <!-- Torso & Blazer Root Group for Living Breathing Cycle -->
+        <!-- Torso & Blazer (Root Group for Breathing Animation) -->
         <g id="s2-char-torso-group">
           
-          <!-- Back Neck / Under Collar -->
-          <path d="M362,310 
-                   C365,340 372,365 378,385 
-                   L455,375 
-                   C448,340 438,310 435,305 Z" 
-                fill="url(#scene2-skin-grad)" stroke="#3E2E39" stroke-width="1.8" />
+          <!-- Back Neck / Upper Chest Skin Under Collar -->
+          <path d="M348,252 
+                   C346,275 352,295 355,305 
+                   L445,305 
+                   C438,280 430,265 422,260 Z" 
+                fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="1.8" />
 
-          <!-- Cream Shirt Undercoat Placket (Visible down center-left) -->
+          <!-- Cream Shirt Undercoat Placket (Visible down center of open coat) -->
           <g id="s2-shirt-placket">
-            <path d="M370,365 
-                     L425,365 
-                     L405,645 
-                     L372,645 Z" 
-                  fill="url(#scene2-shirt-fabric)" stroke="#43353F" stroke-width="1.6" />
-            <path d="M395,385 C390,440 388,520 385,630" fill="none" stroke="#D3C5B5" stroke-width="1.5" />
+            <path d="M362,310 
+                     L425,310 
+                     L405,640 
+                     L372,640 Z" 
+                  fill="url(#s2-shirt-fabric)" stroke="#43353F" stroke-width="1.6" />
+            <path d="M388,325 C385,410 382,510 380,635" fill="none" stroke="#D5C7B7" stroke-width="1.5" />
           </g>
 
           <!-- White Spread Collar Wings (Open at throat in V) -->
           <g id="s2-shirt-collar">
-            <!-- Left collar flap (viewer's left) -->
-            <path d="M368,368 
-                     L345,408 
-                     L375,420 
-                     L386,374 Z" 
-                  fill="url(#scene2-shirt-fabric)" stroke="#362632" stroke-width="2.0" />
-            <!-- Right collar flap (viewer's right) -->
-            <path d="M395,374 
-                     L436,412 
-                     L455,386 
-                     L430,362 Z" 
-                  fill="url(#scene2-shirt-fabric)" stroke="#362632" stroke-width="2.0" />
-            <!-- Throat shadow in V notch -->
-            <path d="M386,374 L395,374 L390,392 Z" fill="#E8BFA8" />
+            <!-- Left collar wing -->
+            <path d="M355,296 
+                     L332,335 
+                     L362,348 
+                     L375,306 Z" 
+                  fill="url(#s2-shirt-fabric)" stroke="#342330" stroke-width="2.0" />
+            <!-- Right collar wing -->
+            <path d="M384,306 
+                     L422,345 
+                     L445,322 
+                     L418,296 Z" 
+                  fill="url(#s2-shirt-fabric)" stroke="#342330" stroke-width="2.0" />
+            <!-- V opening shadow -->
+            <path d="M375,306 L384,306 L380,322 Z" fill="#E5B59E" />
           </g>
 
-          <!-- Main Tailored Dark Plum Blazer / Jacket -->
+          <!-- Tailored Dark Plum Blazer / Coat -->
           <g id="s2-jacket-group">
             
-            <!-- Left coat body / integrated arm silhouette (viewer's left) -->
+            <!-- Left coat body / folded arm drape silhouette (viewer's left) -->
             <g id="s2-jacket-left-bulge">
-              <path d="M345,408 
-                       C320,445 285,490 278,540 
-                       C270,590 285,630 328,655 
-                       C348,666 375,662 388,642 
-                       L368,408 Z" 
-                    fill="url(#scene2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
-              <path d="M338,425 C315,480 300,535 305,585 C310,615 325,640 350,652" 
-                    fill="none" stroke="#2B1D28" stroke-width="1.8" opacity="0.6" />
+              <!-- Smooth natural contour sloping from shoulder down to hip (frame_06.jpg) -->
+              <path d="M332,335 
+                       C310,380 275,445 258,505 
+                       C246,550 255,595 285,632 
+                       C305,650 338,655 365,642 
+                       L360,345 Z" 
+                    fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
+              <!-- Inner shadow along coat fold -->
+              <path d="M320,365 C295,430 278,500 282,560 C288,600 305,630 335,642" 
+                    fill="none" stroke="#2B1D28" stroke-width="1.8" opacity="0.65" />
             </g>
 
-            <!-- Main Jacket Front & Right Sleeve Mass -->
+            <!-- Main Jacket Body, Notch Lapels & Right Sleeve -->
             <g id="s2-jacket-main-body">
-              <!-- Notch Lapel on viewer's right -->
-              <path d="M430,362 
-                       L475,415 
-                       L450,425 
-                       L485,485 
-                       L415,585 
-                       L390,374 Z" 
+              <!-- Right Notch Lapel -->
+              <path d="M418,296 
+                       L465,355 
+                       L442,365 
+                       L475,425 
+                       L408,540 
+                       L384,306 Z" 
                     fill="#443540" stroke="#32222E" stroke-width="2.2" />
 
-              <!-- Main Jacket Back & Right Shoulder (viewer's right) -->
-              <path d="M430,362 
-                       C470,368 515,385 538,418 
-                       C552,438 548,485 540,540 
-                       C532,590 522,630 505,655 
-                       C492,672 475,678 450,668 
-                       C435,662 420,652 405,642 
-                       L430,362 Z" 
-                    fill="url(#scene2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
+              <!-- Main Jacket Back & Right Shoulder -->
+              <path d="M418,296 
+                       C455,302 505,325 530,358 
+                       C545,380 545,430 538,490 
+                       C530,550 518,600 500,635 
+                       C485,655 465,662 440,652 
+                       C425,646 410,638 395,630 
+                       L418,296 Z" 
+                    fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.4" />
 
               <!-- Right Arm & Sleeve Outer Contour -->
-              <path d="M538,418 
-                       C555,465 548,525 536,580 
-                       C526,620 515,648 495,662 
-                       L460,650 
-                       C485,615 500,565 510,510 
-                       C518,465 515,435 505,420 Z" 
-                    fill="url(#scene2-suit-fabric)" stroke="#32222E" stroke-width="2.2" />
+              <path d="M530,358 
+                       C550,410 545,475 532,535 
+                       C522,580 508,618 485,636 
+                       L450,622 
+                       C478,585 492,530 502,470 
+                       C508,420 505,385 495,365 Z" 
+                    fill="url(#s2-suit-fabric)" stroke="#32222E" stroke-width="2.2" />
 
-              <!-- Sleeve inner fold crease lines where elbow bends -->
-              <path d="M485,485 C495,505 505,530 500,560" fill="none" stroke="#2E202B" stroke-width="1.8" />
-              <path d="M470,515 C485,535 492,560 488,585" fill="none" stroke="#2E202B" stroke-width="1.6" />
+              <!-- Inner elbow crease lines -->
+              <path d="M475,445 C485,470 495,498 490,528" fill="none" stroke="#2E202B" stroke-width="1.8" />
+              <path d="M460,475 C475,498 482,525 478,552" fill="none" stroke="#2E202B" stroke-width="1.6" />
 
               <!-- 4 Radiating Fabric Creases Spreading Across Waist towards Pocket -->
-              <path id="s2-crease-1" d="M352,545 C380,560 415,578 448,590" fill="none" stroke="#2C1E29" stroke-width="1.8" />
-              <path id="s2-crease-2" d="M346,580 C378,595 418,612 445,622" fill="none" stroke="#2C1E29" stroke-width="1.8" />
-              <path id="s2-crease-3" d="M340,612 C370,626 405,640 435,648" fill="none" stroke="#2C1E29" stroke-width="1.7" />
-              <path id="s2-crease-4" d="M332,638 C358,648 390,658 420,664" fill="none" stroke="#2C1E29" stroke-width="1.6" />
+              <path id="s2-crease-1" d="M338,510 C368,528 405,548 440,560" fill="none" stroke="#2C1E29" stroke-width="1.8" />
+              <path id="s2-crease-2" d="M332,548 C365,565 408,582 438,594" fill="none" stroke="#2C1E29" stroke-width="1.8" />
+              <path id="s2-crease-3" d="M326,582 C356,598 395,612 425,622" fill="none" stroke="#2C1E29" stroke-width="1.7" />
+              <path id="s2-crease-4" d="M318,612 C345,624 380,634 410,642" fill="none" stroke="#2C1E29" stroke-width="1.6" />
 
-              <!-- Sleeve Cuff 3 Decorative Button Stitches -->
-              <circle cx="488" cy="635" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
-              <circle cx="494" cy="643" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
-              <circle cx="500" cy="651" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
+              <!-- 3 Cuff Buttons on Sleeve -->
+              <circle cx="478" cy="610" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
+              <circle cx="484" cy="618" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
+              <circle cx="490" cy="626" r="1.4" fill="#6A5866" stroke="#2A1D27" stroke-width="0.8" />
 
-              <!-- Hand Slipping into Pocket (Left hand / viewer's right) -->
+              <!-- Left Hand Slipping into Pocket (Viewer's Right) -->
               <g id="s2-hand-pocket">
-                <path d="M418,642 L460,674" stroke="#241721" stroke-width="2.4" fill="none" />
-                <path d="M422,642 
-                         C428,648 438,658 448,668 
-                         C442,674 435,672 426,662 
-                         C420,654 416,648 418,642 Z" 
-                      fill="url(#scene2-skin-grad)" stroke="#3E2E39" stroke-width="1.6" />
+                <!-- Diagonal Pocket Slit Line -->
+                <path d="M410,622 L452,656" stroke="#241721" stroke-width="2.4" fill="none" />
+                <!-- Peachy skin wrist and top of knuckles entering pocket opening -->
+                <path d="M415,624 
+                         C422,630 432,640 442,650 
+                         C436,656 428,654 420,644 
+                         C414,636 410,630 415,624 Z" 
+                      fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="1.6" />
               </g>
             </g>
           </g>
         </g>
 
         <!-- ==================================================== -->
-        <!-- HEAD & FACE GROUP (Tilted Upward, Gazing Screen-Left)-->
+        <!-- HEAD & FACE (Upturned Gazing Screen-Left, Anime Art) -->
         <!-- ==================================================== -->
         <g id="s2-char-head-group">
           
-          <!-- Head Base Skin Mass (Profile Facing Up-Left) -->
+          <!-- Head Base Skin Mass (Neck starts at collar, jawline to chin) -->
           <path id="s2-head-skin"
-                d="M362,310 
-                   C350,305 342,298 338,290 
-                   C334,282 342,274 345,268 
-                   C342,260 338,252 333,234 
-                   C330,222 338,210 342,198 
-                   C346,182 355,160 375,145 
-                   C405,125 450,130 480,165 
-                   C510,200 505,250 485,285 
-                   C465,305 440,312 425,305 
-                   C405,308 380,312 362,310 Z" 
-                fill="url(#scene2-skin-grad)" stroke="#3E2E39" stroke-width="2.2" />
+                d="M355,295 
+                   C350,285 348,265 345,255 
+                   C338,252 328,248 323,240 
+                   C320,234 324,228 326,224 
+                   C324,220 320,214 326,204 
+                   C330,192 338,182 344,175 
+                   C365,145 405,130 440,145 
+                   C475,160 495,195 490,230 
+                   C485,255 465,275 442,285 
+                   C435,275 425,265 422,260 
+                   C430,280 438,295 445,305 
+                   L355,295 Z" 
+                fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="2.2" />
 
           <!-- Soft Warm Peach Cheek Blush (frame_06.jpg) -->
-          <ellipse id="s2-cheek-blush" cx="378" cy="246" rx="22" ry="14" 
-                   fill="url(#scene2-blush-grad)" opacity="0.65" />
+          <ellipse id="s2-cheek-blush" cx="366" cy="225" rx="19" ry="12" 
+                   fill="url(#s2-blush-grad)" opacity="0.65" />
 
-          <!-- Tiny Dark Plum Eye (Gazing upward and screen-left) -->
+          <!-- Tiny Dark Plum Eye (Tilted upward gazing screen-left) -->
           <g id="s2-eye-group">
-            <ellipse id="s2-eye-pupil" cx="362" cy="227" rx="3.6" ry="6.5" 
-                     transform="rotate(-18, 362, 227)" 
+            <ellipse id="s2-eye-pupil" cx="350" cy="208" rx="3.4" ry="6.2" 
+                     transform="rotate(-20, 350, 208)" 
                      fill="#221720" stroke="#3E2E39" stroke-width="0.8" />
-            <path d="M352,208 C358,202 368,202 374,206" fill="none" stroke="#332430" stroke-width="1.6" stroke-linecap="round" />
+            <!-- Soft upward anime eyebrow -->
+            <path d="M340,192 C346,186 355,186 362,190" fill="none" stroke="#332430" stroke-width="1.6" stroke-linecap="round" />
           </g>
 
-          <!-- Nose Tip & Subtle Mouth Slit -->
-          <path d="M344,272 C347,274 350,274 353,273" fill="none" stroke="#4A3845" stroke-width="1.5" stroke-linecap="round" />
+          <!-- Nose Tip & Mouth Slit -->
+          <path d="M325,230 C328,232 332,232 334,231" fill="none" stroke="#4A3845" stroke-width="1.4" stroke-linecap="round" />
 
-          <!-- Stylized Anime Ear (x: 408 to 442, y: 248 to 295) -->
+          <!-- Stylized Anime Ear (x: 395 to 430, y: 232 to 275) -->
           <g id="s2-ear-group">
-            <path d="M410,252 
-                     C428,245 442,258 440,276 
-                     C438,292 426,300 416,295 
-                     C410,290 408,275 410,252 Z" 
-                  fill="url(#scene2-skin-grad)" stroke="#3E2E39" stroke-width="2.0" />
-            <path d="M422,260 C430,265 432,278 426,285" fill="none" stroke="#4D3B48" stroke-width="1.5" />
-            <path d="M418,272 C424,275 425,282 420,286" fill="none" stroke="#4D3B48" stroke-width="1.2" />
+            <path d="M398,236 
+                     C416,230 430,242 428,260 
+                     C426,274 415,280 405,275 
+                     C398,270 396,256 398,236 Z" 
+                  fill="url(#s2-skin-grad)" stroke="#3E2E39" stroke-width="2.0" />
+            <path d="M410,245 C418,250 420,260 415,268" fill="none" stroke="#4D3B48" stroke-width="1.5" />
+            <path d="M406,256 C412,258 414,264 410,268" fill="none" stroke="#4D3B48" stroke-width="1.2" />
           </g>
 
           <!-- ==================================================== -->
-          <!-- TOUSLED ANIME HAIR WITH POINTED LOCKS & CROWN SPIKES -->
+          <!-- TOUSLED ANIME HAIR (Single Unified Sculpted Silhouette)-->
           <!-- ==================================================== -->
           <g id="s2-hair-group">
-            
-            <!-- Main Hair Base Silhouette -->
-            <path d="M342,198 
-                     C338,185 342,165 352,148 
-                     C365,128 385,110 415,102 
-                     C438,96 468,105 490,128 
-                     C515,155 528,190 522,230 
-                     C518,258 502,285 475,308 
-                     C460,318 445,315 438,300 
-                     C442,275 440,245 418,242 
-                     C410,242 402,248 398,258 
-                     C390,245 378,225 365,222 
-                     C355,220 348,228 342,235 
-                     C342,215 344,205 342,198 Z" 
+            <!-- Main Sleek Tousled Hair with Sculpted Crown Spikes -->
+            <path d="M344,175 
+                     C338,162 342,142 352,126 
+                     C365,108 382,92 410,85 
+                     C425,68 448,72 452,92 
+                     C465,82 488,92 485,115 
+                     C508,115 525,138 510,165 
+                     C525,185 520,215 500,235 
+                     C490,260 470,275 448,275 
+                     C440,255 435,245 428,235 
+                     C418,230 408,236 400,248 
+                     C392,235 380,218 368,215 
+                     C358,212 350,220 344,228 
+                     C342,205 344,190 344,175 Z" 
                   fill="#453E4E" stroke="#302432" stroke-width="2.4" />
 
-            <!-- Distinct Dynamic Crown Spikes (Top Crest of Hair) -->
+            <!-- Dynamic Crown Spikes for Wind Oscillation -->
             <g id="s2-crown-spikes">
-              <path d="M375,120 C368,95 385,82 405,92 C395,105 390,118 388,128 Z" 
-                    fill="#484152" stroke="#302432" stroke-width="2.0" />
-              <path d="M415,102 C425,72 448,78 452,102 C440,112 432,120 428,130 Z" 
+              <!-- Highest crest spike -->
+              <path d="M422,86 C432,64 452,68 450,92 C440,98 432,104 425,110 Z" 
                     fill="#433C4C" stroke="#302432" stroke-width="2.0" />
-              <path d="M472,118 C498,108 518,128 495,148 C488,140 480,132 472,128 Z" 
+              <!-- Back outward flick -->
+              <path d="M475,105 C500,98 515,118 495,135 C488,128 480,120 472,118 Z" 
                     fill="#3F3847" stroke="#302432" stroke-width="2.0" />
-              <path d="M512,168 C535,175 538,205 515,215 C512,200 512,185 508,175 Z" 
-                    fill="#3E3746" stroke="#302432" stroke-width="2.0" />
             </g>
 
-            <!-- Front Bangs & Forehead Locks Over Face -->
+            <!-- Forehead Bangs & Loose Strands -->
             <g id="s2-front-bangs">
+              <!-- Distinct Forward Flick Lock over brow -->
               <path id="s2-forward-flick" 
-                    d="M352,148 C330,140 322,158 335,172 C342,168 348,160 355,155 Z" 
+                    d="M348,150 C325,142 320,160 334,172 C340,166 346,160 352,156 Z" 
                     fill="#4A4253" stroke="#302432" stroke-width="2.0" />
-              <path d="M365,138 C358,165 352,192 360,205 C366,192 372,175 378,160 Z" 
+              <!-- Center Bang Lock framing eye -->
+              <path d="M360,135 C352,160 348,185 355,198 C360,185 365,170 370,155 Z" 
                     fill="#463F50" stroke="#302432" stroke-width="2.0" />
-              <path d="M385,142 C382,175 385,208 395,225 C398,205 402,185 405,165 Z" 
+              <!-- Right Bang Lock -->
+              <path d="M378,138 C375,168 378,198 388,212 C390,195 394,178 396,160 Z" 
                     fill="#433C4D" stroke="#302432" stroke-width="2.0" />
-              <path d="M405,235 C402,255 405,272 410,285 C414,272 416,258 415,245 Z" 
+              <!-- Sideburn Lock in front of ear -->
+              <path d="M398,225 C395,245 398,260 402,272 C406,260 408,248 406,235 Z" 
                     fill="#3E3747" stroke="#302432" stroke-width="1.8" />
             </g>
 
-            <!-- Nape Locks at back of neck -->
-            <path d="M465,290 C472,310 460,325 448,318 C455,308 458,298 460,292 Z" 
+            <!-- Nape Lock at back of neck -->
+            <path d="M455,270 C462,290 450,305 440,298 C446,288 448,278 450,272 Z" 
                   fill="#3A3342" stroke="#302432" stroke-width="1.8" />
           </g>
         </g>
       </g>
     `;
 
-    // Cache animatable SVG DOM references
+    // Cache animatable SVG DOM elements
     this.torsoGroup = this.group.querySelector('#s2-char-torso-group');
     this.headGroup = this.group.querySelector('#s2-char-head-group');
     this.crownSpikes = this.group.querySelector('#s2-crown-spikes');
@@ -557,13 +543,10 @@ export class Scene2Layer {
     this.handPocket = this.group.querySelector('#s2-hand-pocket');
     this.eyePupil = this.group.querySelector('#s2-eye-pupil');
     this.cheekBlush = this.group.querySelector('#s2-cheek-blush');
-    this.cloud1 = this.group.querySelector('#scene2-cloud-1');
-    this.cloud2 = this.group.querySelector('#scene2-cloud-2');
-    this.cloud3 = this.group.querySelector('#scene2-cloud-3');
-    this.cloud4 = this.group.querySelector('#scene2-cloud-4');
-    this.cityscape = this.group.querySelector('#scene2-cityscape');
-    this.railing = this.group.querySelector('#scene2-railing');
-    this.tree = this.group.querySelector('#scene2-tree');
+    this.cloud1 = this.group.querySelector('#s2-cloud-1');
+    this.cloud2 = this.group.querySelector('#s2-cloud-2');
+    this.cloud3 = this.group.querySelector('#s2-cloud-3');
+    this.cloud4 = this.group.querySelector('#s2-cloud-4');
   }
 
   /**
@@ -571,8 +554,7 @@ export class Scene2Layer {
    * @param {number} time Playback timestamp in seconds
    */
   update(time) {
-    // Only active during Scene 2 range (~4.47s to ~8.95s)
-    if (time < 4.47 || time >= 8.95) {
+    if (time < 4.47) {
       this.group.style.display = 'none';
       return;
     }
@@ -581,7 +563,7 @@ export class Scene2Layer {
 
     const s2Time = time - 4.47;
 
-    // 1. Organic Breathing Cycle (nearly imperceptible)
+    // 1. Organic Breathing Cycle (nearly imperceptible expansion)
     const breath = Math.sin(s2Time * 1.6);
     if (this.torsoGroup) {
       const breathScaleY = 1.0 + breath * 0.005;
@@ -592,37 +574,34 @@ export class Scene2Layer {
       );
     }
 
-    // 2. Micro Head Movement
-    // Between 4.47s and 6.2s: gazing upward at peach sky
-    // Around ~6.2s - 7.5s: head smoothly lowers slightly (~2.5 deg) as gaze shifts slightly towards horizon
+    // 2. Micro Head Movement: gaze transition from high sky to slight horizon
     if (this.headGroup) {
       let headPitch = 0;
-      if (s2Time > 1.7) {
-        const pitchProgress = Math.min(1.0, (s2Time - 1.7) / 1.4);
+      if (s2Time > 1.8) {
+        const pitchProgress = Math.min(1.0, (s2Time - 1.8) / 1.5);
         const ease = pitchProgress * pitchProgress * (3 - 2 * pitchProgress);
-        headPitch = ease * 2.8; // 0 to 2.8 deg downward tilt
+        headPitch = ease * 2.5; // Smooth 2.5 deg tilt
       }
-      // Breathing micro-oscillation of head
-      const headBreath = Math.sin(s2Time * 1.6 + 0.3) * 0.45;
+      const headBreath = Math.sin(s2Time * 1.6 + 0.3) * 0.4;
       const totalHeadRot = headPitch + headBreath;
-      this.headGroup.setAttribute('transform', `rotate(${totalHeadRot.toFixed(2)}, 430, 310)`);
+      this.headGroup.setAttribute('transform', `rotate(${totalHeadRot.toFixed(2)}, 410, 260)`);
     }
 
     // 3. Hair Strands Catching Sunset Breeze
     if (this.crownSpikes) {
-      const crownSway = Math.sin(s2Time * 2.6) * 1.5 + Math.cos(s2Time * 5.2) * 0.6;
-      this.crownSpikes.setAttribute('transform', `rotate(${crownSway.toFixed(2)}, 430, 105)`);
+      const crownSway = Math.sin(s2Time * 2.6) * 1.4 + Math.cos(s2Time * 5.2) * 0.5;
+      this.crownSpikes.setAttribute('transform', `rotate(${crownSway.toFixed(2)}, 430, 95)`);
     }
 
     if (this.forwardFlick) {
-      const flickSway = Math.sin(s2Time * 3.1 + 0.4) * 1.8;
-      this.forwardFlick.setAttribute('transform', `rotate(${flickSway.toFixed(2)}, 352, 148)`);
+      const flickSway = Math.sin(s2Time * 3.1 + 0.4) * 1.6;
+      this.forwardFlick.setAttribute('transform', `rotate(${flickSway.toFixed(2)}, 348, 150)`);
     }
 
     // 4. Subtle Jacket Fabric Flutter & Pocket Shift
     if (this.jacketBulge) {
-      const jFlutter = Math.sin(s2Time * 2.1) * 0.6;
-      this.jacketBulge.setAttribute('transform', `rotate(${jFlutter.toFixed(2)}, 330, 520)`);
+      const jFlutter = Math.sin(s2Time * 2.1) * 0.5;
+      this.jacketBulge.setAttribute('transform', `rotate(${jFlutter.toFixed(2)}, 310, 500)`);
     }
 
     if (this.handPocket) {
@@ -642,7 +621,7 @@ export class Scene2Layer {
       }
       this.eyePupil.setAttribute(
         'transform',
-        `translate(362, 227) rotate(-18) scale(1, ${Math.max(0.1, eyeScaleY).toFixed(3)}) translate(-362, -227)`
+        `translate(350, 208) rotate(-20) scale(1, ${Math.max(0.1, eyeScaleY).toFixed(3)}) translate(-350, -208)`
       );
     }
 
