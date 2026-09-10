@@ -101,7 +101,7 @@ export class SceneCompositor {
 
     // 2. Exact Hard Cut Scene Switching at 4.47s
     const isScene1 = time < 4.47;
-    const isScene2 = time >= 4.47 && time < 8.95;
+    const isScene2 = time >= 4.47;
 
     this.scene1Group.style.display = isScene1 ? 'block' : 'none';
     if (this.layerToggles.scene2.visible) {

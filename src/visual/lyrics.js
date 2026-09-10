@@ -182,6 +182,7 @@ export class LyricsLayer {
 
     if (s2Stage) {
       this.contentGroup.style.display = 'block';
+      this.contentGroup.setAttribute('opacity', '1');
       this.contentGroup.setAttribute('transform', `translate(${s2Stage.x}, ${s2Stage.y})`);
 
       // Compute progressive reveal timing and subtle horizontal settling
