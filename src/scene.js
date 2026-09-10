@@ -153,15 +153,10 @@ export class SceneCompositor {
       this.characters.group.setAttribute('filter', filterVal);
       this.foliage.group.setAttribute('filter', filterVal);
       this.railingCar.group.setAttribute('filter', filterVal);
-      if (this.scene2) {
-        const s2Tree = this.scene2.group.querySelector('#scene2-tree');
-        const s2City = this.scene2.group.querySelector('#scene2-cityscape');
-        const s2Char = this.scene2.group.querySelector('#scene2-male-character');
-        const s2Rail = this.scene2.group.querySelector('#scene2-railing');
-        if (s2Tree) s2Tree.setAttribute('filter', filterVal);
-        if (s2City) s2City.setAttribute('filter', filterVal);
-        if (s2Char) s2Char.setAttribute('filter', filterVal);
-        if (s2Rail) s2Rail.setAttribute('filter', filterVal);
+      // Scene 2: apply wobble to the entire scene2 layer group
+      if (this.scene2 && this.scene2.group) {
+        const s2MaleChar = this.scene2.group.querySelector('#s2-male-character');
+        if (s2MaleChar) s2MaleChar.setAttribute('filter', filterVal);
       }
     } else if (item.el) {
       item.el.style.display = item.visible ? 'block' : 'none';

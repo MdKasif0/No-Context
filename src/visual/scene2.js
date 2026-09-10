@@ -314,13 +314,7 @@ export class Scene2Layer {
 
     // Cache animatable SVG DOM elements
     this.torsoGroup = this.group.querySelector('#s2-char-torso-group');
-    this.headGroup = this.group.querySelector('#s2-char-head-group');
-    this.crownSpikes = this.group.querySelector('#s2-crown-spikes');
-    this.forwardFlick = this.group.querySelector('#s2-forward-flick');
-    this.leftPanel = this.group.querySelector('#s2-jacket-left-panel');
-    this.handPocket = this.group.querySelector('#s2-hand-pocket');
-    this.eyePupil = this.group.querySelector('#s2-eye-pupil');
-    this.cheekBlush = this.group.querySelector('#s2-cheek-blush');
+    this.maleSprite = this.group.querySelector('#s2-male-sprite');
     this.cloud1 = this.group.querySelector('#s2-cloud-1');
     this.cloud2 = this.group.querySelector('#s2-cloud-2');
     this.cloud3 = this.group.querySelector('#s2-cloud-3');
@@ -341,75 +335,20 @@ export class Scene2Layer {
 
     const s2Time = time - 4.47;
 
-    // 1. Organic Breathing Cycle (subtle chest rise and fall)
+    // 1. Organic Breathing Cycle (subtle chest rise and fall on the whole character sprite)
     const breath = Math.sin(s2Time * 1.6);
     if (this.torsoGroup) {
-      const breathScaleY = 1.0 + breath * 0.004;
-      const breathTransY = -breath * 0.4;
+      const breathScaleY = 1.0 + breath * 0.003;
+      const breathTransY = -breath * 0.35;
+      // Gentle micro-drift for living illustration feel
+      const microDriftX = Math.sin(s2Time * 0.75 + 0.4) * 0.3;
       this.torsoGroup.setAttribute(
         'transform',
-        `translate(0, ${breathTransY.toFixed(2)}) scale(1, ${breathScaleY.toFixed(4)})`
+        `translate(${microDriftX.toFixed(2)}, ${breathTransY.toFixed(2)}) scale(1, ${breathScaleY.toFixed(4)})`
       );
     }
 
-    // 2. Micro Head Movement: gaze transition from high sky to slight horizon
-    if (this.headGroup) {
-      let headPitch = 0;
-      if (s2Time > 1.8) {
-        const pitchProgress = Math.min(1.0, (s2Time - 1.8) / 1.5);
-        const ease = pitchProgress * pitchProgress * (3 - 2 * pitchProgress);
-        headPitch = ease * 2.2; // Smooth tilt down towards horizon
-      }
-      const headBreath = Math.sin(s2Time * 1.6 + 0.3) * 0.35;
-      const totalHeadRot = headPitch + headBreath;
-      this.headGroup.setAttribute('transform', `rotate(${totalHeadRot.toFixed(2)}, 380, 275)`);
-    }
-
-    // 3. Hair Strands Catching Sunset Breeze
-    if (this.crownSpikes) {
-      const crownSway = Math.sin(s2Time * 2.6) * 1.2 + Math.cos(s2Time * 5.2) * 0.4;
-      this.crownSpikes.setAttribute('transform', `rotate(${crownSway.toFixed(2)}, 435, 75)`);
-    }
-
-    if (this.forwardFlick) {
-      const flickSway = Math.sin(s2Time * 3.1 + 0.4) * 1.4;
-      this.forwardFlick.setAttribute('transform', `rotate(${flickSway.toFixed(2)}, 346, 128)`);
-    }
-
-    // 4. Subtle Left Coat Fabric Flutter & Pocket Shift
-    if (this.leftPanel) {
-      const jFlutter = Math.sin(s2Time * 2.1) * 0.4;
-      this.leftPanel.setAttribute('transform', `rotate(${jFlutter.toFixed(2)}, 300, 480)`);
-    }
-
-    if (this.handPocket) {
-      const pShift = Math.sin(s2Time * 1.6) * 0.25;
-      this.handPocket.setAttribute('transform', `translate(0, ${pShift.toFixed(2)})`);
-    }
-
-    // 5. Delicate Micro-Blink around ~5.9s and ~7.9s
-    if (this.eyePupil) {
-      let eyeScaleY = 1.0;
-      if (time >= 5.85 && time <= 5.97) {
-        const p = (time - 5.85) / 0.12;
-        eyeScaleY = Math.abs(Math.sin(p * Math.PI - Math.PI / 2));
-      } else if (time >= 7.85 && time <= 7.97) {
-        const p = (time - 7.85) / 0.12;
-        eyeScaleY = Math.abs(Math.sin(p * Math.PI - Math.PI / 2));
-      }
-      this.eyePupil.setAttribute(
-        'transform',
-        `translate(350, 152) rotate(-12) scale(1, ${Math.max(0.1, eyeScaleY).toFixed(3)}) translate(-350, -152)`
-      );
-    }
-
-    // 6. Subtle Cheek Blush Warmth Breathing
-    if (this.cheekBlush) {
-      const blushOp = 0.65 + Math.sin(s2Time * 1.6) * 0.08;
-      this.cheekBlush.setAttribute('opacity', blushOp.toFixed(3));
-    }
-
-    // 7. Slow Cloud Drift across sky
+    // 2. Slow Cloud Drift across sky
     if (this.cloud1) {
       const drift1 = (s2Time * 4.5) % 80;
       this.cloud1.setAttribute('transform', `translate(${drift1.toFixed(1)}, 0)`);
