@@ -1,0 +1,105 @@
+:root {
+  /* Primary sunset color tokens */
+  --sunset-peach-top: #EDA28B;
+  --sunset-peach-main: #F7BA82;
+  --sunset-peach-light: #F8C18F;
+  --sunset-peach-glow: #FCD6AC;
+  
+  /* Cloud tones */
+  --cloud-pink-main: #EFA98A;
+  --cloud-pink-soft: #F2B99E;
+  --cloud-pink-shadow: #DB8D7B;
+  --cloud-lavender: #CB8E9C;
+
+  /* Ink & Foliage */
+  --plum-outline: #65495A;
+  --plum-dark-ink: #523A49;
+  --plum-tree-deep: #453140;
+  --plum-tree-mid: #594253;
+  --plum-tree-light: #72586B;
+  --plum-tree-accent: #8E7085;
+
+  /* City buildings */
+  --city-distant-sky: #A893A0;
+  --city-mid-block: #7F6A78;
+  --city-fore-block: #634F5D;
+  --window-warm-glow: #FFE694;
+  --window-warm-soft: #F6CD68;
+  --window-dim: #A8865D;
+
+  /* Rooftop & Car */
+  --railing-dark: #503B4A;
+  --railing-accent: #6C5264;
+  --car-body-cream: #DAC7B3;
+  --car-body-shadow: #C4AF99;
+  --car-highlight: #EAE0D3;
+  --car-glass-tint: #4A3B47;
+  --car-glass-reflect: #7D6B7A;
+  --car-interior-seat: #3D2F3C;
+
+  /* Characters */
+  --character-suit-dark: #443742;
+  --character-suit-shadow: #332731;
+  --character-suit-highlight: #5A4B58;
+  --character-cream-dress: #F4D6AF;
+  --character-cream-shadow: #DFC097;
+  --character-cream-highlight: #FCEDE0;
+  --character-shirt-white: #FBF4EC;
+  --character-hair-dark: #423540;
+  --character-hair-highlight: #584955;
+  --character-skin: #FCEBDC;
+  --character-skin-shadow: #EFCFB3;
+  --character-blush: rgba(239, 142, 130, 0.42);
+
+  /* Lyric text */
+  --lyric-text: #FDF8F2;
+  --lyric-glow: rgba(253, 248, 242, 0.4);
+}
+
+/* Base anime styling utilities */
+.anime-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.hand-drawn-stroke {
+  stroke: var(--plum-outline);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.subtle-grain-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.18;
+}
+
+.paper-tint-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, rgba(254, 244, 230, 0.04) 0%, rgba(98, 70, 88, 0.16) 100%);
+  mix-blend-mode: multiply;
+}
+
+/* Watercolor soft edges */
+.watercolor-wash {
+  filter: url(#watercolor-filter);
+}
+
+.ink-wobble {
+  filter: url(#ink-wobble-filter);
+}
