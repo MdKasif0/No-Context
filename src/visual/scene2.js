@@ -303,7 +303,7 @@ export class Scene2Layer {
         <g id="s2-char-torso-group">
           <image 
             id="s2-male-sprite" 
-            href="assets/male-character.png" 
+            href="assets/male-character.png?v=v25" 
             x="0" y="0" 
             width="720" height="720" 
             preserveAspectRatio="xMidYMid meet" 

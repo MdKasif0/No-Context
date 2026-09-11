@@ -41,7 +41,7 @@ export class CharactersLayer {
       <g id="char-boy-asset" filter="url(#ink-wobble-filter)">
         <image 
           id="boy-sprite" 
-          href="assets/male-character.png" 
+          href="assets/male-character.png?v=v25" 
           x="305" y="185" 
           width="390" height="540" 
           preserveAspectRatio="xMidYMid meet" 
