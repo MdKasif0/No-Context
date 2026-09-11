@@ -3,27 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romantic Sunset Animation — 1:1 Procedural Recreation</title>
-  <meta name="description" content="A 1:1 procedural hand-drawn anime animation recreating sunset romance scene in 720x720 vector artwork with 30 FPS playback engine.">
-  <link rel="stylesheet" href="styles/main.css">
+  <title>Romantic Sunset Animation — Fullscreen 1:1 Cinematic Experience</title>
+  <meta name="description" content="A 1:1 procedural hand-drawn anime animation recreating sunset romance scene in 720x720 vector artwork with synchronized sound.">
+  <link rel="stylesheet" href="styles/main.css?v=v24">
 </head>
 <body>
   <div class="app-container">
-    <!-- Top Bar Header -->
-    <header class="app-header">
-      <div class="brand-badge">
-        <div class="brand-dot"></div>
-        <div>
-          <span class="brand-title">Procedural Anime Engine</span>
-          <span class="brand-subtitle">1:1 Vector Recreation</span>
-        </div>
-      </div>
-      <div class="specs-badge">720 × 720 • 30 FPS • 14.98s</div>
-    </header>
-
-    <!-- Stage Viewport (Strict 1:1 Aspect Ratio) -->
+    <!-- Fullscreen 1:1 Stage Viewport -->
     <main class="stage-wrapper">
-      <div class="stage-viewport" id="stage-container">
+      <div class="stage-viewport" id="stage-container" title="Click to Play/Pause • Double-click or Press 'F' for Fullscreen">
         <!-- Procedural Layered SVG Artwork -->
         <svg id="scene-svg" viewBox="0 0 720 720" width="720" height="720" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
           <!-- Dynamic layers injected via src/scene.js -->
@@ -37,248 +25,120 @@
       </div>
     </main>
 
-    <!-- Optional Synchronized Soundtrack -->
-    <audio id="scene-audio" src="audio.mp3" preload="auto"></audio>
+    <!-- Synchronized Soundtrack with Audio ON by Default -->
+    <audio id="scene-audio" src="audio.mp3" preload="auto" loop></audio>
 
-    <!-- Director HUD & Playback System -->
-    <section class="director-hud" aria-label="Animation Controls">
-      <!-- Scrubber Row -->
-      <div class="scrubber-row">
-        <div class="timeline-slider-container">
-          <input type="range" id="timeline-slider" class="timeline-slider" min="0" max="14.98" step="0.03333" value="0" aria-label="Timeline Scrubber">
-        </div>
-        <div class="time-readout" id="time-readout">00.00s / 14.98s</div>
-      </div>
-
-      <!-- Controls Row -->
-      <div class="controls-row">
-        <!-- Playback Buttons -->
-        <div class="playback-controls">
-          <button id="btn-play" class="btn-ctrl btn-primary" title="Play / Pause (Space)">
-            <svg id="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="5,3 19,12 5,21"></polygon>
-            </svg>
-            <span id="label-play">Play</span>
-          </button>
-          <button id="btn-prev-frame" class="btn-ctrl" title="Step Back 1 Frame">◀ Frame</button>
-          <button id="btn-next-frame" class="btn-ctrl" title="Step Forward 1 Frame">Frame ▶</button>
-          <button id="btn-restart" class="btn-ctrl" title="Restart to 0.0s">↺ Reset</button>
-        </div>
-
-        <!-- Camera Shot Presets -->
-        <div class="dropdown-group">
-          <label for="camera-select">Camera:</label>
-          <select id="camera-select" class="select-ctrl">
-            <option value="timeline" selected>Auto Timeline Track (Scene 1)</option>
-            <option value="wide">Master Wide (Static)</option>
-            <option value="girlShot">Girl Close-up (Roof)</option>
-            <option value="boyShot">Boy Close-up (Railing)</option>
-          </select>
-        </div>
-
-        <!-- Playback Speed -->
-        <div class="dropdown-group">
-          <label for="speed-select">Speed:</label>
-          <select id="speed-select" class="select-ctrl">
-            <option value="0.5">0.5×</option>
-            <option value="1.0" selected>1.0× (30 FPS)</option>
-            <option value="2.0">2.0×</option>
-          </select>
-        </div>
-
-        <!-- Sound Sync Toggle -->
-        <button id="btn-audio" class="btn-ctrl" title="Toggle Audio Sync">
-          <span id="audio-icon">🔇</span>
-          <span id="audio-label">Muted</span>
-        </button>
-      </div>
-
-      <!-- Layer Visibility Inspector Drawer -->
-      <div class="inspector-drawer">
-        <div class="inspector-header">
-          <span>Layer Visibility & Shaders</span>
-          <span id="fps-counter" style="color: #F7BA82; font-family: monospace;">Target: 30 FPS</span>
-        </div>
-        <div class="toggle-pills">
-          <button class="toggle-pill active" data-layer="sky">Sky & Clouds</button>
-          <button class="toggle-pill active" data-layer="city">City Skyline</button>
-          <button class="toggle-pill active" data-layer="foliage">Trees & Foliage</button>
-          <button class="toggle-pill active" data-layer="railingCar">Car & Railing</button>
-          <button class="toggle-pill active" data-layer="characters">Scene 1 Characters</button>
-          <button class="toggle-pill active" data-layer="scene2">Scene 2 Portrait</button>
-          <button class="toggle-pill active" data-layer="particles">Floating Particles</button>
-          <button class="toggle-pill active" data-layer="lyrics">Lyrics</button>
-          <button class="toggle-pill active" data-layer="grain">Paper Grain</button>
-          <button class="toggle-pill active" data-layer="wobble">Ink Jitter</button>
-        </div>
-
-        <!-- Realtime Coordinate Telemetry -->
-        <div class="telemetry-row">
-          <div class="telemetry-item">Frame: <span id="telemetry-frame">0</span> / 449</div>
-          <div class="telemetry-item">Cam Scale: <span id="telemetry-scale">1.00×</span></div>
-          <div class="telemetry-item">Cam Pan: <span id="telemetry-pan">(0, 0)</span></div>
-          <div class="telemetry-item">Shot: <span id="telemetry-shot">Scene 1 Push-In</span></div>
-        </div>
-      </div>
-    </section>
+    <!-- Floating Audio Enable Prompt (Only visible if browser blocks unmuted autoplay) -->
+    <div id="sound-prompt" class="sound-prompt" style="display: none;">
+      <span style="font-size: 16px;">🔊</span>
+      <span>Tap anywhere to enable sound</span>
+    </div>
   </div>
 
   <!-- Main Application Bootstrap -->
   <script type="module">
-    import { SceneCompositor } from './src/scene.js?v=v22';
+    import { SceneCompositor } from './src/scene.js?v=v24';
 
     window.addEventListener('DOMContentLoaded', () => {
-      const compositor = new SceneCompositor();
+      const audioEl = document.getElementById('scene-audio');
+      const soundPrompt = document.getElementById('sound-prompt');
+      const stageContainer = document.getElementById('stage-container');
+
+      // 1. Configure audio ON by default
+      audioEl.muted = false;
+      audioEl.volume = 1.0;
+
+      // 2. Initialize Scene Compositor & Deterministic Engine
+      const compositor = new SceneCompositor({
+        audioElement: audioEl
+      });
       const engine = compositor.engine;
       const camera = compositor.camera;
 
-      // Expose for verification and debugging
       window.sceneCompositor = compositor;
-      window.camera = camera;
       window.engine = engine;
+      window.camera = camera;
 
-      // UI Elements
-      const btnPlay = document.getElementById('btn-play');
-      const labelPlay = document.getElementById('label-play');
-      const iconPlay = document.getElementById('icon-play');
-      const slider = document.getElementById('timeline-slider');
-      const timeReadout = document.getElementById('time-readout');
-      const btnPrevFrame = document.getElementById('btn-prev-frame');
-      const btnNextFrame = document.getElementById('btn-next-frame');
-      const btnRestart = document.getElementById('btn-restart');
-      const cameraSelect = document.getElementById('camera-select');
-      const speedSelect = document.getElementById('speed-select');
-      const btnAudio = document.getElementById('btn-audio');
-      const audioIcon = document.getElementById('audio-icon');
-      const audioLabel = document.getElementById('audio-label');
-      const audioEl = document.getElementById('scene-audio');
+      // 3. Attempt unmuted audio autoplay
+      const startAudio = () => {
+        audioEl.muted = false;
+        audioEl.volume = 1.0;
+        audioEl.currentTime = engine.currentTime;
+        return audioEl.play();
+      };
 
-      // Telemetry elements
-      const teleFrame = document.getElementById('telemetry-frame');
-      const teleScale = document.getElementById('telemetry-scale');
-      const telePan = document.getElementById('telemetry-pan');
-      const teleShot = document.getElementById('telemetry-shot');
+      // Try playing immediately
+      startAudio()
+        .then(() => {
+          if (soundPrompt) soundPrompt.style.display = 'none';
+        })
+        .catch(() => {
+          // Browser autoplay policy blocked unmuted sound; display prompt until user interacts
+          if (soundPrompt) soundPrompt.style.display = 'flex';
+        });
 
-      let isDraggingSlider = false;
+      // 4. One-time interaction handler to unlock sound if initially restricted
+      const unlockAudio = () => {
+        startAudio()
+          .then(() => {
+            if (soundPrompt) {
+              soundPrompt.style.opacity = '0';
+              setTimeout(() => { soundPrompt.style.display = 'none'; }, 400);
+            }
+          })
+          .catch(() => {});
+        window.removeEventListener('click', unlockAudio);
+        window.removeEventListener('touchstart', unlockAudio);
+        window.removeEventListener('keydown', unlockAudio);
+      };
 
-      // Play / Pause Button Handler
-      btnPlay.addEventListener('click', () => {
+      window.addEventListener('click', unlockAudio);
+      window.addEventListener('touchstart', unlockAudio, { passive: true });
+      window.addEventListener('keydown', unlockAudio);
+
+      // 5. Stage click: Toggle Play / Pause
+      stageContainer.addEventListener('click', (e) => {
+        // Toggle play/pause
         engine.togglePlay();
       });
 
-      // Frame Stepping
-      btnPrevFrame.addEventListener('click', () => {
-        engine.pause();
-        engine.seekFrame(engine.currentFrame - 1);
-      });
-
-      btnNextFrame.addEventListener('click', () => {
-        engine.pause();
-        engine.seekFrame(engine.currentFrame + 1);
-      });
-
-      btnRestart.addEventListener('click', () => {
-        engine.seek(0);
-      });
-
-      // Timeline Scrubber
-      slider.addEventListener('input', (e) => {
-        isDraggingSlider = true;
-        const targetTime = parseFloat(e.target.value);
-        engine.seek(targetTime);
-      });
-
-      slider.addEventListener('change', () => {
-        isDraggingSlider = false;
-      });
-
-      // Camera Preset Selection
-      cameraSelect.addEventListener('change', (e) => {
-        camera.setMode(e.target.value);
-      });
-
-      // Playback Speed Selection
-      speedSelect.addEventListener('change', (e) => {
-        engine.setPlaybackRate(parseFloat(e.target.value));
-      });
-
-      // Audio Sync Toggle
-      let audioEnabled = false;
-      btnAudio.addEventListener('click', () => {
-        audioEnabled = !audioEnabled;
-        if (audioEnabled) {
-          audioEl.muted = false;
-          audioEl.currentTime = engine.currentTime;
-          if (engine.isPlaying) audioEl.play().catch(() => {});
-          audioIcon.textContent = '🔊';
-          audioLabel.textContent = 'Sound On';
-          btnAudio.classList.add('btn-primary');
-        } else {
-          audioEl.muted = true;
-          audioEl.pause();
-          audioIcon.textContent = '🔇';
-          audioLabel.textContent = 'Muted';
-          btnAudio.classList.remove('btn-primary');
+      // 6. Double click or 'F' key: Toggle native OS Fullscreen
+      const toggleFullScreen = () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
         }
-      });
+      };
 
-      // Layer Toggles
-      document.querySelectorAll('.toggle-pill').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const layerKey = btn.getAttribute('data-layer');
-          const isVisible = compositor.toggleLayer(layerKey);
-          btn.classList.toggle('active', isVisible);
-        });
-      });
+      stageContainer.addEventListener('dblclick', toggleFullScreen);
 
-      // Engine Timeline Listener
-      engine.subscribe(({ time, frame, isPlaying, totalFrames }) => {
-        if (!isDraggingSlider) {
-          slider.value = time.toFixed(2);
-        }
-
-        const formattedSecs = time.toFixed(2).padStart(5, '0');
-        timeReadout.textContent = `${formattedSecs}s / 14.98s`;
-
-        // Update play button label
-        if (isPlaying) {
-          labelPlay.textContent = 'Pause';
-          iconPlay.innerHTML = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
-        } else {
-          labelPlay.textContent = 'Play';
-          iconPlay.innerHTML = '<polygon points="5,3 19,12 5,21"></polygon>';
-        }
-
-        // Telemetry readout
-        const camData = camera.getTelemetry();
-        teleFrame.textContent = frame;
-        teleScale.textContent = `${camData.scale}×`;
-        telePan.textContent = `(${camData.x}, ${camData.y})`;
-        if (camera.mode === 'timeline') {
-          const currentShot = time < 4.47 
-            ? 'Scene 1 Push-In (Auto)' 
-            : (time < 8.95 ? 'Scene 2 Close-up (Auto)' : 'Scene 3 (Auto)');
-          teleShot.textContent = currentShot;
-        } else {
-          teleShot.textContent = cameraSelect.options[cameraSelect.selectedIndex]?.text || camData.mode;
-        }
-      });
-
-      // Keyboard spacebar shortcut
       window.addEventListener('keydown', (e) => {
-        if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT') {
+        if (e.code === 'Space') {
           e.preventDefault();
           engine.togglePlay();
-        } else if (e.code === 'ArrowLeft') {
-          engine.pause();
-          engine.seekFrame(engine.currentFrame - 1);
-        } else if (e.code === 'ArrowRight') {
-          engine.pause();
-          engine.seekFrame(engine.currentFrame + 1);
+        } else if (e.code === 'KeyF') {
+          e.preventDefault();
+          toggleFullScreen();
+        } else if (e.code === 'KeyM') {
+          e.preventDefault();
+          audioEl.muted = !audioEl.muted;
         }
       });
 
-      // Auto start playback
+      // 7. Auto-hide mouse cursor after 2.5 seconds of inactivity
+      let idleTimer = null;
+      window.addEventListener('mousemove', () => {
+        document.body.classList.remove('cursor-hidden');
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          if (engine.isPlaying) {
+            document.body.classList.add('cursor-hidden');
+          }
+        }, 2500);
+      });
+
+      // 8. Start animation engine automatically
       engine.play();
     });
   </script>
