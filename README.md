@@ -16,6 +16,20 @@ we rebuilt this entire aesthetic experience into pure, lightweight web technolog
 
 no heavy 3d engines. no 500mb `node_modules` black hole. no react reconciliation existential crises. just html, css, svg, javascript, and pure unadulterated longing.
 
+```mermaid
+graph LR
+    subgraph normal_approach["how normal people watch this"]
+        A["download 15-second mp4"] --> B["hit spacebar"] --> C["close video player"]
+    end
+
+    subgraph our_approach["how we decided to do it"]
+        D["449 deterministic svg frames"] --> E["procedural cloud gradient meshes"]
+        E --> F["sample-accurate hardware audio lock"]
+        F --> G["real-time analog paper grain shader"]
+        G --> H["same exact 15 seconds of sunset"]
+    end
+```
+
 ---
 
 ### the timeline breakdown
@@ -25,6 +39,14 @@ no heavy 3d engines. no 500mb `node_modules` black hole. no react reconciliation
 
 * **4.47s – 14.98s (scene 2: the abrupt dramatic hard cut)**  
   an immediate hard cut straight to a close portrait of him looking upward toward the evening horizon. suddenly the world is eighty percent warm peach sunset and twenty percent him reflecting on every unresolved conversation he has ever had. glowing petals drift by, and the lyrics float across the sky in timed handwriting.
+
+```mermaid
+pie title emotional distribution of the 14.98 seconds
+    "yearning while sitting on a car roof" : 30
+    "pretending to look at the sunset" : 25
+    "staring blankly into the middle distance" : 35
+    "hoping the car roof does not dent" : 10
+```
 
 ---
 
@@ -47,8 +69,31 @@ no heavy 3d engines. no 500mb `node_modules` black hole. no react reconciliation
   * if your browser throws a tantrum about unmuted autoplay, a tiny floating pill lets you tap anywhere to wake it up.
   * tapping or clicking anywhere will *never* pause the video—it simply turns on the sound and lets the scene keep rolling.
 
+```mermaid
+graph TD
+    A["user opens page in browser"] --> B{"browser sees unmuted audio"}
+    B -->|"allowed"| C["music starts playing immediately"]
+    B -->|"blocked by autoplay policy"| D["show subtle floating pill"]
+    D --> E["user taps anywhere on screen"]
+    E --> F["sound wakes up instantly"]
+    F --> G{"does the video pause?"}
+    G -->|"absolutely not"| H["continues playing smoothly without interruption"]
+```
+
 * **zero interface junk**  
   no scrubbers, no progress bars, no diagnostic overlays, and no watermarks cluttering your view. the mouse cursor even politely fades away if you stop moving it.
+
+---
+
+### codebase breakdown
+
+```mermaid
+pie title repository composition by emotional weight
+    "actual code (html, css, svg, js)" : 20
+    "aesthetic contemplation" : 45
+    "sinusoidal math for floating petals" : 15
+    "telea inpainting algorithms on his jacket" : 20
+```
 
 ---
 
