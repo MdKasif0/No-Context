@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Romantic Sunset Animation — Fullscreen 1:1 Cinematic Experience</title>
   <meta name="description" content="A 1:1 procedural hand-drawn anime animation recreating sunset romance scene in 720x720 vector artwork with synchronized sound.">
-  <link rel="stylesheet" href="styles/main.css?v=v25">
+  <link rel="stylesheet" href="styles/main.css?v=v28">
 </head>
 <body>
   <div class="app-container">
     <!-- Fullscreen 1:1 Stage Viewport -->
     <main class="stage-wrapper">
-      <div class="stage-viewport" id="stage-container" title="Click to Play/Pause • Double-click or Press 'F' for Fullscreen">
+      <div class="stage-viewport" id="stage-container" title="Double-click or Press 'F' for Fullscreen • Press Space to Play/Pause">
         <!-- Procedural Layered SVG Artwork -->
         <svg id="scene-svg" viewBox="0 0 720 720" width="720" height="720" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
           <!-- Dynamic layers injected via src/scene.js -->
@@ -37,7 +37,7 @@
 
   <!-- Main Application Bootstrap -->
   <script type="module">
-    import { SceneCompositor } from './src/scene.js?v=v25';
+    import { SceneCompositor } from './src/scene.js?v=v28';
 
     window.addEventListener('DOMContentLoaded', () => {
       const audioEl = document.getElementById('scene-audio');
@@ -59,76 +59,53 @@
       window.engine = engine;
       window.camera = camera;
 
-      // 3. Attempt unmuted audio autoplay
-      let soundUnlocked = false;
-
-      const startAudio = () => {
+      // 3. Audio & Playback controller
+      const enableAndPlaySound = () => {
         audioEl.muted = false;
         audioEl.volume = 1.0;
-        audioEl.currentTime = engine.currentTime;
-        return audioEl.play();
-      };
 
-      // 4. One-time interaction handler to unlock sound if initially restricted
-      const unlockAudio = (e) => {
-        if (soundUnlocked) return;
-        soundUnlocked = true;
-
-        if (e) {
-          e.stopPropagation();
-          if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+        if (audioEl.paused) {
+          audioEl.currentTime = engine.currentTime;
+          audioEl.play().catch((err) => {
+            console.warn('Audio play request:', err);
+          });
         }
 
-        window.removeEventListener('click', unlockAudio, true);
-        window.removeEventListener('touchstart', unlockAudio, true);
-        window.removeEventListener('keydown', unlockAudio, true);
+        if (soundPrompt) {
+          soundPrompt.style.opacity = '0';
+          setTimeout(() => { soundPrompt.style.display = 'none'; }, 300);
+        }
 
-        startAudio()
-          .then(() => {
-            if (soundPrompt) {
-              soundPrompt.style.opacity = '0';
-              setTimeout(() => { soundPrompt.style.display = 'none'; }, 400);
-            }
-          })
-          .catch((err) => {
-            console.warn('Audio playback error:', err);
-          });
-
-        // Ensure engine is and remains playing continuously without interruption
+        // Always guarantee animation engine continues playing
         if (!engine.isPlaying) {
           engine.play();
         }
       };
 
       // Try unmuted autoplay immediately on load
-      startAudio()
+      audioEl.currentTime = 0;
+      audioEl.play()
         .then(() => {
-          soundUnlocked = true;
           if (soundPrompt) soundPrompt.style.display = 'none';
         })
         .catch(() => {
-          // Browser autoplay policy blocked unmuted sound; listen in capture phase to unlock on first interaction
+          // If browser restricts unmuted autoplay, show prompt
           if (soundPrompt) soundPrompt.style.display = 'flex';
-          window.addEventListener('click', unlockAudio, true);
-          window.addEventListener('touchstart', unlockAudio, { capture: true, passive: false });
-          window.addEventListener('keydown', unlockAudio, true);
         });
+
+      // User interaction anywhere enables sound and keeps playback moving
+      // Clicking/tapping will NEVER pause the video
+      window.addEventListener('click', enableAndPlaySound);
+      window.addEventListener('touchstart', enableAndPlaySound, { passive: true });
 
       if (soundPrompt) {
         soundPrompt.addEventListener('click', (e) => {
           e.stopPropagation();
-          unlockAudio(e);
+          enableAndPlaySound();
         });
       }
 
-      // 5. Stage click: Toggle Play / Pause (Only after sound is unlocked, never on the unlock tap)
-      stageContainer.addEventListener('click', (e) => {
-        if (!soundUnlocked) return;
-        // Toggle play/pause
-        engine.togglePlay();
-      });
-
-      // 6. Double click or 'F' key: Toggle native OS Fullscreen
+      // Double click or 'F' key: Toggle native OS Fullscreen
       const toggleFullScreen = () => {
         if (!document.fullscreenElement) {
           document.documentElement.requestFullscreen().catch(() => {});
@@ -139,6 +116,10 @@
 
       stageContainer.addEventListener('dblclick', toggleFullScreen);
 
+      // Keyboard Controls:
+      // Space: Toggle Play/Pause
+      // 'F': Toggle Fullscreen
+      // 'M': Toggle Mute
       window.addEventListener('keydown', (e) => {
         if (e.code === 'Space') {
           e.preventDefault();
@@ -149,6 +130,8 @@
         } else if (e.code === 'KeyM') {
           e.preventDefault();
           audioEl.muted = !audioEl.muted;
+        } else {
+          enableAndPlaySound();
         }
       });
 

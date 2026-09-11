@@ -111,11 +111,15 @@ export class AnimationEngine {
   _loop(timestamp) {
     if (!this.isPlaying) return;
 
-    const delta = (timestamp - this.lastTimestamp) / 1000;
-    this.lastTimestamp = timestamp;
-
-    // Advance time according to playback rate
-    this.currentTime += delta * this.playbackRate;
+    // If audio is actively playing and not seeking, lock animation to audio master clock
+    if (this.audioElement && !this.audioElement.paused && !this.audioElement.seeking && this.audioElement.currentTime > 0) {
+      this.currentTime = this.audioElement.currentTime;
+      this.lastTimestamp = timestamp;
+    } else {
+      const delta = (timestamp - this.lastTimestamp) / 1000;
+      this.lastTimestamp = timestamp;
+      this.currentTime += delta * this.playbackRate;
+    }
 
     // Check bounds / looping
     if (this.currentTime >= this.duration) {
@@ -123,7 +127,7 @@ export class AnimationEngine {
         this.currentTime = 0;
         if (this.audioElement) {
           this.audioElement.currentTime = 0;
-          this.audioElement.play().catch(() => { });
+          this.audioElement.play().catch(() => {});
         }
       } else {
         this.currentTime = this.duration;
@@ -134,11 +138,6 @@ export class AnimationEngine {
 
     // Update discrete frame number
     this.currentFrame = Math.min(this.totalFrames, Math.floor(this.currentTime * this.fps));
-
-    // Periodic audio re-sync check (prevent drift)
-    if (this.audioElement && !this.audioElement.paused && Math.abs(this.audioElement.currentTime - this.currentTime) > 0.15) {
-      this.audioElement.currentTime = this.currentTime;
-    }
 
     this.notify();
     this.animationFrameId = requestAnimationFrame(this._loop);
