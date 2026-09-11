@@ -60,6 +60,8 @@
       window.camera = camera;
 
       // 3. Attempt unmuted audio autoplay
+      let soundUnlocked = false;
+
       const startAudio = () => {
         audioEl.muted = false;
         audioEl.volume = 1.0;
@@ -67,18 +69,20 @@
         return audioEl.play();
       };
 
-      // Try playing immediately
-      startAudio()
-        .then(() => {
-          if (soundPrompt) soundPrompt.style.display = 'none';
-        })
-        .catch(() => {
-          // Browser autoplay policy blocked unmuted sound; display prompt until user interacts
-          if (soundPrompt) soundPrompt.style.display = 'flex';
-        });
-
       // 4. One-time interaction handler to unlock sound if initially restricted
-      const unlockAudio = () => {
+      const unlockAudio = (e) => {
+        if (soundUnlocked) return;
+        soundUnlocked = true;
+
+        if (e) {
+          e.stopPropagation();
+          if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+        }
+
+        window.removeEventListener('click', unlockAudio, true);
+        window.removeEventListener('touchstart', unlockAudio, true);
+        window.removeEventListener('keydown', unlockAudio, true);
+
         startAudio()
           .then(() => {
             if (soundPrompt) {
@@ -86,18 +90,40 @@
               setTimeout(() => { soundPrompt.style.display = 'none'; }, 400);
             }
           })
-          .catch(() => {});
-        window.removeEventListener('click', unlockAudio);
-        window.removeEventListener('touchstart', unlockAudio);
-        window.removeEventListener('keydown', unlockAudio);
+          .catch((err) => {
+            console.warn('Audio playback error:', err);
+          });
+
+        // Ensure engine is and remains playing continuously without interruption
+        if (!engine.isPlaying) {
+          engine.play();
+        }
       };
 
-      window.addEventListener('click', unlockAudio);
-      window.addEventListener('touchstart', unlockAudio, { passive: true });
-      window.addEventListener('keydown', unlockAudio);
+      // Try unmuted autoplay immediately on load
+      startAudio()
+        .then(() => {
+          soundUnlocked = true;
+          if (soundPrompt) soundPrompt.style.display = 'none';
+        })
+        .catch(() => {
+          // Browser autoplay policy blocked unmuted sound; listen in capture phase to unlock on first interaction
+          if (soundPrompt) soundPrompt.style.display = 'flex';
+          window.addEventListener('click', unlockAudio, true);
+          window.addEventListener('touchstart', unlockAudio, { capture: true, passive: false });
+          window.addEventListener('keydown', unlockAudio, true);
+        });
 
-      // 5. Stage click: Toggle Play / Pause
+      if (soundPrompt) {
+        soundPrompt.addEventListener('click', (e) => {
+          e.stopPropagation();
+          unlockAudio(e);
+        });
+      }
+
+      // 5. Stage click: Toggle Play / Pause (Only after sound is unlocked, never on the unlock tap)
       stageContainer.addEventListener('click', (e) => {
+        if (!soundUnlocked) return;
         // Toggle play/pause
         engine.togglePlay();
       });
