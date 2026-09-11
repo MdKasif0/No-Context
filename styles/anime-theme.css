@@ -93,6 +93,7 @@
   pointer-events: none;
   background: radial-gradient(circle at 50% 45%, rgba(254, 244, 230, 0.04) 0%, rgba(98, 70, 88, 0.16) 100%);
   mix-blend-mode: multiply;
+  border-radius: inherit;
 }
 
 /* Watercolor soft edges */

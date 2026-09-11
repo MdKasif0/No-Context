@@ -87,6 +87,7 @@ body.cursor-hidden {
   height: 100%;
   display: block;
   shape-rendering: geometricPrecision;
+  border-radius: inherit;
 }
 
 /* Grain Canvas */
@@ -99,6 +100,7 @@ body.cursor-hidden {
   pointer-events: none;
   opacity: 0.24;
   mix-blend-mode: overlay;
+  border-radius: inherit;
 }
 
 /* Subtle Floating Audio Prompt if browser autoplay is blocked */

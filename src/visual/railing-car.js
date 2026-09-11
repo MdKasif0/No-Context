@@ -124,8 +124,6 @@ export class RailingCarLayer {
 
         <path d="M175,640 C172,662 168,692 166,725" fill="none" stroke="#5E4E46" stroke-width="1.4" />
 
-        <!-- Stylized hand-drawn script badge on car flank matching frame_01.jpg -->
-        <text x="195" y="688" font-family="'Caveat', cursive" font-size="14" fill="#3E302B" opacity="0.75">toots</text>
 
         <!-- Oval Side Mirror attached on right flank (matching girl_body.jpg: x: 220 - 275, y: 610 - 655) -->
         <g id="car-side-mirror">
