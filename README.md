@@ -1,169 +1,159 @@
 # no context 🌅
 
-> an unreasonably dramatic 1:1 anime sunset rooftop animation that runs entirely in your browser because someone decided an mp4 wasn't complicated enough.
+> an anime sunset rooftop scene. in your browser. because why just watch an mp4 when you can overcomplicate it with code.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
-[![Pure Vanilla](https://img.shields.io/badge/dependencies-zero-orange.svg)](#under-the-hood)
-[![FPS](https://img.shields.io/badge/fps-30%20deterministic-f8c18f.svg)](#under-the-hood)
+[![Pure Vanilla](https://img.shields.io/badge/dependencies-zero-orange.svg)](#file-map)
+[![FPS](https://img.shields.io/badge/fps-30%20deterministic-f8c18f.svg)](#file-map)
 
 ---
 
-### what even is this?
+### what is this?
 
-someone is sitting on the roof of a vintage car at golden hour. someone else is standing by the railing looking painfully contemplative in an oversized dark coat. distant apartment windows flicker on in the purple evening haze. wind blows drifting petals across the sky. lyrics gently fade into existence. feelings happen.
+- girl sits on vintage car roof.
+- boy stands by railing in oversized coat.
+- sunset goes crazy.
+- lyrics appear.
+- feelings occur.
 
-we rebuilt this entire aesthetic experience into pure, lightweight web technology—layered vector artwork, a real-time paper grain canvas shader, smooth organic animations, and sample-accurate audio sync.
-
-no heavy 3d engines. no 500mb `node_modules` black hole. no react reconciliation existential crises. just html, css, svg, javascript, and pure unadulterated longing.
+zero frameworks. zero node_modules. zero dependencies.  
+just pure html, css, svg, and unprovoked emotional damage.
 
 ```mermaid
 graph LR
-    subgraph normal_approach["how normal people watch this"]
-        A["download 15-second mp4"] --> B["hit spacebar"] --> C["close video player"]
+    subgraph normal_people["normal people"]
+        A["open 15s video"] --> B["watch it"] --> C["close tab"]
     end
 
-    subgraph our_approach["how we decided to do it"]
-        D["449 deterministic svg frames"] --> E["procedural cloud gradient meshes"]
-        E --> F["sample-accurate hardware audio lock"]
-        F --> G["real-time analog paper grain shader"]
-        G --> H["same exact 15 seconds of sunset"]
+    subgraph us["us"]
+        D["449 svg frames"] --> E["procedural sunset"]
+        E --> F["audio clock lock"]
+        F --> G["paper grain shader"]
+        G --> H["same 15s of sunset"]
     end
 ```
 
 ---
 
-### the timeline breakdown
+### timeline
 
-* **0.00s – 4.46s (scene 1: the wide rooftop stare-down)**  
-  she is perched sideways on the vehicle roof, dress flowing softly against the metal. he stands near the railing pretending he didn't spend twenty minutes figuring out how to casually put his hands in his pockets. warm peach gradients stretch across the sky, distant apartments light up one by one, and a slender tree sways in the evening breeze.
+- **0.00s – 4.46s (the wide rooftop shot)**  
+  she sits on a car.  
+  he stands by the railing pretending to look natural.  
+  distant windows flicker.  
+  leaves blow around.
 
-* **4.47s – 14.98s (scene 2: the abrupt dramatic hard cut)**  
-  an immediate hard cut straight to a close portrait of him looking upward toward the evening horizon. suddenly the world is eighty percent warm peach sunset and twenty percent him reflecting on every unresolved conversation he has ever had. glowing petals drift by, and the lyrics float across the sky in timed handwriting.
+- **4.47s – 14.98s (the dramatic hard cut)**  
+  instant cut to his face.  
+  80% peach sky, 20% him contemplating life.  
+  lyrics float in.  
+  immaculate autumn breeze energy.
 
 ```mermaid
-pie title emotional distribution of the 14.98 seconds
-    "yearning while sitting on a car roof" : 30
-    "pretending to look at the sunset" : 25
-    "staring blankly into the middle distance" : 35
-    "hoping the car roof does not dent" : 10
+pie title how the 14.98 seconds feel
+    "yearning on car roof" : 30
+    "pretending to watch sunset" : 25
+    "staring blankly into distance" : 35
+    "hoping car roof does not dent" : 10
 ```
 
 ---
 
-### features that had no business being this detailed
+### stuff we over-engineered
 
-* **1:1 square cinematic frame with rounded edges**  
-  contained in an elegant 28px rounded viewport with multi-layered ambient drop shadows, so it floats cleanly on your screen like a living polaroid.
-
-* **pristine extracted character artwork**  
-  characters are preserved directly from the original reference animation frames—every hair strand, blush tone, and coat fold is intact (and yes, we painstakingly inpainted the random watermark off his jacket so it is completely invisible).
-
-* **living vector environment**  
-  * **procedural sunset sky**: multi-stop peach and orange gradient meshes with drifting cloud strata.
-  * **living cityscape**: silhouette towers whose windows gently pulse with warm golden light like someone is working late on a spreadsheet.
-  * **floating particles**: wind-blown petals and glowing dust motes governed by smooth sinusoidal wave math.
-  * **analog paper texture**: a real-time 30 fps paper grain canvas overlay that makes digital pixels feel like physical watercolor paper.
-
-* **audio that actually respects you**  
-  * audio is unmuted and set to full volume by default.
-  * if your browser throws a tantrum about unmuted autoplay, a tiny floating pill lets you tap anywhere to wake it up.
-  * tapping or clicking anywhere will *never* pause the video—it simply turns on the sound and lets the scene keep rolling.
+- **rounded corners (28px)**: because square viewports are aggressive.
+- **original extracted art**: every hair strand and blush tone intact.
+- **watermark erased**: scrubbed the text off his jacket with pixel surgery.
+- **living windows**: apartment lights gently pulse like someone is working late.
+- **paper tooth grain**: 30 fps noise shader so it feels like physical paper.
+- **audio on by default**: tap anywhere if browser gets scared.
+- **will it pause when you tap?**: no. stop asking.
+- **zero ui clutter**: no scrubbers. cursor auto-hides. pure vibes.
 
 ```mermaid
 graph TD
-    A["user opens page in browser"] --> B{"browser sees unmuted audio"}
-    B -->|"allowed"| C["music starts playing immediately"]
-    B -->|"blocked by autoplay policy"| D["show subtle floating pill"]
-    D --> E["user taps anywhere on screen"]
-    E --> F["sound wakes up instantly"]
-    F --> G{"does the video pause?"}
-    G -->|"absolutely not"| H["continues playing smoothly without interruption"]
+    A["open page"] --> B{"browser sees audio"}
+    B -->|"cool"| C["plays immediately"]
+    B -->|"scared"| D["shows tiny prompt"]
+    D --> E["tap anywhere"]
+    E --> F["sound turns on"]
+    F --> G{"does it pause?"}
+    G -->|"no"| H["keeps vibing"]
 ```
-
-* **zero interface junk**  
-  no scrubbers, no progress bars, no diagnostic overlays, and no watermarks cluttering your view. the mouse cursor even politely fades away if you stop moving it.
 
 ---
 
-### codebase breakdown
+### repo composition
 
 ```mermaid
-pie title repository composition by emotional weight
-    "actual code (html, css, svg, js)" : 20
-    "aesthetic contemplation" : 45
-    "sinusoidal math for floating petals" : 15
-    "telea inpainting algorithms on his jacket" : 20
+pie title repository weight
+    "actual code" : 20
+    "aesthetic longing" : 45
+    "floating petal math" : 15
+    "removing jacket watermark" : 20
 ```
 
 ---
 
-### controls (for people who refuse to just sit back and watch)
+### controls
 
-| input | what it does |
+| key | what happens |
 |---|---|
-| `tap / click anywhere` | wakes up the audio immediately, keeps the animation rolling, refuses to pause |
-| `space` | pauses or resumes the drama (if you need a second to process your feelings) |
-| `double click` or `F` | enters full-screen mode so your entire monitor turns into a sunset |
-| `M` | toggles mute (in case someone walks behind you) |
+| `tap anywhere` | turns sound on. refuses to pause. |
+| `space` | pauses the drama. |
+| `f` or `double click` | fullscreen sunset. |
+| `m` | mute (if someone walks in). |
 
 ---
 
-### how to run this locally in 5 seconds
+### run it (takes 5 seconds)
 
-no build steps. no vite. no bundlers. no thirty-minute dependency installations.
+no build steps. no npm install. no waiting.
 
-1. clone the repository:
-   ```bash
-   git clone https://github.com/MdKasif0/No-Context.git
-   cd "No Context"
-   ```
+```bash
+git clone https://github.com/MdKasif0/No-Context.git
+cd "No Context"
+python3 server.py
+```
 
-2. start the lightweight zero-cache server:
-   ```bash
-   python3 server.py
-   ```
-
-3. open your browser:
-   ```
-   http://localhost:8766
-   ```
-
-put your headphones on, lean back, and pretend you're on a rooftop overlooking the city in 2004.
+open `http://localhost:8766`.  
+put headphones on.  
+pretend it is 2004.
 
 ---
 
-### under the hood
+### file map
 
 ```
 No Context/
-├── index.html              # the minimalist fullscreen stage
-├── server.py               # lightweight zero-cache local server
-├── audio.mp3               # high-fidelity synchronized soundtrack
+├── index.html              # the stage
+├── server.py               # zero-cache server
+├── audio.mp3               # sync soundtrack
 ├── styles/
-│   ├── main.css            # rounded 1:1 viewport, smooth drop shadows, clean dark backdrop
-│   └── anime-theme.css     # watercolor tint washes and paper textures
+│   ├── main.css            # rounded 1:1 frame & shadows
+│   └── anime-theme.css     # watercolor & paper filters
 ├── src/
-│   ├── scene.js            # master compositor connecting all visual layers
+│   ├── scene.js            # master compositor
 │   ├── core/
-│   │   ├── engine.js       # deterministic 30 fps timeline locked to the audio clock
-│   │   └── camera.js       # smooth handheld camera drift coordinator
+│   │   ├── engine.js       # 30 fps clock locked to audio
+│   │   └── camera.js       # subtle handheld camera drift
 │   └── visual/
-│       ├── sky-clouds.js   # sunset gradient mesh & cloud strata
-│       ├── cityscape.js    # evening city skyline with glowing apartment windows
-│       ├── foliage.js      # wind-swaying trees and branches
-│       ├── railing-car.js  # rooftop railing and vintage car body
-│       ├── characters.js   # scene 1 character layer
-│       ├── scene2.js       # scene 2 cinematic portrait & backdrop
-│       ├── particles.js    # drifting petals and dust motes
-│       ├── lyrics.js       # timed floating song lyrics
-│       └── paper-texture.js# procedural paper tooth and analog film grain
+│       ├── sky-clouds.js   # sunset clouds
+│       ├── cityscape.js    # skyline & flickering windows
+│       ├── foliage.js      # swaying trees
+│       ├── railing-car.js  # car & railing
+│       ├── characters.js   # scene 1
+│       ├── scene2.js       # scene 2 close-up
+│       ├── particles.js    # floating petals
+│       ├── lyrics.js       # handwritten lyrics
+│       └── paper-texture.js# real-time grain
 └── assets/
-    ├── female-character.png # pristine extracted artwork (bun, blush, and hair wisp intact)
-    └── male-character.png   # pristine extracted artwork (watermark cleanly removed)
+    ├── female-character.png # clean extracted art
+    └── male-character.png   # watermark-free art
 ```
 
 ---
 
-### license & vibes
+### license
 
-built with patience, math, and an unreasonable appreciation for golden hour lighting. do whatever you want with it, just don't make the corners square again.
+mit. do whatever you want. just keep the corners rounded.
